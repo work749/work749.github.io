@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0a0b0d"/>
+  <rect x="24" y="24" width="464" height="464" rx="80" fill="none" stroke="#d9a441" stroke-width="10" opacity="0.55"/>
+  <text x="256" y="256" font-size="270" text-anchor="middle" dominant-baseline="central"
+        font-family="PingFang SC, Microsoft YaHei, serif" font-weight="700" fill="#d9a441">满</text>
+</svg>

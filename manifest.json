@@ -1,0 +1,17 @@
+{
+  "name": "曾小满工作台",
+  "short_name": "工作台",
+  "description": "道德经背诵 · 新概念英语点读 · 助贷房产要闻 · 竹笛自学",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0b0d",
+  "theme_color": "#0a0b0d",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
