@@ -57,7 +57,34 @@
     return m + ":" + (ss < 10 ? "0" + ss : ss);
   }
 
+  // APP（安卓 WebView）里网页版全屏常常无效，改走原生：容器铺满 + 强制横屏 + 隐藏系统栏
+  function exitFs(el) {
+    if (!el) return;
+    el.classList.remove("app-fs");
+    var b = el.querySelector(".fs-exit");
+    if (b && b.parentNode) b.parentNode.removeChild(b);
+    if (window.AndroidApp && typeof window.AndroidApp.exitFullscreen === "function") {
+      try { window.AndroidApp.exitFullscreen(); } catch (e) { }
+    } else if (document.fullscreenElement) {
+      try { document.exitFullscreen(); } catch (e) { }
+    }
+  }
+  window.__exitFs = function () { exitFs(document.querySelector(".video-wrap.app-fs")); };
+
   function requestFs(el) {
+    if (window.AndroidApp && typeof window.AndroidApp.enterFullscreen === "function") {
+      el.classList.add("app-fs");
+      if (!el.querySelector(".fs-exit")) {
+        var b = document.createElement("button");
+        b.className = "fs-exit";
+        b.textContent = "退出全屏";
+        b.onclick = function () { exitFs(el); };
+        el.appendChild(b);
+      }
+      try { window.AndroidApp.enterFullscreen(); } catch (e) { }
+      toast("已全屏，点右上角或按返回键退出");
+      return;
+    }
     var fn = el.requestFullscreen || el.webkitRequestFullscreen ||
       el.mozRequestFullScreen || el.msRequestFullscreen;
     if (!fn) { toast("当前环境不支持全屏，请点「在 B 站打开」"); return; }

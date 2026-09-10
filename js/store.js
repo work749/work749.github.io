@@ -84,13 +84,50 @@
     return voices.filter(function (v) { return !langPrefix || v.lang.toLowerCase().indexOf(langPrefix) === 0; });
   };
 
+  /* ---------- 语音合成 ----------
+     APP（安卓 WebView）里没有可用的 Web Speech API，改用手机原生语音引擎：
+     通过 AndroidApp.speak() 桥接，播完原生会回调 window.__ttsDone(id) 触发 onend。 */
+  var nativeSeq = 0;
+  var nativeCb = {};
+
+  window.__ttsDone = function (id) {
+    var c = nativeCb[id];
+    if (c) { delete nativeCb[id]; if (c.onend) try { c.onend(); } catch (e) { } }
+  };
+  window.__ttsStart = function (id) {
+    var c = nativeCb[id];
+    if (c && c.onstart) try { c.onstart(); } catch (e) { }
+  };
+
+  function nativeTtsOk() {
+    return !!(window.AndroidApp && typeof window.AndroidApp.speak === "function"
+      && window.AndroidApp.ttsReady && window.AndroidApp.ttsReady());
+  }
+
   window.speak = function (text, lang, opts) {
-    if (!window.speechSynthesis) { toast("当前浏览器不支持语音朗读"); return null; }
+    if (!text) return null;
     opts = opts || {};
+    var rate = opts.rate || (lang && lang.indexOf("en") === 0 ? (data.ui.nceRate || 0.9) : 0.95);
+
+    if (nativeTtsOk()) {
+      var id = "u" + (++nativeSeq);
+      nativeCb[id] = opts;
+      try {
+        window.AndroidApp.speak(String(text), lang || "zh-CN", rate, id);
+        return { native: true, id: id };
+      } catch (e) { /* 桥接失败则回退网页语音 */ }
+    }
+
+    if (!window.speechSynthesis) {
+      // APP 内原生引擎也不可用时，给明确指引，而不是干巴巴一句“不支持”
+      if (window.AndroidApp) toast("手机缺少中文语音引擎，请安装「Google 文字转语音」或讯飞语音引擎");
+      else toast("当前浏览器不支持语音朗读");
+      return null;
+    }
     speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
     u.lang = lang || "zh-CN";
-    u.rate = opts.rate || (lang && lang.indexOf("en") === 0 ? (data.ui.nceRate || 0.9) : 0.95);
+    u.rate = rate;
     u.pitch = opts.pitch || 1;
     var pick = null;
     if (u.lang.indexOf("zh") === 0 && data.ui.voiceURI) {
@@ -105,7 +142,14 @@
     speechSynthesis.speak(u);
     return u;
   };
-  window.stopSpeak = function () { if (window.speechSynthesis) speechSynthesis.cancel(); };
+
+  window.stopSpeak = function () {
+    if (window.AndroidApp && typeof window.AndroidApp.stopSpeak === "function") {
+      try { window.AndroidApp.stopSpeak(); } catch (e) { }
+    }
+    if (window.speechSynthesis) speechSynthesis.cancel();
+    nativeCb = {};
+  };
 
   /* ---------- 转义 ---------- */
   window.esc = function (s) {

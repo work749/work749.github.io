@@ -269,6 +269,47 @@ if (nceFollow) {
 // 持久化
 check("localStorage 已写入", !!w.localStorage.getItem("zengxiaoman.workspace.v1"));
 
+// ---- 跨设备同步 ----
+check("同步卡片已就位", !!$("#syncSetup") && !!$("#syncNow") && !!$("#syncPair") && !!$("#syncOff"));
+check("同步状态标签存在", !!$("#syncState"));
+check("SYNC 模块已加载", !!w.SYNC && typeof w.SYNC.setToken === "function");
+check("同步默认未开启", !!w.SYNC && w.SYNC.enabled() === false);
+check("未开启时点同步不报错", (() => {
+  try { $("#syncNow").click(); $("#syncPair").click(); return true; } catch (e) { return false; }
+})());
+check("配对链接指向永久地址", !!w.SYNC && /work749\.github\.io/.test(w.SYNC.pairUrl()));
+
+// ---- APP 原生朗读桥接 ----
+check("原生朗读回调已注册", typeof w.__ttsDone === "function" && typeof w.__ttsStart === "function");
+const spoken = [];
+w.AndroidApp = {
+  ttsReady: () => true,
+  speak: (t, lang, rate, id) => spoken.push({ t, lang, rate, id }),
+  stopSpeak: () => {}
+};
+w.speak("上德不德，是以有德", "zh-CN", {});
+check("APP 内朗读走手机原生引擎", spoken.length === 1 && spoken[0].t === "上德不德，是以有德");
+let ttsEnded = false;
+w.speak("第二句", "zh-CN", { onend: () => { ttsEnded = true; } });
+if (spoken.length > 1) w.__ttsDone(spoken[spoken.length - 1].id);
+check("原生读完回调 onend（连读不中断）", ttsEnded);
+check("停止朗读不报错", (() => { try { w.stopSpeak(); return true; } catch (e) { return false; } })());
+
+// ---- APP 内视频全屏 ----
+let appFs = 0;
+w.AndroidApp.enterFullscreen = () => { appFs++; };
+w.AndroidApp.exitFullscreen = () => { appFs--; };
+const fsLesson = $(".lesson.open");
+const fsBtn = fsLesson && fsLesson.querySelector('[data-act="fs"]');
+if (fsBtn) fsBtn.click();
+const fsWrap = fsLesson && fsLesson.querySelector(".video-wrap");
+check("APP 内全屏调用原生横屏", appFs === 1);
+check("全屏容器已铺满", !!fsWrap && fsWrap.classList.contains("app-fs"));
+check("全屏有退出按钮", !!fsWrap && !!fsWrap.querySelector(".fs-exit"));
+w.__exitFs();
+check("可退出全屏", !!fsWrap && !fsWrap.classList.contains("app-fs") && appFs === 0);
+delete w.AndroidApp;
+
 // ---- 输出 ----
 let fail = 0;
 for (const r of results) {

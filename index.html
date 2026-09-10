@@ -339,7 +339,29 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="dot"></span>版本与更新<span class="right" id="verLabel">v1.5</span></div>
+      <div class="card-title"><span class="dot"></span>跨设备同步<span class="right" id="syncState">未开启</span></div>
+      <div class="setting-row">
+        <div class="label"><div class="n">手机 / 电脑自动同步</div><div class="d">已读、打卡、备忘录在多台设备间自动同步；数据存你自己的 GitHub 仓库，密钥只留在本机</div></div>
+        <button class="btn" id="syncSetup">开启同步</button>
+      </div>
+      <div class="setting-row">
+        <div class="label"><div class="n">立即同步</div><div class="d">马上和云端合并一次（取并集，不会互相覆盖）</div></div>
+        <button class="btn" id="syncNow">同步</button>
+      </div>
+      <div class="setting-row">
+        <div class="label"><div class="n">配对另一台设备</div><div class="d">复制链接发到手机或电脑打开，即自动完成配对</div></div>
+        <button class="btn" id="syncPair">复制配对链接</button>
+      </div>
+      <div class="setting-row">
+        <div class="label"><div class="n">关闭同步</div><div class="d">本机数据保留，仅停止同步</div></div>
+        <button class="btn" id="syncOff" style="border-color:#5a2b2b;color:#e05252">关闭</button>
+      </div>
+      <div id="syncPairBox"></div>
+      <div class="page-desc" id="syncTip" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>版本与更新<span class="right" id="verLabel">v1.6</span></div>
       <div class="setting-row">
         <div class="label"><div class="n">强制刷新到最新版</div><div class="d">页面没变化时点一下，会清掉离线缓存并重新加载</div></div>
         <button class="btn" id="btnUpdate">刷新</button>
@@ -398,6 +420,7 @@
 <script src="js/mod/news.js"></script>
 <script src="js/mod/flute.js"></script>
 <script src="js/mod/memo.js"></script>
+<script src="js/sync.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
