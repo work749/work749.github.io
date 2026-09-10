@@ -51,9 +51,26 @@
     if (window.MOD && MOD.memo && MOD.memo.render) MOD.memo.render();
   }
 
+  function fmtDur(s) {
+    if (!s) return "";
+    var m = Math.floor(s / 60), ss = s % 60;
+    return m + ":" + (ss < 10 ? "0" + ss : ss);
+  }
+
+  function requestFs(el) {
+    var fn = el.requestFullscreen || el.webkitRequestFullscreen ||
+      el.mozRequestFullScreen || el.msRequestFullscreen;
+    if (!fn) { toast("当前环境不支持全屏，请点「在 B 站打开」"); return; }
+    try {
+      var r = fn.call(el);
+      if (r && r.catch) r.catch(function () { toast("全屏被拒绝，可点「在 B 站打开」"); });
+    } catch (e) { toast("全屏失败，可点「在 B 站打开」"); }
+  }
+
   function lessonHtml(l) {
     return '<div class="lesson' + (isDone(l.id) ? " done" : "") + '" data-id="' + l.id + '">' +
       '<div class="lesson-top"><span class="t">' + esc(l.title) + "</span>" +
+      (l.dur ? '<span class="vdur">' + fmtDur(l.dur) + "</span>" : "") +
       '<span class="right">' +
       '<button class="btn sm" data-act="open">展开</button>' +
       '<button class="btn sm' + (isDone(l.id) ? " done" : "") + '" data-act="ok">' + (isDone(l.id) ? "已学 ✓" : "学完") + "</button>" +
@@ -63,6 +80,7 @@
       '<div class="row" style="margin-bottom:12px">' +
       '<a class="btn sm" href="' + esc(bilibiliPage(bvOf(l), l.p)) + '" target="_blank" rel="noopener">在 B 站打开</a>' +
       '<a class="btn sm" href="' + esc(searchUrl(l.kw)) + '" target="_blank" rel="noopener">搜更多同类教程</a>' +
+      '<button class="btn sm" data-act="fs">全屏播放</button>' +
       '<button class="btn sm ghost" data-act="custom">自定义视频</button>' +
       '<span class="page-desc" style="margin-left:auto">' + (bvOf(l) === l.bvid ? "" : "已用自定义视频") + "</span>" +
       "</div>" +
@@ -79,6 +97,11 @@
       var btn = e.target.closest("[data-act]");
 
       if (btn && btn.dataset.act === "ok") { toggleDone(id); return; }
+      if (btn && btn.dataset.act === "fs") {
+        var wrapEl = $(".video-wrap", lessonEl);
+        if (!wrapEl || !wrapEl.querySelector("iframe")) { toast("先点「展开」载入视频，再全屏"); return; }
+        requestFs(wrapEl); return;
+      }
       if (btn && btn.dataset.act === "custom") {
         var v = prompt("粘贴 B 站视频链接或 BV 号（留空恢复默认）：", bvOf(l) || "");
         if (v === null) return;
@@ -96,7 +119,10 @@
         lessonEl.classList.toggle("open", !open);
         var wrap = $(".video-wrap", lessonEl);
         if (!open) {
-          wrap.innerHTML = '<iframe src="' + esc(bilibiliEmbed(bvOf(l), l.p)) + '" scrolling="no" frameborder="no" allowfullscreen="true" referrerpolicy="no-referrer"></iframe>';
+          wrap.innerHTML = '<iframe src="' + esc(bilibiliEmbed(bvOf(l), l.p)) + '" scrolling="no" frameborder="no"' +
+            ' allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"' +
+            ' allow="fullscreen; autoplay; encrypted-media; picture-in-picture"' +
+            ' referrerpolicy="no-referrer"></iframe>';
           btn && (btn.textContent = "收起");
         } else {
           wrap.innerHTML = "";

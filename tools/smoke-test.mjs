@@ -227,6 +227,45 @@ check("快捷添加写入同一份数据", (w.Store.data.memo.items || []).lengt
 $$("#memoQuickList .memo-check")[0].click();
 check("快捷区可直接打勾", w.Store.data.memo.items.filter((n) => n.done).length === 1);
 
+// ---- 笛子：视频时长徽章 / 全屏 / allow 属性 ----
+$$("#nav .nav-item").find((b) => b.dataset.page === "flute").click();
+const vdur = $("#fluteCourse .vdur");
+check("视频时长徽章显示", !!vdur && /^\d+:\d{2}$/.test((vdur.textContent || "").trim()),
+  vdur ? vdur.textContent : "无");
+check("全屏按钮存在", !!$("#fluteCourse [data-act='fs']"));
+$("#fluteCourse [data-act='open']").click();
+const ifr = $("#fluteCourse .video-wrap iframe");
+check("视频 iframe 已注入", !!ifr);
+check("iframe 带 allow=fullscreen", !!ifr && /fullscreen/.test(ifr.getAttribute("allow") || ""),
+  ifr ? ifr.getAttribute("allow") : "无");
+
+// ---- 道德经朗读：连读高亮 / 停止 / 语速 ----
+$$("#nav .nav-item").find((b) => b.dataset.page === "ddj").click();
+check("停止朗读按钮存在", !!$("#ddjStopSpeak"));
+check("道德经语速滑块存在", !!$("#ddjRate"));
+$("#ddjRate").value = "1.1";
+$("#ddjRate").dispatchEvent(new w.Event("input"));
+check("朗读语速可保存", Math.abs((w.Store.data.ui.ddjRate || 0) - 1.1) < 1e-6,
+  String(w.Store.data.ui.ddjRate));
+$("#ddjSpeakAll").click();
+check("连读时高亮当前句", $$(".ddj-sent.speaking").length >= 1,
+  `${$$(".ddj-sent.speaking").length} 句`);
+let stopOk = true;
+try { $("#ddjStopSpeak").click(); } catch (e) { stopOk = false; }
+check("点击停止朗读不报错", stopOk);
+check("停止后清除高亮", $$(".ddj-sent.speaking").length === 0);
+
+// ---- 英语：跟读模式 ----
+$$("#nav .nav-item").find((b) => b.dataset.page === "nce").click();
+const nceFollow = $("#nceFollow");
+check("跟读模式按钮存在", !!nceFollow);
+if (nceFollow) {
+  nceFollow.click();
+  check("跟读模式可开启", /跟读中/.test(nceFollow.textContent), nceFollow.textContent);
+  nceFollow.click();
+  check("跟读模式可关闭", /跟读模式/.test(nceFollow.textContent), nceFollow.textContent);
+}
+
 // 持久化
 check("localStorage 已写入", !!w.localStorage.getItem("zengxiaoman.workspace.v1"));
 

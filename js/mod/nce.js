@@ -4,6 +4,8 @@
   var cur = 0;
   var dictation = false;
   var playIdx = -1;
+  var followMode = false;   // 跟读模式：每句读完留出跟读时间
+  var followTimer = null;
 
   function lesson() { return LESSONS[cur]; }
 
@@ -17,7 +19,7 @@
       if (!b) return;
       cur = parseInt(b.dataset.i, 10);
       Store.data.nce.lastLesson = cur; Store.save();
-      stopSpeak(); render();
+      stopAll(); render();
     };
   }
 
@@ -64,17 +66,34 @@
     };
   }
 
-  function playAll() {
-    var l = lesson(); if (!l) return;
+  function stopAll() {
+    if (followTimer) { clearTimeout(followTimer); followTimer = null; }
     stopSpeak();
     playIdx = -1;
+    $$(".line-row").forEach(function (r) { r.classList.remove("playing"); });
+  }
+
+  function playAll() {
+    var l = lesson(); if (!l) return;
+    stopAll();
     (function next() {
       playIdx++;
-      if (playIdx >= l.lines.length) { playIdx = -1; return; }
+      if (playIdx >= l.lines.length) {
+        playIdx = -1;
+        $$(".line-row", $("#nceBody")).forEach(function (r) { r.classList.remove("playing"); });
+        return;
+      }
       $$(".line-row", $("#nceBody")).forEach(function (r) { r.classList.remove("playing"); });
       var row = $('.line-row[data-i="' + playIdx + '"]', $("#nceBody"));
       if (row) { row.classList.add("playing"); row.scrollIntoView({ block: "center", behavior: "smooth" }); }
-      speak(l.lines[playIdx].en, "en-US", { onend: next });
+      var txt = l.lines[playIdx].en;
+      speak(txt, "en-US", {
+        onend: function () {
+          if (!followMode) { next(); return; }
+          // 跟读模式：按句子长度留出跟读时间（至少 1.5 秒）
+          followTimer = setTimeout(next, Math.max(1500, txt.length * 90));
+        }
+      });
     })();
   }
 
@@ -91,7 +110,17 @@
 
   function bind() {
     $("#ncePlayAll").onclick = playAll;
-    $("#nceStop").onclick = function () { stopSpeak(); playIdx = -1; $$(".line-row").forEach(function (r) { r.classList.remove("playing"); }); };
+    $("#nceStop").onclick = function () { stopAll(); };
+    var fb = $("#nceFollow");
+    if (fb) {
+      fb.textContent = followMode ? "跟读中 ✓" : "跟读模式";
+      fb.onclick = function () {
+        followMode = !followMode;
+        fb.textContent = followMode ? "跟读中 ✓" : "跟读模式";
+        fb.classList.toggle("done", followMode);
+        toast(followMode ? "跟读模式：每句读完留出时间给你跟读" : "已退出跟读模式");
+      };
+    }
     $("#nceToggleZh").onclick = function () { Store.data.nce.hideZh = !Store.data.nce.hideZh; Store.save(); render(); };
     $("#nceDictation").onclick = function () { dictation = !dictation; render(); toast(dictation ? "英文已遮挡，点击句子可显示" : "已退出听写模式"); };
     $("#nceDone").onclick = function () {

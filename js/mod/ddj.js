@@ -112,7 +112,7 @@
       if (!btn) return;
       var wrap = e.target.closest(".ddj-sent");
       var i = parseInt(wrap.dataset.idx, 10);
-      if (btn.dataset.act === "speak") speak(SENT[i].t, "zh-CN");
+      if (btn.dataset.act === "speak") speakOne(SENT[i].t);
       else toggleDone(i);
     };
   }
@@ -134,8 +134,12 @@
   function openChapter(ci) {
     var part = window.DAO_DE_JING[curPart], c = part.chapters[ci];
     var noPy = !!Store.data.ddj.hidePy;
+    // 本章每句对应的全局序号，供整章朗读时高亮跟随
+    var gis = c.sent.map(function (s, si) {
+      return SENT.findIndex(function (x) { return x.pi === curPart && x.ci === ci && x.si === si; });
+    });
     var html = c.sent.map(function (s, si) {
-      var gi = SENT.findIndex(function (x) { return x.pi === curPart && x.ci === ci && x.si === si; });
+      var gi = gis[si];
       return '<div class="ddj-sent' + (isDone(gi) ? " ok" : "") + '" data-idx="' + gi + '">' +
         '<div class="meta"><span>第 ' + (si + 1) + ' 句</span></div>' +
         '<div class="text' + (noPy ? " no-py" : "") + '" style="font-size:' + (Store.data.ui.ddjSize || 21) + 'px">' +
@@ -150,18 +154,39 @@
       var btn = e.target.closest("[data-act]");
       if (btn) {
         var i = parseInt(e.target.closest(".ddj-sent").dataset.idx, 10);
-        if (btn.dataset.act === "speak") speak(SENT[i].t, "zh-CN"); else toggleDone(i);
+        if (btn.dataset.act === "speak") speakOne(SENT[i].t); else toggleDone(i);
         return;
       }
-      if (e.target.id === "chSpeakAll") speakSeq(c.sent.map(function (s) { return s.t; }));
+      if (e.target.id === "chSpeakAll") speakSeq(c.sent.map(function (s) { return s.t; }), gis);
     };
   }
 
-  function speakSeq(list) {
+  function clearSpeak() {
+    stopSpeak();
+    $$(".ddj-sent.speaking").forEach(function (el) { el.classList.remove("speaking"); });
+  }
+
+  /* 单句朗读（带语速） */
+  function speakOne(t) {
+    speak(t, "zh-CN", { rate: Store.data.ui.ddjRate || 0.95 });
+  }
+
+  /* 连续朗读：list 为文本数组；idxs 为对应全局句序号，用于高亮跟随 */
+  function speakSeq(list, idxs) {
     var k = 0;
+    clearSpeak();
+    if (!list || !list.length) return;
     (function next() {
-      if (k >= list.length) return;
-      speak(list[k++], "zh-CN", { onend: next });
+      if (k >= list.length) { clearSpeak(); return; }
+      if (idxs) {
+        $$(".ddj-sent.speaking").forEach(function (el) { el.classList.remove("speaking"); });
+        var el = $('.ddj-sent[data-idx="' + idxs[k] + '"]');
+        if (el) {
+          el.classList.add("speaking");
+          try { el.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (e) { }
+        }
+      }
+      speak(list[k++], "zh-CN", { rate: Store.data.ui.ddjRate || 0.95, onend: next });
     })();
   }
 
@@ -186,7 +211,7 @@
     $("#ddjReview").onclick = function (e) {
       if (!e.target.closest("[data-act='speak']")) return;
       var i = parseInt(e.target.closest(".ddj-sent").dataset.idx, 10);
-      speak(SENT[i].t, "zh-CN");
+      speakOne(SENT[i].t);
     };
   }
 
@@ -214,8 +239,15 @@
     };
     $("#ddjFinishBtn").onclick = finishDay;
     $("#ddjSpeakAll").onclick = function () {
-      speakSeq(ensureToday().idxs.map(function (i) { return SENT[i].t; }));
+      var idxs = ensureToday().idxs;
+      speakSeq(idxs.map(function (i) { return SENT[i].t; }), idxs);
     };
+    $("#ddjStopSpeak").onclick = function () { clearSpeak(); toast("已停止朗读"); };
+    var dr = $("#ddjRate");
+    if (dr) {
+      dr.value = Store.data.ui.ddjRate || 0.95;
+      dr.oninput = function () { Store.data.ui.ddjRate = parseFloat(dr.value); Store.save(); };
+    }
     $("#ddjTogglePy").onclick = function () {
       Store.data.ddj.hidePy = !Store.data.ddj.hidePy; Store.save();
       this.textContent = Store.data.ddj.hidePy ? "显示拼音" : "隐藏拼音（自测）";
