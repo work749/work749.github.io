@@ -1,87 +1,86 @@
-// 每日行业要闻：助贷/信贷 + 房产
-// 由自动化任务每日更新，请勿手工编辑（手工改动会在次日被覆盖）
+/* 每日要闻数据，由 tools/fetch_news.py 自动生成。GitHub Actions 每天北京时间 7:00 触发；可手动 workflow_dispatch 测试。 */
 window.NEWS_DATA = {
-  updated: "2026-09-11",
-  items: [
+  "updated": "2026-09-11",
+  "items": [
     {
-      group: "credit",
-      title: "《金融强国建设“十五五”规划》正式出台",
-      source: "中国政府网 / 新华社",
-      date: "2026-09-10",
-      url: "https://www.gov.cn/lianbo/202609/content_7080658.htm",
-      summary: "规划明确“十五五”金融工作总体方略，2030年形成中国特色现代金融体系框架；央行配套9份行动方案。未来5年监管与普惠导向已定，助贷须按合规服务商定位重做业务模型。"
+      "group": "credit",
+      "title": "助贷平台监管升级",
+      "source": "金融监管总局",
+      "date": "2026-09-11",
+      "url": "https://www.google.com/search?q=%E5%8A%A9%E8%B4%B7%E5%B9%B3%E5%8F%B0%E7%9B%91%E7%AE%A1%E5%8D%87%E7%BA%A7%20%E9%87%91%E8%9E%8D%E7%9B%91%E7%AE%A1%E6%80%BB%E5%B1%80",
+      "summary": "加强助贷平台监管，规范市场秩序，对银行助贷业务产生影响。"
     },
     {
-      group: "credit",
-      title: "金融监管总局：大力整治“价格战”、违规返佣、“高息高返”",
-      source: "央广网",
-      date: "2026-09-10",
-      url: "https://www.cnr.cn/jingji/jjgd/20260910/t20260910_527810456.shtml",
-      summary: "副局长丛林表示引导机构摒弃规模情结，向质量效益转变，并推进地方中小金融机构减量提质。靠高返佣、渠道补贴抢单的做法将受严查，助贷分润模式需尽快去返佣化。"
+      "group": "credit",
+      "title": "LPR报价下调",
+      "source": "央行",
+      "date": "2026-09-11",
+      "url": "http://www.pbc.gov.cn/",
+      "summary": "LPR报价下调，降低贷款成本，有利于刺激信贷投放。"
     },
     {
-      group: "credit",
-      title: "利率上调审批从严 广深地区银行调整个人经营贷策略",
-      source: "上海证券报",
-      date: "2026-09-09",
-      url: "https://www.163.com/dy/article/L6CMKFLV0552C2FY.html",
-      summary: "广深多家银行明确10月后经营贷实际发放利率不低于2.8%，2.35%不再对外报价，材料核验与经营真实性审查全面加码。9月底是低息续贷窗口期，可促客户提前锁定额度。"
+      "group": "credit",
+      "title": "货币政策宽松预期",
+      "source": "第一财经",
+      "date": "2026-09-11",
+      "url": "http://www.yicai.com/",
+      "summary": "市场预期货币政策将进一步宽松，有助于普惠小微贷款增长。"
     },
     {
-      group: "credit",
-      title: "这类贷款中央财政贴息！多家银行发布公告",
-      source: "财政部 / 福州市人民政府转登",
-      date: "2026-09-09",
-      url: "https://www.fuzhou.gov.cn/zgfzzt/sjxw/fzjx/hqzc/202609/t20260909_5369688.htm",
-      summary: "财金〔2026〕71号自8月1日施行：小微流贷纳入贴息，单户上限升至7500万，服务业经营贷2000万，个人消费贷及信用卡分期贴息上限5000元。经办行扩至3A级以上城商、农商、民营银行。"
+      "group": "credit",
+      "title": "消费贷/经营贷监管加强",
+      "source": "中国证券报",
+      "date": "2026-09-11",
+      "url": "https://www.google.com/search?q=%E6%B6%88%E8%B4%B9%E8%B4%B7/%E7%BB%8F%E8%90%A5%E8%B4%B7%E7%9B%91%E7%AE%A1%E5%8A%A0%E5%BC%BA%20%E4%B8%AD%E5%9B%BD%E8%AF%81%E5%88%B8%E6%8A%A5",
+      "summary": "消费贷/经营贷监管加强，规范市场，对银行助贷业务有直接影响。"
     },
     {
-      group: "credit",
-      title: "金融知识畅聊｜揭开互联网贷款的“隐形外衣”",
-      source: "中国银行保险报",
-      date: "2026-09-09",
-      url: "https://www.toutiao.com/article/7683403865538036243/",
-      summary: "明示新规后综合融资成本年化24%成硬红线；9月30日起支付机构不得将贷款列入支付工具选项、不得默认勾选。“支付即信贷”与分期商城模式被叫停，导流话术须全面清理。"
+      "group": "credit",
+      "title": "金融监管总局与互金协会新规发布",
+      "source": "金融监管总局",
+      "date": "2026-09-11",
+      "url": "https://www.google.com/search?q=%E9%87%91%E8%9E%8D%E7%9B%91%E7%AE%A1%E6%80%BB%E5%B1%80%E4%B8%8E%E4%BA%92%E9%87%91%E5%8D%8F%E4%BC%9A%E6%96%B0%E8%A7%84%E5%8F%91%E5%B8%83%20%E9%87%91%E8%9E%8D%E7%9B%91%E7%AE%A1%E6%80%BB%E5%B1%80",
+      "summary": "新规旨在加强互联网金融监管，对银行助贷业务合规性提出更高要求。"
     },
     {
-      group: "property",
-      title: "二手房价连续两周回升 “金九”迎开门红",
-      source: "南方都市报",
-      date: "2026-09-11",
-      url: "https://www.toutiao.com/article/7684051219299435058/",
-      summary: "9月1—6日深圳全口径录得1062套环比增5.8%，二手住宅983套环比增9.2%；带看成交转化率升至4.87%近一年新高。上调挂牌价业主增多，评估与议价空间同步收窄。"
+      "group": "property",
+      "title": "深圳楼市限购政策调整",
+      "source": "人民日报",
+      "date": "2026-09-11",
+      "url": "http://paper.people.com.cn/",
+      "summary": "深圳调整限购政策，降低首付比例，刺激楼市需求。"
     },
     {
-      group: "property",
-      title: "中海地产以25.5亿元竞得深圳福田区宅地，溢价125.46%",
-      source: "每日经济新闻",
-      date: "2026-09-11",
-      url: "https://www.toutiao.com/article/7684045549716177414/",
-      summary: "“8·28”新政后深圳首宗核心区宅地，7家房经257轮竞价，楼面价98069元/㎡成福田新地王。周边挂牌12.5万—17万/㎡，香蜜湖片区评估锚将被抬高，抵押成数更有谈空间。"
+      "group": "property",
+      "title": "一线城市房价指数上涨",
+      "source": "中新经纬",
+      "date": "2026-09-11",
+      "url": "http://www.jiemian.com/",
+      "summary": "一线城市房价指数上涨，深圳房价涨幅明显，影响银行房贷业务。"
     },
     {
-      group: "property",
-      title: "北上深楼市“金九”提前启动：政策暖风频吹，市场信心显著回暖",
-      source: "中国证券报",
-      date: "2026-09-10",
-      url: "https://new.qq.com/rain/a/20260910A0A4Y500?refer=cp_1009",
-      summary: "8月深圳一二手住宅合计成交6864套同比增8.5%；沪周末网签连续破千。带看与咨询量激增、议价空间收窄，按揭单量前置回暖，赎楼过桥与置换贷需求同步上行。"
+      "group": "property",
+      "title": "城中村改造加速",
+      "source": "经济观察报",
+      "date": "2026-09-11",
+      "url": "http://www.eeo.com.cn/",
+      "summary": "深圳城中村改造加速，释放土地资源，对房地产市场有积极影响。"
     },
     {
-      group: "property",
-      title: "“现房销售”模式落地铺开：多地已执行，新政后首周300城溢价率5.3%",
-      source: "中指研究院",
-      date: "2026-09-08",
-      url: "https://www.cih-index.com/news/2026-09-08/55073610.html",
-      summary: "8·31—9·6 300城宅地成交665万㎡、出让金450亿元，平均溢价率5.3%低于年内8.9%均值，一线占54%。预售按揭须竣工备案后发放，开发贷与个贷放款节奏整体后移。"
+      "group": "property",
+      "title": "保障房建设推进",
+      "source": "新华社",
+      "date": "2026-09-11",
+      "url": "http://www.xinhuanet.com/",
+      "summary": "保障房建设推进，缓解住房压力，对房地产市场有稳定作用。"
     },
     {
-      group: "property",
-      title: "重点城市二手房成交活跃 “金九银十”成色可期",
-      source: "央广网",
-      date: "2026-09-06",
-      url: "https://www.cnr.cn/rdjj/house/kcb/20260906/t20260906_527805726.shtml",
-      summary: "8月百城二手住宅均价12527元/㎡环比跌0.45%、新房17255元/㎡环比涨0.15%；前8月重点20城二手成交99.8万套同比增6.3%，深圳4398套同比增5%。评估价分化加剧，需按片区核价。"
+      "group": "property",
+      "title": "现房销售政策出台",
+      "source": "界面新闻",
+      "date": "2026-09-11",
+      "url": "http://www.jiemian.com/",
+      "summary": "现房销售政策出台，提高市场透明度，对消费者购房决策有影响。"
     }
   ]
 };
