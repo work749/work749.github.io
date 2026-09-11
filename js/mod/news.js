@@ -108,6 +108,48 @@
     };
   }
 
+  // ---- 自动拉取最新要闻 ----
+  // 每天北京时间 7:00 由 GitHub Actions 更新 js/data/news.js。
+  // 网页/APP 打开即拉最新，无需 WorkBuddy 推送；离线则保留本地（或上次缓存）。
+  function newsLiveUrl() {
+    // 同源（网页托管在 github.io）用相对路径，APP 离线包用绝对地址
+    if (location.hostname.indexOf("github.io") >= 0) return "js/data/news.js";
+    return "https://work749.github.io/js/data/news.js";
+  }
+  function newsLoadCache() {
+    try {
+      var raw = localStorage.getItem("zxm.news.cache");
+      if (!raw) return;
+      var o = JSON.parse(raw);
+      if (o && o.data && o.data.items && o.data.items.length) window.NEWS_DATA = o.data;
+    } catch (e) {}
+  }
+  function newsSaveCache() {
+    try {
+      localStorage.setItem("zxm.news.cache", JSON.stringify({ t: Date.now(), data: window.NEWS_DATA }));
+    } catch (e) {}
+  }
+  function newsRefreshLive() {
+    if (typeof fetch !== "function") return;          // jsdom/极旧环境直接跳过
+    var prevDate = window.NEWS_DATA && window.NEWS_DATA.updated;
+    var url = newsLiveUrl() + "?t=" + Date.now();
+    fetch(url, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("http " + r.status);
+      return r.text();
+    }).then(function (txt) {
+      if (!/NEWS_DATA\s*=/.test(txt)) return;
+      (0, eval)(txt);                                 // 重新赋值 window.NEWS_DATA
+      newsSaveCache();
+      render();
+      if (window.NEWS_DATA.updated && window.NEWS_DATA.updated !== prevDate) {
+        try { toast("行业要闻已更新（" + dateLabel(window.NEWS_DATA.updated) + "）", 1600); } catch (e) {}
+      }
+    }).catch(function () {});                         // 离线/失败：保留本地数据
+  }
+
   window.MOD = window.MOD || {};
-  window.MOD.news = { init: function () { bind(); render(); }, render: render };
+  window.MOD.news = {
+    init: function () { newsLoadCache(); bind(); render(); newsRefreshLive(); },
+    render: render
+  };
 })();
