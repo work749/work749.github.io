@@ -92,6 +92,7 @@
     window.scrollTo({ top: 0 });
     try { localStorage.setItem("zengxiaoman.lastPage", page); } catch (e) { }
   }
+  window.go = go;
 
   function bindNav() {
     $$("#nav .nav-item, #tabbar .tab").forEach(function (b) {
@@ -149,12 +150,12 @@
 
     bindNav(); renderSwatches(); bindSettings(); fillVoices();
 
-    ["ddj", "nce", "news", "flute", "memo"].forEach(function (k) {
+    ["home", "ddj", "nce", "news", "tools", "flute", "memo"].forEach(function (k) {
       if (window.MOD && MOD[k] && MOD[k].init) MOD[k].init();
     });
 
     var last = "";
-    try { last = localStorage.getItem("zengxiaoman.lastPage") || "ddj"; } catch (e) { last = "ddj"; }
+    try { last = localStorage.getItem("zengxiaoman.lastPage") || "home"; } catch (e) { last = "home"; }
     go(last);
 
     initSW();

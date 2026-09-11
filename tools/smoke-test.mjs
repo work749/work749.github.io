@@ -144,11 +144,17 @@ check("隐藏拼音后无 ruby", $$("#ddjTodayList ruby").length === 0);
 $("#ddjTogglePy").click();
 check("恢复拼音", $$("#ddjTodayList ruby").length > 0);
 
-// 页面切换
-$$("#nav .nav-item")[2].click();
+// 页面切换（侧边 nav 已精简为 logo 区，全部切到 #tabbar）
+$$("#tabbar .tab[data-page='news']")[0].click();
 check("切换到要闻页", $("#page-news").classList.contains("active"));
-$$("#nav .nav-item[data-page='flute']")[0].click();
-check("切换到笛子页", $("#page-flute").classList.contains("active"));
+$$("#tabbar .tab[data-page='tools']")[0].click();
+check("切换到工具页", $("#page-tools").classList.contains("active"));
+$$("#page-tools [data-go='flute']")[0].click();
+check("工具页 → 笛子页", $("#page-flute").classList.contains("active"));
+$$("#tabbar .tab[data-page='home']")[0].click();
+check("回到首页 Portal", $("#page-home").classList.contains("active"));
+check("首页三大入口齐全", $$("#page-home .home-card").length === 3);
+check("首页次要入口齐全", $$("#page-home .home-mini-item").length >= 3);
 
 // 笛子展开视频
 if (errors.length) console.log("!! 早期错误:\n" + errors.slice(0, 8).map((e) => "   " + e).join("\n"));
@@ -172,7 +178,8 @@ check("练习计时写入当天", Object.keys(secs).length === 1 && Object.value
 check("计时后打卡连续天数", $("#fluteStreak").textContent.indexOf("1") >= 0, $("#fluteStreak").textContent.trim());
 
 // 备忘录（独立模块 · iPhone 便签式）
-$$("#nav .nav-item").find((b) => b.dataset.page === "memo").click();
+$$("#tabbar .tab[data-page='tools']")[0].click();
+$$("#page-tools [data-go='memo']")[0].click();
 check("切换到备忘录页", $("#page-memo").classList.contains("active"));
 check("备忘录两栏结构齐全", !!$("#memoNotes") && !!$("#memoEdText") && !!$("#memoNew") && !!$("#memoSearch"));
 
@@ -225,7 +232,8 @@ check("闹铃时间已保存", w.Store.data.memo.items.some((n) => n.time === "0
 check("闹铃检查不报错", typeof w.MOD.memo.checkAlarms === "function" && (w.MOD.memo.checkAlarms(), true));
 
 // 笛子页快捷区与备忘录页共用同一份数据
-$$("#nav .nav-item").find((b) => b.dataset.page === "flute").click();
+$$("#tabbar .tab[data-page='tools']")[0].click();
+$$("#page-tools [data-go='flute']")[0].click();
 check("笛子页快捷备忘同步显示", $$("#memoQuickList .memo-item").length === 2,
   `${$$("#memoQuickList .memo-item").length} 条`);
 $("#memoQuickText").value = "随手记：练长音 10 分钟";
@@ -235,7 +243,8 @@ $$("#memoQuickList .memo-check")[0].click();
 check("快捷区可直接打勾", w.Store.data.memo.items.filter((n) => n.done).length === 1);
 
 // ---- 笛子：视频时长徽章 / 全屏 / allow 属性 ----
-$$("#nav .nav-item").find((b) => b.dataset.page === "flute").click();
+$$("#tabbar .tab[data-page='tools']")[0].click();
+$$("#page-tools [data-go='flute']")[0].click();
 const vdur = $("#fluteCourse .vdur");
 check("视频时长徽章显示", !!vdur && /^\d+:\d{2}$/.test((vdur.textContent || "").trim()),
   vdur ? vdur.textContent : "无");
@@ -247,7 +256,7 @@ check("iframe 带 allow=fullscreen", !!ifr && /fullscreen/.test(ifr.getAttribute
   ifr ? ifr.getAttribute("allow") : "无");
 
 // ---- 道德经朗读：连读高亮 / 停止 / 语速 ----
-$$("#nav .nav-item").find((b) => b.dataset.page === "ddj").click();
+$$("#tabbar .tab[data-page='ddj']")[0].click();
 check("停止朗读按钮存在", !!$("#ddjStopSpeak"));
 check("道德经语速滑块存在", !!$("#ddjRate"));
 $("#ddjRate").value = "1.1";
@@ -263,7 +272,7 @@ check("点击停止朗读不报错", stopOk);
 check("停止后清除高亮", $$(".ddj-sent.speaking").length === 0);
 
 // ---- 英语：跟读模式 ----
-$$("#nav .nav-item").find((b) => b.dataset.page === "nce").click();
+$$("#tabbar .tab[data-page='nce']")[0].click();
 const nceFollow = $("#nceFollow");
 check("跟读模式按钮存在", !!nceFollow);
 if (nceFollow) {
