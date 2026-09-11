@@ -1,6 +1,6 @@
 /* 离线缓存：安装到桌面/手机后离线可用
    策略：网络优先（保证打开就是最新版），断网时回落本地缓存 */
-var CACHE = "zxm-workspace-v13";
+var CACHE = "zxm-workspace-v14";
 var FILES = [
   "./",
   "./index.html",
@@ -10,13 +10,11 @@ var FILES = [
   "./js/mod/ddj.js",
   "./js/mod/nce.js",
   "./js/mod/news.js",
-  "./js/mod/house.js",
   "./js/mod/flute.js",
   "./js/mod/memo.js",
   "./js/data/daodejing.js",
   "./js/data/nce.js",
   "./js/data/news.js",
-  "./js/data/house.js",
   "./js/data/flute.js",
   "./img/icon.svg",
   "./manifest.json"
