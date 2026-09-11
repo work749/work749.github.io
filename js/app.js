@@ -149,7 +149,7 @@
 
     bindNav(); renderSwatches(); bindSettings(); fillVoices();
 
-    ["ddj", "nce", "news", "flute", "memo"].forEach(function (k) {
+    ["ddj", "nce", "news", "house", "flute", "memo"].forEach(function (k) {
       if (window.MOD && MOD[k] && MOD[k].init) MOD[k].init();
     });
 

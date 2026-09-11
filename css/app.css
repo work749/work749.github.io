@@ -14,6 +14,9 @@
   --dim: #6f7686;
   --ok: #4caf7d;
   --danger: #e05252;
+  /* 中国股市习惯：涨红跌绿 */
+  --up: #e05252;
+  --down: #4caf7d;
   --radius: 14px;
   --sidebar-w: 216px;
   --font: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", -apple-system, system-ui, sans-serif;
@@ -505,6 +508,17 @@ rt {
 }
 
 .empty { color: var(--dim); text-align: center; padding: 40px 0; font-size: 14px; }
+
+/* 房产数据模块 */
+.kv-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.kv-table th, .kv-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line-soft); }
+.kv-table th { color: var(--text-2); font-weight: 500; background: var(--bg-1); position: sticky; top: 0; }
+.kv-table td.num, .kv-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.kv-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+.kv-table tbody tr:last-child td { border-bottom: none; }
+.chart-wrap { background: var(--bg-1); border: 1px solid var(--line-soft); border-radius: 10px; padding: 8px 8px 4px; margin: 4px 0; }
+.input { background: var(--bg-1); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px; font-family: inherit; font-size: 13px; outline: none; }
+.input:focus { border-color: var(--accent); }
 
 .toast {
   position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(20px);

@@ -1,0 +1,56 @@
+name: 房产数据更新
+
+on:
+  schedule:
+    # 北京时间每月 19 日 08:00（统计局通常 15-18 日发布上月数据，次日抓最稳）
+    - cron: '0 0 19 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: house-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 抓取并更新 house.js
+        run: |
+          cd workspace
+          python tools/fetch_house.py
+
+      - name: 校验输出
+        run: |
+          cd workspace
+          node -e "
+            const fs = require('fs');
+            const src = fs.readFileSync('js/data/house.js','utf8');
+            const must = ['updated:','lpr:','newIndex:','usedIndex:','deals:','months:'];
+            const missing = must.filter(k => !src.includes(k));
+            if (missing.length) { console.error('缺少字段:', missing.join(',')); process.exit(1); }
+            console.log('OK 字段完整');
+          "
+
+      - name: 提交并推送
+        run: |
+          git config user.email "workbuddy-bot@users.noreply.github.com"
+          git config user.name "workbuddy-bot"
+          git add workspace/js/data/house.js
+          if git diff --cached --quiet; then
+            echo "无变化，跳过提交"
+          else
+            git commit -m "房产数据更新 $(date '+%Y-%m-%d')"
+            git push origin main
+          fi

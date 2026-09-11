@@ -43,6 +43,12 @@
       </svg>
       <span data-page-node-id="fLROBgL7vu8aUaJIuIFXfK">行业要闻</span><span class="badge" id="badgeNews" data-page-node-id="y3aj0ZDEM6xB7IlqQf5Ie8"></span>
     </button>
+    <button class="nav-item" data-page="house" data-page-node-id="3EeT4HouSeMaAr3yC5tPfQ">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="8VpeYbQnLh7DjTk1Wb2kR3">
+        <path d="M3 10l9-6 9 6v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z" data-page-node-id="a1BsXw2Rp6WnKy7HpTmZ9J"/>
+      </svg>
+      <span data-page-node-id="4hBxT9pKqL2cWnYjZm7VnR">房产数据</span>
+    </button>
     <button class="nav-item" data-page="flute" data-page-node-id="6DNDGyTHn1Sv8UZuVgrH8E">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="PvUoDkMvKPU8tJC6iFeLye">
         <path d="M3 17l14-9" data-page-node-id="6FuBLEncX9RNAD4RdVYesz"/><circle cx="6.5" cy="9" r="1.2" data-page-node-id="vJrytOxiS9z94x91ffuEL2"/><circle cx="9.5" cy="11" r="1.2" data-page-node-id="14ueE5CR1GEbPJ91v8z0W7"/><circle cx="12.5" cy="13" r="1.2" data-page-node-id="voFvx7nWpWFyLs9L4FEH3K"/><circle cx="15.5" cy="15" r="1.2" data-page-node-id="HfoXTAEQYuODHQDOVCivPF"/>
@@ -180,6 +186,44 @@
     </div>
 
     <div id="newsList" data-page-node-id="qYWG9XsMpBwz8Q5pBCisiB"></div>
+  </section>
+
+  <!-- ---------- 房产数据 ---------- -->
+  <section class="page" id="page-house">
+    <div class="page-head">
+      <h1 class="page-title">全国房产数据</h1>
+      <div class="page-desc">央行 LPR · 国家统计局 70 城指数 · 重点城市成交（颗粒度：城市/项目级） · 数据更新：<b id="houseUpdated"></b></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>央行 LPR 利率历史<span class="right">每月 20 日 9:15 公布</span></div>
+      <div id="houseLprBody"></div>
+      <div class="page-desc" style="margin-top:8px">数据源：中国人民银行（pbc.gov.cn）公开公告</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>国家统计局 70 城价格指数（环比）<span class="right">每月 15-18 日发布</span></div>
+      <div class="row" style="margin-bottom:8px" id="houseIndexTabs">
+        <button class="btn sm active" data-kind="new">新建商品住宅</button>
+        <button class="btn sm" data-kind="used">二手住宅</button>
+      </div>
+      <div id="houseIndexBody"></div>
+      <div class="page-desc" style="margin-top:8px">数据源：国家统计局 stats.gov.cn 70 个大中城市商品住宅销售价格指数（环比/同比）</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>重点城市商品房月度成交<span class="right">月报数据</span></div>
+      <div id="houseDealBody"></div>
+      <div class="page-desc" style="margin-top:8px">数据源：深圳/上海/北京/广州 住建局公开月报（颗粒度：城市整体）</div>
+    </div>
+
+    <div class="card" style="background:rgba(255,255,255,0.02)">
+      <div class="page-desc">
+        <b style="color:var(--text)">⚠️ 数据范围说明</b><br>
+        本工作台数据为官方公开的城市/项目级趋势，<b style="color:var(--text)">不包含具体小区的实时挂牌价与逐套成交记录</b>。
+        如需查询某个小区的实时挂牌/历史成交，请到贝壳/链家/乐有家 APP 直接搜索；或接入合规的 B 端数据服务（如数粮数据、房讯数据，年费 800-8000 元）。
+      </div>
+    </div>
   </section>
 
   <!-- ---------- 笛子教程 ---------- -->
@@ -394,6 +438,14 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" data-page-node-id="CMgWL0ZqW5JALJVIMSnuGE"><path d="M4 5h13a1 1 0 0 1 1 1v13H5a1 1 0 0 1-1-1z" data-page-node-id="CHaalTaOFLpMS4353fiyUr"/><path d="M7 9h7M7 13h7M7 16h4" data-page-node-id="E2H0XsOHJ5pH2Xo3XezjXv"/></svg>
     要闻
   </button>
+  <button class="tab" data-page="news" data-page-node-id="51GlCyjIxGijP1wD9bD93A">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 5h13a1 1 0 0 1 1 1v13H5a1 1 0 0 1-1-1z"/><path d="M18 9h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2"/><path d="M7 9h7M7 13h7M7 16h4"/></svg>
+    要闻
+  </button>
+  <button class="tab" data-page="house">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 10l9-6 9 6v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>
+    房产
+  </button>
   <button class="tab" data-page="flute" data-page-node-id="bLXO7cO8AMy7R6Gjp1FR8R">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" data-page-node-id="YEjyZ6uE4TRzhooMQEaq3s"><path d="M3 17l14-9" data-page-node-id="GHVQEENweSt0KhZvIkENVq"/><circle cx="9.5" cy="11" r="1.2" data-page-node-id="wClQ7qCOdD0hWJv6GD7miV"/><circle cx="12.5" cy="13" r="1.2" data-page-node-id="nK3QsddVskRvlTIHjdtCwf"/></svg>
     笛子
@@ -418,6 +470,8 @@
 <script src="js/mod/ddj.js"></script>
 <script src="js/mod/nce.js"></script>
 <script src="js/mod/news.js"></script>
+<script src="js/data/house.js"></script>
+<script src="js/mod/house.js"></script>
 <script src="js/mod/flute.js"></script>
 <script src="js/mod/memo.js"></script>
 <script src="js/sync.js"></script>

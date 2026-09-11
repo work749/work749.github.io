@@ -140,7 +140,12 @@ check("恢复拼音", $$("#ddjTodayList ruby").length > 0);
 // 页面切换
 $$("#nav .nav-item")[2].click();
 check("切换到要闻页", $("#page-news").classList.contains("active"));
-$$("#nav .nav-item")[3].click();
+$$("#nav .nav-item[data-page='house']")[0].click();
+check("切换到房产数据页", $("#page-house").classList.contains("active"));
+check("房产 LPR 表已渲染", $$("#houseLprBody .kv-table tr").length >= 7);
+check("房产 70 城指数折线图存在", !!$("#houseIndexBody svg"));
+check("房产 重点城市成交表存在", $$("#houseDealBody .kv-table tr").length >= 14);
+$$("#nav .nav-item[data-page='flute']")[0].click();
 check("切换到笛子页", $("#page-flute").classList.contains("active"));
 
 // 笛子展开视频
