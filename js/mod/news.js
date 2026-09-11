@@ -5,6 +5,7 @@
    - 顶部显示抓取时间和源 fetch_news.py 输出状态 */
 (function () {
   var group = "all";
+  var current = null;   // 当前阅读面板打开的新闻
 
   function items() {
     return (window.NEWS_DATA && window.NEWS_DATA.items) || [];
@@ -18,13 +19,33 @@
     Store.save(); render();
   }
 
-  // 点击整条新闻直接打开：优先新标签，浏览器禁用则当前页打开；看过即标记已读
+  // 点击整条新闻：在站内弹出阅读面板显示新闻内容，不跳走、主页面不变；看过即标记已读
   function openNews(n) {
-    if (!n || !n.url) return;
-    var w;
-    try { w = window.open(n.url, "_blank", "noopener"); } catch (e) {}
-    if (!w) { try { window.location.href = n.url; } catch (e) {} }
-    if (!isRead(n)) toggleRead(n);
+    if (!n) return;
+    var isCredit = n.group !== "property";
+    var tag = $("#nrTag");
+    tag.textContent = isCredit ? "助贷 / 信贷" : "房地产";
+    tag.className = "nr-tag " + (isCredit ? "credit" : "property");
+    $("#nrTitle").textContent = n.title || "";
+    $("#nrMeta").textContent = [n.source, dateLabel(n.date)].filter(Boolean).join(" · ");
+    var body = n.content || n.summary || "";
+    $("#nrBody").innerHTML = body
+      ? body.split(/\n+/).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("")
+      : '<p class="nr-empty">（暂无正文，可点下方「查看原文 / 搜索」看完整内容）</p>';
+    var link = $("#nrLink");
+    link.href = n.url || "#";
+    link.textContent = isHomeOrSearch(n.url) ? "百度搜索原文 ↗" : "查看原文 ↗";
+    $("#nrMark").textContent = isRead(n) ? "已读" : "标为已读";
+    var reader = $("#newsReader");
+    reader.hidden = false;
+    document.body.classList.add("nr-open");
+    current = n;
+    if (!isRead(n)) toggleRead(n);   // 打开即算已读
+  }
+  function closeReader() {
+    var reader = $("#newsReader");
+    if (reader) reader.hidden = true;
+    document.body.classList.remove("nr-open");
   }
 
   // 判断链接是不是"文章页"——如果落到首页/搜索结果，按钮应显示"搜索"
@@ -90,7 +111,7 @@
         "</div>" +
         '<div class="acts">' +
         '<button class="btn sm" data-act="read">' + (isRead(n) ? "已读" : "标已读") + '</button>' +
-        '<span class="open-hint">点击整条打开 ↗</span>' +
+        '<span class="open-hint">点击整条阅读</span>' +
         "</div></div>";
     }).join("");
 
@@ -115,6 +136,22 @@
       Store.data.news.read = items().map(keyOf);
       Store.save(); render(); toast("已全部标记为已读");
     };
+
+    // ---- 站内阅读面板：关闭 / ESC / 面板内「标为已读」 ----
+    var reader = $("#newsReader");
+    if (reader) {
+      reader.addEventListener("click", function (e) {
+        if (e.target.closest("[data-nr-close]")) closeReader();
+      });
+      $("#nrMark").addEventListener("click", function () {
+        if (!current) return;
+        toggleRead(current);
+        $("#nrMark").textContent = isRead(current) ? "已读" : "标为已读";
+      });
+    }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && reader && !reader.hidden) closeReader();
+    });
   }
 
   // ---- 自动拉取最新要闻 ----

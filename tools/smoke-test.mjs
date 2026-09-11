@@ -109,13 +109,20 @@ check("每条只有一个标已读按钮、无多余链接",
   $$("#newsList .news-item .acts a").length === 0);
 check("每条都有 src-link 短链",
   $$("#newsList .src-link").length === 10);
-// 模拟点击整条新闻：应调用 window.open 打开对应链接
+// 模拟点击整条新闻：应弹出站内阅读面板，不再 window.open 跳走
 let openedUrl = null;
 w.open = (u) => { openedUrl = u; return {}; };
 const firstItem = $("#newsList .news-item");
 firstItem.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
-check("点击整条新闻会打开链接",
-  openedUrl === firstItem.dataset.url, `opened=${openedUrl} expect=${firstItem.dataset.url}`);
+check("点击整条新闻弹出站内阅读面板（不跳走）",
+  !$("#newsReader").hidden && openedUrl === null,
+  `readerHidden=${$("#newsReader").hidden} opened=${openedUrl}`);
+check("阅读面板显示该条标题与正文",
+  $("#nrTitle").textContent.length > 0 && $("#nrBody").innerHTML.length > 0,
+  `title=${$("#nrTitle").textContent}`);
+// 关闭面板
+$("#nrClose").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+check("点击关闭后阅读面板隐藏", $("#newsReader").hidden === true);
 
 const fluteLessons = (w.FLUTE_COURSE || []).reduce((a, s) => a + s.lessons.length, 0);
 check("笛子课程 >= 34 节", $$("#fluteCourse .lesson").length === fluteLessons && fluteLessons >= 34,

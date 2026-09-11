@@ -339,6 +339,35 @@ rt {
 .btn.sm.warn { background: rgba(240, 200, 122, 0.12); color: #f0c87a; border-color: rgba(240, 200, 122, 0.3); }
 .btn.sm.warn:hover { background: rgba(240, 200, 122, 0.2); }
 
+/* ---------- 新闻站内阅读面板（点开不跳走） ---------- */
+.news-reader { position: fixed; inset: 0; z-index: 80; display: flex; justify-content: flex-end; }
+.news-reader[hidden] { display: none; }
+.nr-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(2px); }
+.nr-panel {
+  position: relative; width: min(560px, 100%); height: 100%;
+  background: var(--bg-1); border-left: 1px solid var(--line);
+  padding: 22px 24px 26px; overflow-y: auto;
+  box-shadow: -16px 0 40px rgba(0, 0, 0, 0.4);
+  animation: nrSlide .22s ease;
+}
+@keyframes nrSlide { from { transform: translateX(40px); opacity: .4; } to { transform: none; opacity: 1; } }
+.nr-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.nr-tag { font-size: 11.5px; padding: 2px 10px; border-radius: 20px; border: 1px solid var(--line); color: var(--text-2); }
+.nr-tag.credit { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.nr-tag.property { color: #6fb3f0; border-color: #2c4a68; }
+.nr-close {
+  background: var(--bg-2); border: 1px solid var(--line); color: var(--dim);
+  width: 32px; height: 32px; border-radius: 9px; font-size: 15px; cursor: pointer;
+}
+.nr-close:hover { color: var(--text); border-color: var(--accent); }
+.nr-title { font-size: 21px; line-height: 1.45; font-weight: 700; margin: 0 0 10px; }
+.nr-meta { font-size: 12.5px; color: var(--dim); margin-bottom: 18px; }
+.nr-body { font-size: 15px; line-height: 1.95; color: var(--text); }
+.nr-body p { margin: 0 0 14px; }
+.nr-body .nr-empty { color: var(--dim); }
+.nr-foot { display: flex; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-soft); }
+@media (max-width: 560px) { .nr-panel { width: 100%; border-left: none; } }
+
 /* ---------------- 笛子 ---------------- */
 .stage-block { margin-bottom: 18px; }
 .stage-head {
