@@ -1,6 +1,6 @@
 /* 离线缓存：安装到桌面/手机后离线可用
    策略：网络优先（保证打开就是最新版），断网时回落本地缓存 */
-var CACHE = "zxm-workspace-v15";
+var CACHE = "zxm-workspace-v16";
 var FILES = [
   "./",
   "./index.html",
@@ -33,7 +33,14 @@ self.addEventListener("install", function (e) {
 self.addEventListener("activate", function (e) {
   e.waitUntil(caches.keys().then(function (keys) {
     return Promise.all(keys.map(function (k) { return k === CACHE ? null : caches.delete(k); }));
-  }).then(function () { return self.clients.claim(); }));
+  }).then(function () {
+    return self.clients.claim();
+  }).then(function () {
+    // 通知所有受控页面：SW 已升级，请刷新拿最新代码
+    return self.clients.matchAll({ includeUncontrolled: true }).then(function (cls) {
+      cls.forEach(function (c) { c.postMessage({ type: "sw-updated", ver: "v16" }); });
+    });
+  }));
 });
 
 self.addEventListener("message", function (e) {

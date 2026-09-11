@@ -162,6 +162,13 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       navigator.serviceWorker.register("sw.js").catch(function () { });
+      // 收到 SW 升级通知（v15 → v16 等），自动 reload 拿最新代码
+      navigator.serviceWorker.addEventListener("message", function (e) {
+        if (e.data && e.data.type === "sw-updated") {
+          // 只在用户当前未操作时静默刷新（避免打断输入/朗读）
+          if (document.hidden) location.reload();
+        }
+      });
     }
     setTimeout(fillVoices, 600);
   }

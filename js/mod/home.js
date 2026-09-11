@@ -80,76 +80,23 @@
     var today = todayStr();
     var t = timeOfDay();
 
-    root.innerHTML =
-      // 顶部问候 + 未读
-      '<div class="home-hero">' +
-        '<div class="home-hi"><span class="home-time">' + esc(t) + '</span>，小满</div>' +
-        '<div class="home-date">' + esc(dateLabel(today)) + ' · ' +
-        esc(["周日","周一","周二","周三","周四","周五","周六"][new Date().getDay()]) +
-        '</div>' +
-        '<div class="home-unread' + (news.unread ? " on" : "") + '">' +
-          '<span class="dot"></span>' +
-          (news.unread > 0
-            ? '<b>' + news.unread + '</b> 条新闻未读 · 已为你自动准备好'
-            : '今日新闻已全部读完 · 干得漂亮') +
-        '</div>' +
-      '</div>' +
-
-      // 三大主入口（大卡片）
-      '<div class="home-grid">' +
-        // 道德经
-        '<a class="home-card home-ddj" data-go="ddj">' +
-          '<div class="home-card-icon">📖</div>' +
-          '<div class="home-card-name">帛书老子</div>' +
-          '<div class="home-card-desc">德经 44 章 + 道经 37 章 · 逐字带拼音 · 已背 <b>' + ddj.done + '</b>/506 句</div>' +
-          (ddj.streak > 0
-            ? '<div class="home-card-streak">🔥 连续 ' + ddj.streak + ' 天</div>'
-            : '<div class="home-card-streak off">今天还没开始</div>') +
-        '</a>' +
-        // 英语
-        '<a class="home-card home-nce" data-go="nce">' +
-          '<div class="home-card-icon">🇬🇧</div>' +
-          '<div class="home-card-name">新概念英语</div>' +
-          '<div class="home-card-desc">第一册 · 点句子/单词即读 · 上次学到 <b>L' + nce.last + '</b></div>' +
-          (nce.todayRead > 0
-            ? '<div class="home-card-streak">✅ 今日已读 ' + nce.todayRead + ' 课</div>'
-            : '<div class="home-card-streak off">今天还没学</div>') +
-        '</a>' +
-        // 新闻
-        '<a class="home-card home-news" data-go="news">' +
-          '<div class="home-card-icon">📰</div>' +
-          '<div class="home-card-name">每日要闻</div>' +
-          '<div class="home-card-desc">助贷 7 + 地产 3，每天 07:00 / 20:00 自动更新</div>' +
-          (news.unread > 0
-            ? '<div class="home-card-streak">🔴 ' + news.unread + ' 条未读</div>'
-            : '<div class="home-card-streak off">✅ 全部已读</div>') +
-        '</a>' +
-      '</div>' +
-
-      // 次要入口（横排）
-      '<div class="home-section-title">次要模块</div>' +
-      '<div class="home-mini">' +
-        '<a class="home-mini-item" data-go="flute">' +
-          '<div class="ico">🎵</div>' +
-          '<div class="n">笛子教程</div>' +
-          '<div class="d">已完成 ' + flute.done + ' 课</div>' +
-        '</a>' +
-        '<a class="home-mini-item" data-go="memo">' +
-          '<div class="ico">📝</div>' +
-          '<div class="n">备忘录</div>' +
-          '<div class="d">' + memo.open + ' 待办 · ' + memo.today + ' 今日</div>' +
-        '</a>' +
-        '<a class="home-mini-item" data-go="settings">' +
-          '<div class="ico">⚙️</div>' +
-          '<div class="n">设置</div>' +
-          '<div class="d">同步 / 备份 / 朗读音色</div>' +
-        '</a>' +
-      '</div>' +
-
-      // 底部每日推送时段提示
-      '<div class="home-foot">' +
-        '📡 新闻自动推送时段：<b>每日 07:00</b> 与 <b>20:00</b> · 数据来源 GitHub Actions 抓取 + 智谱 GLM-4-Flash' +
-      '</div>';
+    // 注水静态结构（保持 HTML 兜底在 JS 失败时仍可见）
+    var timeEl = $("#homeTimeOfDay");
+    if (timeEl) timeEl.textContent = t;
+    var dateEl = $("#homeDateLabel");
+    if (dateEl) dateEl.textContent = dateLabel(today) + " · " +
+      ["周日","周一","周二","周三","周四","周五","周六"][new Date().getDay()];
+    var unreadEl = $("#homeUnread");
+    var unreadText = $("#homeUnreadText");
+    if (unreadEl && unreadText) {
+      unreadEl.classList.toggle("on", news.unread > 0);
+      unreadText.innerHTML = news.unread > 0
+        ? '<b>' + news.unread + '</b> 条新闻未读 · 已为你自动准备好'
+        : '今日新闻已全部读完 · 干得漂亮';
+    }
+    var ddjS = $("#homeCardDdj"); if (ddjS) ddjS.textContent = "已背 " + ddj.done + " / 506";
+    var nceS = $("#homeCardNce"); if (nceS) nceS.textContent = "上次学到 L" + nce.last + " · 今日 " + nce.todayRead + " 课";
+    var newsS = $("#homeCardNews"); if (newsS) newsS.textContent = "未读 " + news.unread + " / " + news.total;
   }
 
   function bind() {

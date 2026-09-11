@@ -35,9 +35,66 @@
 <!-- ============ 主内容 ============ -->
 <main class="main" data-page-node-id="IpF6J9o9ykCHVHRKhxDVGy">
 
-  <!-- ---------- 首页 Portal ---------- -->
+  <!-- ---------- 首页 Portal（静态兜底 + JS 注水） ---------- -->
   <section class="page active" id="page-home" data-page-node-id="a1B2c3D4e5F6g7H8i9J0kL">
-    <!-- 由 js/mod/home.js 渲染 -->
+    <div class="page-head">
+      <h1 class="page-title">曾小满工作台</h1>
+      <div class="page-desc" id="homeDate">今天 · 由 js/mod/home.js 注入数据</div>
+    </div>
+    <noscript>
+      <div class="card" style="background:rgba(255,200,80,0.08);border-color:#7a6320">
+        本工作台需要 JavaScript 才能交互。请在浏览器开启 JS 后刷新本页。
+      </div>
+    </noscript>
+
+    <div id="homeHero" class="home-hero">
+      <div class="home-hi"><span class="home-time" id="homeTimeOfDay">你好</span>，小满</div>
+      <div class="home-date" id="homeDateLabel">—</div>
+      <div class="home-unread" id="homeUnread">
+        <span class="dot"></span>
+        <span id="homeUnreadText">加载中…</span>
+      </div>
+    </div>
+
+    <div class="home-grid">
+      <a class="home-card" data-go="ddj">
+        <div class="home-card-icon">📖</div>
+        <div class="home-card-title">帛书老子</div>
+        <div class="home-card-sub">德经 44 · 道经 37</div>
+        <div class="home-card-stats" id="homeCardDdj">已背 0 / 506</div>
+      </a>
+      <a class="home-card" data-go="nce">
+        <div class="home-card-icon">🇬🇧</div>
+        <div class="home-card-title">新概念英语</div>
+        <div class="home-card-sub">第一册 · 点读</div>
+        <div class="home-card-stats" id="homeCardNce">今日已读 0 篇</div>
+      </a>
+      <a class="home-card" data-go="news">
+        <div class="home-card-icon">📰</div>
+        <div class="home-card-title">每日要闻</div>
+        <div class="home-card-sub">助贷 7 + 地产 3</div>
+        <div class="home-card-stats" id="homeCardNews">未读 0 / 10</div>
+      </a>
+    </div>
+
+    <div class="home-section-title">次要模块</div>
+    <div class="home-mini">
+      <a class="home-mini-item" data-go="flute">
+        <div class="ico">🎵</div>
+        <div class="n">笛子教程</div>
+        <div class="d">从吹响第一个音到《姑苏行》</div>
+      </a>
+      <a class="home-mini-item" data-go="memo">
+        <div class="ico">📝</div>
+        <div class="n">备忘录</div>
+        <div class="d">边写边存 · 支持闹铃提醒</div>
+      </a>
+      <a class="home-mini-item" data-go="settings">
+        <div class="ico">⚙️</div>
+        <div class="n">设置</div>
+        <div class="d">同步 / 备份 / 朗读音色</div>
+      </a>
+    </div>
   </section>
 
   <!-- ---------- 道德经 ---------- -->
