@@ -1,0 +1,67 @@
+name: 每日要闻更新
+
+on:
+  # 北京时间每天 7:00（UTC 23:00）
+  schedule:
+    - cron: '0 23 * * *'
+  # 手动触发：Actions 页面 → Run workflow
+  workflow_dispatch:
+  # 允许从 API 触发（未来扩展）
+  repository_dispatch:
+
+# 防并发：上一次还没跑完就不开新跑
+concurrency:
+  group: daily-news
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # 提交并 push js/data/news.js
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 抓取并写入 news.js
+        env:
+          ZXM_API_KEY: ${{ secrets.ZXM_API_KEY }}
+          ZXM_BASE_URL: ${{ secrets.ZXM_BASE_URL }}
+          ZXM_MODEL: ${{ secrets.ZXM_MODEL }}
+        run: python tools/fetch_news.py
+
+      - name: 校验输出
+        run: |
+          python -c "
+          import re
+          s = open('js/data/news.js', encoding='utf-8').read()
+          m = re.search(r'updated\":\s*\"([0-9-]+)\"', s)
+          assert m, 'news.js 中找不到 updated 字段'
+          items = re.findall(r'\"group\":\s*\"(credit|property)\"', s)
+          assert items.count('credit') == 5, f'credit 应为 5 条, 实际 {items.count(\"credit\")}'
+          assert items.count('property') == 5, f'property 应为 5 条, 实际 {items.count(\"property\")}'
+          print('校验通过：', m.group(1), 'credit=5 property=5')
+          "
+
+      - name: 提交并推送
+        run: |
+          if git diff --quiet js/data/news.js; then
+            echo "无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name "zxm-bot"
+          git config user.email "zxm-bot@users.noreply.github.com"
+          git add js/data/news.js
+          today=$(date -u +%Y-%m-%d)
+          git commit -m "每日要闻更新 ${today}"
+          git push
