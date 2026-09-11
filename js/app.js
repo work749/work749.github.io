@@ -121,26 +121,32 @@
   function initSW() {
     if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
     navigator.serviceWorker.register("sw.js").then(function (reg) {
-      // 发现新版本 → 自动重载一次（同一会话只重载一次，避免死循环）
+      // 发现新版本 → 安装完成后自动重载一次（同一会话只重载一次，避免死循环）
       reg.addEventListener("updatefound", function () {
         var nw = reg.installing;
         if (!nw) return;
         nw.addEventListener("statechange", function () {
           if (nw.state === "installed" && navigator.serviceWorker.controller) {
-            try {
-              if (!sessionStorage.getItem("zxm.sw.reload")) {
-                sessionStorage.setItem("zxm.sw.reload", "1");
-                location.reload();
-              }
-            } catch (e) { location.reload(); }
+            reloadOnce();
           }
         });
       });
+      // SW 控制权变更（新版本 skipWaiting + claim 后触发）→ 无条件刷新拿最新代码
+      navigator.serviceWorker.addEventListener("controllerchange", reloadOnce);
       setInterval(function () { try { reg.update(); } catch (e) { } }, 600000);
     }).catch(function () { });
 
     var btn = $("#btnUpdate");
     if (btn) btn.onclick = function () { clearCacheThen(hardReload); };
+  }
+
+  // 同一会话内只强制刷新一次，避免新 SW 反复 reload 形成死循环
+  function reloadOnce() {
+    try {
+      if (sessionStorage.getItem("zxm.sw.reload")) return;
+      sessionStorage.setItem("zxm.sw.reload", "1");
+    } catch (e) { }
+    location.reload();
   }
 
   function init() {
@@ -154,20 +160,15 @@
       if (window.MOD && MOD[k] && MOD[k].init) MOD[k].init();
     });
 
-    var last = "";
-    try { last = localStorage.getItem("zengxiaoman.lastPage") || "home"; } catch (e) { last = "home"; }
-    go(last);
+    // Portal 首页作为默认着陆页（不再恢复旧的 lastPage，避免停留在要闻等次级页）
+    go("home");
 
     initSW();
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
-      navigator.serviceWorker.register("sw.js").catch(function () { });
-      // 收到 SW 升级通知（v15 → v16 等），自动 reload 拿最新代码
+      // 收到 SW 升级通知（v16 → v17 等），自动 reload 拿最新代码
       navigator.serviceWorker.addEventListener("message", function (e) {
-        if (e.data && e.data.type === "sw-updated") {
-          // 只在用户当前未操作时静默刷新（避免打断输入/朗读）
-          if (document.hidden) location.reload();
-        }
+        if (e.data && e.data.type === "sw-updated") reloadOnce();
       });
     }
     setTimeout(fillVoices, 600);
