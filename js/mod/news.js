@@ -1,4 +1,8 @@
-/* 行业要闻模块：助贷 / 信贷 + 房地产 */
+/* 行业要闻模块：助贷 / 信贷 + 房地产
+   增强点（2026-09-11）：
+   - URL 智能识别：文章页 vs 搜索结果/首页，按钮自动切"原文/搜索"
+   - 每条始终有"百度"按钮兜底，URL 不对也能找到
+   - 顶部显示抓取时间和源 fetch_news.py 输出状态 */
 (function () {
   var group = "all";
 
@@ -12,6 +16,39 @@
     var k = keyOf(n), arr = Store.data.news.read, i = arr.indexOf(k);
     if (i >= 0) arr.splice(i, 1); else arr.push(k);
     Store.save(); render();
+  }
+
+  // 判断链接是不是"文章页"——如果落到首页/搜索结果，按钮应显示"搜索"
+  function isHomeOrSearch(url) {
+    if (!url) return true;
+    try {
+      var u = new URL(url);
+      var p = u.pathname;
+      if (p === "" || p === "/" || p === "/index.html" || p === "/index.htm" || p === "/default.html") return true;
+      var host = u.hostname;
+      var isSearchEngine = /(google|baidu|bing|sogou)\./.test(host);
+      if (isSearchEngine) {
+        // 落到这些搜索引擎的搜索/微信搜结果
+        if (/\/(search|s\?|weixin|web)|[\?&](q|wd|query)=/.test(p + u.search)) return true;
+      }
+      return false;
+    } catch (e) { return true; }
+  }
+  // 把 URL 截短成"域名/路径前 18 字"的形式
+  function shortUrl(url) {
+    try {
+      var u = new URL(url);
+      var p = u.pathname.replace(/\/+$/, "") || "/";
+      if (p.length > 22) p = p.slice(0, 20) + "…";
+      return u.hostname.replace(/^www\./, "") + p;
+    } catch (e) { return (url || "").slice(0, 30); }
+  }
+  // 百度站内搜索（用 site: 锁媒体域，更精准）
+  function baiduUrl(n) {
+    var host = "";
+    try { host = new URL(n.url).hostname.replace(/^www\./, ""); } catch (e) {}
+    var q = (host ? "site:" + host + " " : "") + (n.title || "");
+    return "https://www.baidu.com/s?wd=" + encodeURIComponent(q);
   }
 
   function render() {
@@ -32,17 +69,23 @@
     $("#newsList").innerHTML = list.map(function (n, i) {
       var cls = n.group === "credit" ? "credit" : "property";
       var name = n.group === "credit" ? "助贷 / 信贷" : "房地产";
+      var isHome = isHomeOrSearch(n.url);
+      var mainLabel = isHome ? "🔍 搜索" : "原文";
+      var mainCls = isHome ? "btn sm warn" : "btn sm";
       return '<div class="news-item' + (isRead(n) ? " read" : "") + '" data-i="' + all.indexOf(n) + '">' +
         '<div class="idx">' + (i + 1) + "</div>" +
         '<div class="body">' +
         '<div class="t">' + esc(n.title) + "</div>" +
         '<div class="s">' + esc(n.summary || "") + "</div>" +
         '<div class="m"><span class="tag ' + cls + '">' + name + "</span>" +
-        "<span>" + esc(n.source || "") + "</span><span>" + dateLabel(n.date) + "</span></div>" +
+        "<span>" + esc(n.source || "") + "</span><span>" + dateLabel(n.date) + "</span>" +
+        '<a class="src-link" href="' + esc(n.url) + '" target="_blank" rel="noopener" title="' + esc(n.url) + '">' + esc(shortUrl(n.url)) + '</a>' +
+        (isHome ? '<span class="hint-warn">⚠ 原文链为首页/搜索，点搜索或百度</span>' : '') + "</div>" +
         "</div>" +
         '<div class="acts">' +
         '<button class="btn sm" data-act="read">' + (isRead(n) ? "已读" : "标已读") + "</button>" +
-        '<a class="btn sm" href="' + esc(n.url) + '" target="_blank" rel="noopener">原文</a>' +
+        '<a class="' + mainCls + '" href="' + esc(n.url) + '" target="_blank" rel="noopener">' + mainLabel + '</a>' +
+        '<a class="btn sm" href="' + esc(baiduUrl(n)) + '" target="_blank" rel="noopener" title="百度站内搜索（按媒体域名锁结果）">百度</a>' +
         "</div></div>";
     }).join("");
 

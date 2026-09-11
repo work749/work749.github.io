@@ -30,7 +30,12 @@ SYSTEM_PROMPT = (
     "你是「曾小满工作台」的每日要闻编辑，专门服务中国深圳的银行助贷从业者。\n"
     "你必须只输出今天真实可查的中国大陆新闻，绝不编造来源、日期或链接。\n"
     "如果对某条新闻不确定，就换成另一条确定的。\n"
-    "输出必须是严格 JSON 数组，不要任何额外文字、Markdown、解释或代码块标记。"
+    "输出必须是严格 JSON 数组，不要任何额外文字、Markdown、解释或代码块标记。\n\n"
+    "【关键】url 字段必须通过 web_search 工具实际搜出来，不要凭印象猜。\n"
+    "搜到后只填该文章页本身的 URL（不是首页、不是分类页、不是 Google/百度搜索结果）。\n"
+    "如果某条实在搜不到原文，url 字段填百度站内搜索的 URL：\n"
+    "  https://www.baidu.com/s?wd=site:<媒体域名>%20<标题关键词>\n"
+    "这样前端用户点开至少能搜到那一篇。"
 )
 
 USER_PROMPT = (
@@ -46,7 +51,10 @@ USER_PROMPT = (
     "  title    短标题（20字内）\n"
     "  source   媒体简称（例：证券日报、央行、第一财经）\n"
     "  date     YYYY-MM-DD\n"
-    "  url      原文链接（找不到就填该媒体的搜索/首页链接，不要编）\n"
+    "  url      原文链接——必须通过 web_search 工具实际搜出，"
+    "禁止凭印象给首页。如果实在搜不到原文，填该媒体域名下的百度站内搜索 URL：\n"
+    "           https://www.baidu.com/s?wd=site:<媒体域名>%20<标题>\n"
+    "           例：https://www.baidu.com/s?wd=site:pbc.gov.cn%20LPR%E6%8A%A5%E4%BB%B7\n"
     "  summary  30-60 字，说清对助贷从业者或楼市的实际影响\n\n"
     "【来源媒体限中国大陆主流财经】\n"
     "央行/金融监管总局/国务院/新华社/人民日报/证券时报/证券日报/中国证券报/"
@@ -72,6 +80,19 @@ def call_llm():
         ],
         "temperature": 0.2,
         "stream": False,
+        "tools": [
+            {
+                "type": "web_search",
+                "web_search": {
+                    "enable": True,
+                    "search_result": True,
+                    "search_query": (
+                        "今天 中国大陆 助贷 监管 LPR 房地产 限购 房贷 政策 新闻"
+                    ),
+                },
+            }
+        ],
+        "tool_choice": "auto",
     }
     req = urllib.request.Request(
         BASE + "/chat/completions",
@@ -129,18 +150,45 @@ def validate(items):
 
 
 def check_url(url):
-    """轻量校验：能取到内容就算通过；失败返回 False。"""
+    """轻量校验：用真实浏览器 UA + 跟随重定向，读前 4KB 头判断文章页 vs 列表页/搜索页。
+    返回：
+      "ok"          看起来是文章页（路径含具体 slug / 数字 ID）
+      "search"      落到搜索结果或首页（前端会显示"搜索"按钮）
+      "bad"         404 / 网络错误 / 非 HTTP(S)（直接降级）"""
     if not url or not url.startswith(("http://", "https://")):
-        return False
+        return "bad"
     try:
+        # 先用 HTTPRedirectHandler 把 3xx 链自动跳完
+        opener = urllib.request.build_opener(urllib.request.HTTPRedirectHandler())
         req = urllib.request.Request(url)
-        req.add_header("User-Agent", "Mozilla/5.0 (ZXMNews/1.0)")
-        req.add_header("Accept", "text/html,application/xhtml+xml")
-        with urllib.request.urlopen(req, timeout=10) as r:
-            r.read(512)
-            return 200 <= r.status < 400
+        req.add_header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+        req.add_header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+        req.add_header("Accept-Language", "zh-CN,zh;q=0.9,en;q=0.8")
+        with opener.open(req, timeout=10) as r:
+            final_url = r.geturl() or url
+            body = r.read(4096).decode("utf-8", "ignore")
+            ct = r.headers.get("Content-Type", "")
+            if not (200 <= r.status < 400):
+                return "bad"
+            # 落到搜索结果
+            if any(k in final_url for k in ("google.com/search", "baidu.com/s?", "bing.com/search", "sogou.com/web")):
+                return "search"
+            # 落到站点首页（路径为 /  或  /index.*）
+            try:
+                p = urllib.parse.urlparse(final_url).path
+                if p in ("", "/", "/index.html", "/index.htm", "/default.html"):
+                    return "search"
+            except Exception:
+                pass
+            # 标题里含"搜索结果" / "请输入关键词" → 搜索页
+            if "百度搜索" in body or "搜索结果" in body[:2000] and "site:" in body[:2000].lower():
+                return "search"
+            # 找不到任何正文锚点 → 可能是反爬或 SPA 空壳
+            if not body.strip():
+                return "bad"
+            return "ok"
     except Exception:
-        return False
+        return "bad"
 
 
 def main():
@@ -155,15 +203,33 @@ def main():
         print("ERR: " + cleaned, file=sys.stderr)
         print("--- 原始返回 ---\n" + content[:800], file=sys.stderr)
         sys.exit(3)
-    # URL 校验：失败的降级到该 source 的媒体官网首页（多数搜索能定位到）
-    fail = 0
+
+    # URL 校验 + 降级：失败 → 百度站内搜索该媒体的"标题"
+    fail_ok = fail_search = fail_bad = 0
     for it in cleaned:
-        if not check_url(it["url"]):
-            fail += 1
-            # 用 Google 搜索该媒体的站点作为兜底
-            it["url"] = f"https://www.google.com/search?q={urllib.parse.quote(it['title'] + ' ' + it['source'])}"
+        st = check_url(it["url"])
+        if st == "ok":
+            continue
+        if st == "search":
+            fail_search += 1
+            continue  # 已是搜索 URL，留给前端"搜索"按钮
+        # bad → 降级到百度站内搜索
+        fail_bad += 1
+        site_hint = ""
+        host = ""
+        try:
+            host = urllib.parse.urlparse(it["url"]).hostname or ""
+        except Exception:
+            pass
+        if host and host not in ("", "localhost"):
+            site_hint = "site:" + host + " "
+        it["url"] = "https://www.baidu.com/s?wd=" + urllib.parse.quote(site_hint + it["title"])
+    fail = fail_search + fail_bad
     if fail:
-        print(f"WARN: {fail}/10 条 URL 校验失败，已降级为搜索引擎链接", file=sys.stderr)
+        print(
+            f"WARN: {fail}/10 条 URL 不理想（search={fail_search} 已是搜索页，bad={fail_bad} 已降级为百度站内搜索）",
+            file=sys.stderr,
+        )
 
     out = (
         "/* 每日要闻数据，由 tools/fetch_news.py 自动生成。"
