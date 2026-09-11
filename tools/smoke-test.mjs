@@ -101,13 +101,21 @@ check("生词卡渲染", $$("#nceWords .word-card").length > 0);
 check("新闻 10 条", $$("#newsList .news-item").length === 10,
   `实际 ${$$("#newsList .news-item").length}`);
 check("新闻含助贷/房产两类", $$("#newsList .tag.credit").length > 0 && $$("#newsList .tag.property").length > 0);
-// 2026-09-11 URL 智能识别增强
-check("首页/搜索 URL 标了 warn 提示",
-  $$("#newsList .hint-warn").length >= 5, `实际 ${$$("#newsList .hint-warn").length} 处`);
-check("每条都有 3 个动作按钮（已读/原文或搜索/百度）",
-  $$("#newsList .news-item").length === $$("#newsList .news-item .acts a, #newsList .news-item .acts button[data-act]").length / 3);
+// 2026-09-11 交互增强：整条点击直接打开，仅保留"标已读"按钮
+check("每条新闻都能直接打开（带 data-url）",
+  $$("#newsList .news-item[data-url]").length === 10, `实际 ${$$("#newsList .news-item[data-url]").length}`);
+check("每条只有一个标已读按钮、无多余链接",
+  $$("#newsList .news-item .acts button[data-act='read']").length === 10 &&
+  $$("#newsList .news-item .acts a").length === 0);
 check("每条都有 src-link 短链",
   $$("#newsList .src-link").length === 10);
+// 模拟点击整条新闻：应调用 window.open 打开对应链接
+let openedUrl = null;
+w.open = (u) => { openedUrl = u; return {}; };
+const firstItem = $("#newsList .news-item");
+firstItem.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+check("点击整条新闻会打开链接",
+  openedUrl === firstItem.dataset.url, `opened=${openedUrl} expect=${firstItem.dataset.url}`);
 
 const fluteLessons = (w.FLUTE_COURSE || []).reduce((a, s) => a + s.lessons.length, 0);
 check("笛子课程 >= 34 节", $$("#fluteCourse .lesson").length === fluteLessons && fluteLessons >= 34,

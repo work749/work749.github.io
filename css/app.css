@@ -291,8 +291,10 @@ rt {
   display: flex;
   gap: 13px;
   transition: .15s;
+  cursor: pointer;
 }
-.news-item:hover { border-color: var(--line); }
+.news-item:hover { border-color: var(--accent); }
+.news-item:active { transform: scale(.995); }
 .news-item.read { opacity: .5; }
 .news-item .idx {
   flex: 0 0 26px; height: 26px; border-radius: 7px;
@@ -309,7 +311,7 @@ rt {
 }
 .tag.credit { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
 .tag.property { color: #6fb3f0; border-color: #2c4a68; }
-.news-item .acts { display: flex; flex-direction: column; gap: 6px; flex: 0 0 auto; }
+.news-item .acts { display: flex; flex-direction: row; align-items: center; gap: 10px; flex: 0 0 auto; }
 
 /* ---------- 要闻：URL 短链 + 兜底样式 ---------- */
 .news-item .src-link {
@@ -324,6 +326,8 @@ rt {
   white-space: nowrap;
 }
 .news-item .src-link:hover { color: var(--accent); border-color: var(--accent); }
+.news-item .open-hint { font-size: 11.5px; color: var(--dim); white-space: nowrap; }
+.news-item:hover .open-hint { color: var(--accent); }
 .news-item .hint-warn {
   font-size: 11.5px;
   color: #f0c87a;

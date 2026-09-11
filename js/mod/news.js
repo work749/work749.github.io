@@ -18,6 +18,15 @@
     Store.save(); render();
   }
 
+  // 点击整条新闻直接打开：优先新标签，浏览器禁用则当前页打开；看过即标记已读
+  function openNews(n) {
+    if (!n || !n.url) return;
+    var w;
+    try { w = window.open(n.url, "_blank", "noopener"); } catch (e) {}
+    if (!w) { try { window.location.href = n.url; } catch (e) {} }
+    if (!isRead(n)) toggleRead(n);
+  }
+
   // 判断链接是不是"文章页"——如果落到首页/搜索结果，按钮应显示"搜索"
   function isHomeOrSearch(url) {
     if (!url) return true;
@@ -69,32 +78,32 @@
     $("#newsList").innerHTML = list.map(function (n, i) {
       var cls = n.group === "credit" ? "credit" : "property";
       var name = n.group === "credit" ? "助贷 / 信贷" : "房地产";
-      var isHome = isHomeOrSearch(n.url);
-      var mainLabel = isHome ? "🔍 搜索" : "原文";
-      var mainCls = isHome ? "btn sm warn" : "btn sm";
-      return '<div class="news-item' + (isRead(n) ? " read" : "") + '" data-i="' + all.indexOf(n) + '">' +
+      return '<div class="news-item' + (isRead(n) ? " read" : "") + '" data-i="' + all.indexOf(n) + '" data-url="' + esc(n.url) + '">' +
         '<div class="idx">' + (i + 1) + "</div>" +
         '<div class="body">' +
         '<div class="t">' + esc(n.title) + "</div>" +
         '<div class="s">' + esc(n.summary || "") + "</div>" +
         '<div class="m"><span class="tag ' + cls + '">' + name + "</span>" +
         "<span>" + esc(n.source || "") + "</span><span>" + dateLabel(n.date) + "</span>" +
-        '<a class="src-link" href="' + esc(n.url) + '" target="_blank" rel="noopener" title="' + esc(n.url) + '">' + esc(shortUrl(n.url)) + '</a>' +
-        (isHome ? '<span class="hint-warn">⚠ 原文链为首页/搜索，点搜索或百度</span>' : '') + "</div>" +
+        '<span class="src-link" title="' + esc(n.url) + '">' + esc(shortUrl(n.url)) + '</span>' +
+        "</div>" +
         "</div>" +
         '<div class="acts">' +
-        '<button class="btn sm" data-act="read">' + (isRead(n) ? "已读" : "标已读") + "</button>" +
-        '<a class="' + mainCls + '" href="' + esc(n.url) + '" target="_blank" rel="noopener">' + mainLabel + '</a>' +
-        '<a class="btn sm" href="' + esc(baiduUrl(n)) + '" target="_blank" rel="noopener" title="百度站内搜索（按媒体域名锁结果）">百度</a>' +
+        '<button class="btn sm" data-act="read">' + (isRead(n) ? "已读" : "标已读") + '</button>' +
+        '<span class="open-hint">点击整条打开 ↗</span>' +
         "</div></div>";
     }).join("");
 
     $("#newsList").onclick = function (e) {
-      var btn = e.target.closest("[data-act]");
-      if (btn && e.target.tagName !== "A") {
-        var i = parseInt(e.target.closest(".news-item").dataset.i, 10);
-        toggleRead(all[i]);
-      }
+      var item = e.target.closest(".news-item");
+      if (!item) return;
+      var i = parseInt(item.dataset.i, 10);
+      var n = all[i];
+      if (!n) return;
+      // 点"标已读"按钮：只切换已读，不打开
+      if (e.target.closest('[data-act="read"]')) { toggleRead(n); return; }
+      // 整条其余区域点击：直接打开该新闻
+      openNews(n);
     };
   }
 
