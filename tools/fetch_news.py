@@ -62,7 +62,7 @@ NEWS = ("sina.com.cn", "sohu.com", "qq.com", "cctv.com", "gmw.cn", "gov.cn",
         "ndrc.gov.cn", "chinamoney", "stcn", "21jingji", "cls.cn", "yicai",
         "cs.com.cn", "people", "xinhua", "caixin", "thepaper", "eastmoney",
         "cnstock", "jrj", "hexun", "ce.cn", "chinanews", "wallstreetcn",
-        "china.com.cn", "jwview", "eeo", "finance", "news")
+        "china.com.cn", "jwview", "eeo", "finance", "news", "news.google")
 
 CREDIT_BASE = [
     "贷款市场报价利率 LPR 最新",
@@ -174,10 +174,12 @@ def search_baidu(q, max_n=10):
 def resolve_redirect(url, timeout=8):
     """跟随 30x 拿到真实文章 URL（Google News / Bing News 链接是重定向）。失败原样返回。"""
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": UA}, method="HEAD")
+        # 用 GET（HEAD 常被拒）；urllib 会自动跟随 3xx，geturl() 即最终地址
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "zh-CN,zh;q=0.9"})
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            loc = r.geturl()
-            return loc if loc and loc != url else url
+            final = r.geturl()
+            r.read(4096)
+        return final if final and final != url else url
     except Exception:
         return url
 
@@ -210,9 +212,16 @@ def search_gnews(q, max_n=10):
             except Exception:
                 pass
         desc = re.search(r"<description>(.*?)</description>", item, re.S)
-        ds = html.unescape(re.sub(r"<[^>]+>", "", desc.group(1))).strip() if desc else ""
+        # 先反转义再剥标签：RSS 里 <description> 是双重转义的 &lt;a href=...&gt;
+        ds = re.sub(r"<[^>]+>", "", html.unescape(desc.group(1))).strip() if desc else ""
+        ds = ds.replace("&nbsp;", " ").strip()
         snip = ("%s %s" % (iso, ds)).strip()
-        out.append({"title": title, "url": real, "snippet": snip[:220]})
+        # RSS 自带真实媒体名与媒体域名（链接是 news.google.com 重定向，来源要取这里）
+        sm = re.search(r'<source[^>]*url="([^"]+)"[^>]*>(.*?)</source>', item, re.S)
+        src_url = sm.group(1).strip() if sm else ""
+        src_name = html.unescape(re.sub(r"<[^>]+>", "", sm.group(2))).strip() if sm else ""
+        out.append({"title": title, "url": real, "snippet": snip[:220],
+                    "src_url": src_url, "src_name": src_name})
     return out[:max_n]
 
 
@@ -244,6 +253,9 @@ def score_pool(items, kws, min_score=1):
 
 
 def fetch_content(url):
+    # Google News 链接是跳转页，抓不到正文，直接放弃（回退用 RSS 摘要）
+    if "news.google" in url:
+        return ""
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "zh-CN,zh;q=0.9"})
         with urllib.request.urlopen(req, timeout=8) as r:
@@ -325,6 +337,23 @@ KNOWN_SOURCE = {
     "chinanews.com.cn": "中国新闻网", "wallstreetcn.com": "华尔街见闻", "china.com.cn": "中国网",
     "jwview.com": "中新经纬", "eeo.com.cn": "经济观察报", "mof.gov.cn": "财政部",
 }
+
+
+KNOWN_VALUES = set(KNOWN_SOURCE.values())
+
+
+def source_of(item, url=""):
+    """来源名：优先用 RSS 自带的真实媒体（Google News 链接域名是 news.google.com，没意义）。"""
+    if isinstance(item, dict):
+        su = (item.get("src_url") or "").strip()
+        if su:
+            nm = friendly_source(su)
+            if nm in KNOWN_VALUES:
+                return nm
+        nm2 = (item.get("src_name") or "").strip()
+        if nm2:
+            return nm2[:20]
+    return friendly_source(url)
 
 
 def friendly_source(u):
@@ -433,7 +462,7 @@ def local_structured(credit, prop):
             cnt += 1
             items.append({
                 "title": clean_title(x["title"]),
-                "source": friendly_source(x["url"]),
+                "source": source_of(x, x["url"]),
                 "date": guess_date(x["url"], x["snippet"]) or ASOF,
                 "url": x["url"],
                 "summary": (x["snippet"] or "").strip()[:120] or "（暂无摘要）",
@@ -536,7 +565,7 @@ def main():
             out.append({
                 "group": grp,
                 "title": clean_title(x["title"]),
-                "source": friendly_source(x["url"]),
+                "source": source_of(x, x["url"]),
                 "date": guess_date(x["url"], snip) or ASOF,
                 "url": x["url"],
                 "summary": snip.strip()[:120] or "（暂无摘要）",
@@ -605,7 +634,7 @@ def main():
             out.append({
                 "group": need,
                 "title": clean_title(best["title"]),
-                "source": friendly_source(best["url"]),
+                "source": source_of(best, best["url"]),
                 "date": guess_date(best["url"], snip) or ASOF,
                 "url": best["url"],
                 "summary": snip.strip()[:120] or "（暂无摘要）",
