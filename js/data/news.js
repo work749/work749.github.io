@@ -4,57 +4,93 @@ window.NEWS_DATA = {
   "items": [
     {
       "group": "credit",
-      "title": "个人贷款",
-      "source": "cmbchina.com",
-      "date": "2026-07-09",
-      "url": "https://cmbchina.com/personal/credit/",
-      "summary": "2026年7月9日 · 招商银行手机银行限时特惠,手机银行转账汇款费率优惠,持卡尊享专属银行理财产品,银行贷款融资快速通道,无抵押贷 …",
-      "content": "2026年7月9日 · 招商银行手机银行限时特惠,手机银行转账汇款费率优惠,持卡尊享专属银行理财产品,银行贷款融资快速通道,无抵押贷 …"
+      "title": "10万亿经营贷暗藏风险，银行上调利率",
+      "source": "news.google.com",
+      "date": "2026-09-10",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOXpIT0VrYlpOMFdJZGNUaVdlZE5LcDZlMGNEQmMtTFNBd1NpUUlfRUh6UW1yS0NNaXlha1BTYlY4RF9panFGeVcwakJiTzFLMmNLdTNObzU4QjZ5RjAzY0JzNHBndmlnM043eFZvX21kVzVXYjhyQVFvM1lWdFNaZHpKOG5OWHh6YktOZQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-10 <a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxQOXpIT0VrYlpOMFdJZGNUaVdlZE5LcDZlMGNEQmMtTFNBd1N",
+      "content": "2026-09-10 <a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxQOXpIT0VrYlpOMFdJZGNUaVdlZE5LcDZlMGNEQmMtTFNBd1NpUUlfRUh6UW1yS0NNaXlha1BTYlY4RF9panFGeVcwakJiTzFLMmNLdTNObzU4QjZ5RjAzY0JzNHBndmlnM043eFZvX21kVzVXYjh"
+    },
+    {
+      "group": "credit",
+      "title": "央行、金融监管总局、证监会、外汇局，最新发声",
+      "source": "news.google.com",
+      "date": "2026-09-10",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOV3daTUpnOEtjRmVyZC1jbWdzbTBtTkdyVkR1R0lieU1MR3Z4NUUwZFBzZk5QQWkxSmNtcDlvSTlyaGRaaVUwLUhOX0swTFZVSkpDT2lRdWlGaE11MjFQWkpKbjljUnFnWTAtVkhFc0VRMDVYZEJySG5qelMyRXNrWA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-10 <a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxOV3daTUpnOEtjRmVyZC1jbWdzbTBtTkdyVkR1R0lieU1MR3Z",
+      "content": "2026-09-10 <a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxOV3daTUpnOEtjRmVyZC1jbWdzbTBtTkdyVkR1R0lieU1MR3Z4NUUwZFBzZk5QQWkxSmNtcDlvSTlyaGRaaVUwLUhOX0swTFZVSkpDT2lRdWlGaE11MjFQWkpKbjljUnFnWTAtVkhFc0VRMDVYZEJ"
+    },
+    {
+      "group": "credit",
+      "title": "青岛银行：主动清退互联网合作类消费贷款业务，9月推出自营消费贷产品",
+      "source": "news.google.com",
+      "date": "2026-09-04",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oQXNPcTZVeEdtY1JQYUpXcnNaNDRSR1htaUs1UkJhUzBfeDM4NTVNRXRPLV9PeEJ1b3JTdWhBRGhkSVQwUnQxYXlPaFVUWS1iNWR6Z2VLTjhFdTlZanZxeTF3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-04 <a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oQXNPcTZVeEdtY1JQYUpXcnNaNDRSR1htaUs1UkJhUzBfeDM",
+      "content": "2026-09-04 <a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oQXNPcTZVeEdtY1JQYUpXcnNaNDRSR1htaUs1UkJhUzBfeDM4NTVNRXRPLV9PeEJ1b3JTdWhBRGhkSVQwUnQxYXlPaFVUWS1iNWR6Z2VLTjhFdTlZanZxeTF3?oc=5\" target=\"_blank\">青岛银行"
+    },
+    {
+      "group": "credit",
+      "title": "警惕非法互联网贷款陷阱！北京金融监管局发文提示-中新网",
+      "source": "news.google.com",
+      "date": "2026-09-08",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ESU0zWEdMZjM5dVU5WWxTbnprWmZjNHV4YUg5aV8yMnJISkFpSE1iUXprMmlaRm1pS3J6RGtPNEE4b3FVTUtKWGFOT1lMWktyTGtRc0RGcDZUS3dnM1owZ3JXMFFQYk5r?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-08 <a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ESU0zWEdMZjM5dVU5WWxTbnprWmZjNHV4YUg5aV8yMnJISkF",
+      "content": "2026-09-08 <a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ESU0zWEdMZjM5dVU5WWxTbnprWmZjNHV4YUg5aV8yMnJISkFpSE1iUXprMmlaRm1pS3J6RGtPNEE4b3FVTUtKWGFOT1lMWktyTGtRc0RGcDZUS3dnM1owZ3JXMFFQYk5r?oc=5\" target=\"_bla"
+    },
+    {
+      "group": "credit",
+      "title": "告别流量依赖！多家银行收缩助贷合作白名单，自营渠道如何建",
+      "source": "news.google.com",
+      "date": "2026-09-09",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVC0ycHRpVkVkUTI0QTIwU0RUeHJ2RUlhcWtPdmstYW1CRi1tUVFjSjRHdVJURlBJVXlKcWVEblFJY3R2UFBuZFB4THpsVUM4NlhLbkJMcWNxOFZSSFh0YWJ5TVM5SUZKY1RrUXBJVzIydHUwaURlQnpYZXpFTC1uTGJ2anFadXExSnZKb0c2WDNjZHdYTV9fd1ZST1R4S1JHR1g0RngzYWxWWUg0WFlUTzg5THI?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-09 <a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOVC0ycHRpVkVkUTI0QTIwU0RUeHJ2RUlhcWtPdmstYW1CRi1",
+      "content": "2026-09-09 <a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOVC0ycHRpVkVkUTI0QTIwU0RUeHJ2RUlhcWtPdmstYW1CRi1tUVFjSjRHdVJURlBJVXlKcWVEblFJY3R2UFBuZFB4THpsVUM4NlhLbkJMcWNxOFZSSFh0YWJ5TVM5SUZKY1RrUXBJVzIydHUwaUR"
     },
     {
       "group": "property",
-      "title": "大局已定!2026年房贷利率3大调整，存量房贷族月供有望下调",
-      "source": "腾讯新闻",
-      "date": "2026-08-27",
-      "url": "https://news.qq.com/rain/a/20260827A052AR00",
-      "summary": "8月20日，中国人民银行授权全国银行间同业拆借中心公布，1年期LPR为3.0%，5年期以上LPR为3.5%，两个期限LPR均与上月持平。 这 ...",
-      "content": "时间复利师 2026-08-27 10:49发布于山东 8月20日，中国人民银行授权全国银行间同业拆借中心公布，1年期LPR为3.0%，5年期以上LPR为3.5%，两个期限LPR均与上月持平。 这已经是LPR连续第15个月维持不变。 但LPR不动，不代表房贷月供也不动。 2026年开年以来，房贷市场有三项调整已经在陆续落地。 每一项针对的贷款类型不一样，生效方式也不一样。 有人月供自动少了，有人需要自己跑一趟银行，还有人改了合同里的一个选项，之后的利率更新时间变快了。 这三件事，分开说清楚。 第一件事：公积金存量贷款，利率已经自动下调了 2026年1月1日起，全国存量公积金贷款完成利率统一下调。 凡是2025年5月8日之前放款的公积金房贷，不需要本人去公积金中心提交申请，系统自动完成更新。 调整之后，5年以上首套公积金贷款利率为2.6%，二套房为3.075%。 相比之前，下调了25个基点。 有公积金中心算了账，以贷款120万元、30年期等额本息为例，首套房节省利息57100.85元。 不过组合贷里面，只有公积金部分执行新利率，商业贷款部分不跟着一起变动。 2025年5月8日之后才办理的公积金贷款，放款时就已经使用新利率，不再二次调整。 第二件事：商业房贷的加点，可以找银行谈了 很多人的商业房贷是“LPR+固定加点”模式。 LPR大家都一样，真正拉开差距的是那个加点数。 按照中国人民银行公告〔2024〕第11号的规定，符合条件的存量商业房贷客户，可以主动联系贷款银行，申请重新协商调整加点幅度。 具体触发条件是：借款合同约定的加点值，比全国新发放房贷利率平均加点值高30BP以上的，可以申请调整。 调整后的加点值，不低于全国新发放房贷利率平均加点值加30BP。 这项调整需要借款人主动发起申请，银行审批通过后才能调整。 不是所有人都能调，银行会结合征信、还款记录综合审核。 已经享受过存量房贷批量下调的用户，调整空间相对有限。 固定利率房贷不能直接享受这个政策，需要先和银行协商转换为LPR浮动模式，再谈加点调整。 转换会有相应条件，不要盲目操作。 第三件事：重定价周期可以改成3个月或6个月了 过去房贷重定价周期最少一年。 就算LPR下调了，也要等满一整年，到了重定价日，月供才会跟着变。 现在规则放开了。 自2024年11月1日起，商业性个人住房贷款利率新的定价机制落地，借款人可以随时向银行提出，将重定价周期调整为3个月、6个月或1年。 简单说，如果未来LPR出现下降，重定价周期越短，你就能越早享受到降息带来的月供减少。 但也要客观提一句：LPR也有可能上行。 周期改短之后，利率上涨的时候，月供也会更快增加。 贷款存续期内仅可调整一次重定价周期。 几个容易搞混的地方： 有人以为2026年所有存量房贷都会自动降月供。 不是的。 公积金存量贷款是自动下调的；商业贷款分两种情况——重定价日到了才会跟随LPR变动，想改加点需要自己主动找银行申请。 有人觉得只要有房贷，找银行就一定能降利率。 银行会审核征信、还款记录、当地政策，不是申请就一定批。 还有人以为改了重定价周期，当下月供立刻就少了。 修改重定价周期不会改变你现在的利率，只是改变未来利率更新的时间点，当下月供不会马上变化。 如果你的房贷是公积金贷款： 打开手机银行或者公积金中心的APP，查看还款账单，确认1月1日之后利率是否已经更新。 有异常再联系公积金管理中心。 如果你的房贷是商业贷款，而且当年利率偏高： 可以拨打贷款银行客服电话，或者去线下网点咨询，问清楚自己是否符合加点调整的条件，需要什么材料。 全程正规办理，不要相信网上所谓“代办降利率”。 关于提前还款： 如果你的房贷利率已经处在比较低的水平，可以把资金留作家庭备用，不用一股脑全部提前还贷。 结合自家现金流的情况来安排。 每家的贷款合同、放款时间"
+      "title": "8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小",
+      "source": "news.google.com",
+      "date": "2026-09-03",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE01NFd5Z2lxd0hNV3QxQnZXVW1NQWpoSUt4cldERXJUd1c2MWgxQ3k5Y0t5anJoeFRmaDA1dE5mV0ZLZ0Q5S1ZQcmlHVEVBQnBHREJ5VTJaNnlvaWQ0YkE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-03 <a href=\"https://news.google.com/rss/articles/CBMiXkFVX3lxTE01NFd5Z2lxd0hNV3QxQnZXVW1NQWpoSUt4cldERXJUd1c2MWg",
+      "content": "2026-09-03 <a href=\"https://news.google.com/rss/articles/CBMiXkFVX3lxTE01NFd5Z2lxd0hNV3QxQnZXVW1NQWpoSUt4cldERXJUd1c2MWgxQ3k5Y0t5anJoeFRmaDA1dE5mV0ZLZ0Q5S1ZQcmlHVEVBQnBHREJ5VTJaNnlvaWQ0YkE?oc=5\" target=\"_blank\">8月深圳一二手住宅"
     },
     {
       "group": "property",
-      "title": "2026房贷利率最新调整!月供大幅变化，买房还贷必看",
-      "source": "腾讯新闻",
-      "date": "2026-07-01",
-      "url": "https://news.qq.com/rain/a/20260701A06OXJ00",
-      "summary": "同样贷款100万，30年还下来，利息能差出一辆代步车——这事儿搁2026年，还真不是吓唬人。 央行6月22日刚公布的数据，5年期以上LPR还是3.5%，这已经 ...",
-      "content": "财商在线通 2026-07-01 15:24发布于山东 同样贷款100万，30年还下来，利息能差出一辆代步车——这事儿搁2026年，还真不是吓唬人。 央行6月22日刚公布的数据，5年期以上LPR还是3.5%，这已经是连续第13个月没动了。 但你要是以为房贷利率没啥变化，那就亏大了。 今年真正的重头戏根本不在LPR这个数字上，而是全国房贷的定价规则、首付门槛、存量降息、银行加减点——全给你重来了一遍。 同样贷100万，征信好、首付高的，利率能干到2.95%，月供4132块；征信差点意思、首付踩线过的，利率直接给你拉到3.5%，月供4490。 每个月差358，三十年下来，13万没了。 一辆代步车，就这么从手边溜走了。 以前全国统一划条线，首套多少、二套多少，大家都一样。 2026年这条线直接取消了。 现在叫“一市一策、一人一价”。 银行自己说了算，给你加多少点、减多少点，全看四个东西：征信记录怎么样、首付掏了多少、在什么单位上班、名下还有没有别的债。 城市跟城市也不一样。 人口流出的三四线县城，首套最低能做到2.85%，地方再贴点息，有的楼盘直接干到2.8%。 普通二三线城市，主流在3.05%到3.3%之间。 到了北上广深、杭州、苏州这些地方，库存紧张，风控收得紧，首套普遍3.3%到3.5%，想拿大额减点？ 难。 同样贷一百万，你在不同城市、不同银行、不同资质条件下拿到的利率，可能差了半个点以上。 今年刚需上车最大的变化，是首付门槛降了。 全国绝大多数城市，首套房最低首付从20%降到了15%。 总价100万的房子，原来你得凑20万，现在15万就行。 就一线城市核心学区、限购板块还守着20%的门槛，其他地方基本都放开了。 但有个事儿得掰扯清楚——很多人以为“首付越低利率越高”，2026年刚好反过来。 首付掏得越多，银行觉得风险越低，给你的减点力度就越大。 你想拿2.9%到3.0%那个档位的超低利率，光靠15%的首付不够，最好能凑到20%。 另外两类人现在拿低利率最有优势：头一回买房、征信干干净净的；还有买政府盘活的现房库存楼盘，地方财政贴息还能再降0.1到0.2个点。 想换房的，今年政策也给你让了步。 二套房首付底线从30%降到了25%。 200万的房子，首付从60万降到50万，多出来10万块钱，装修也好、交税费也好，手头宽裕不少。 还有一条更关键的——“认房不认贷”全面落地了。 什么意思？ 你本地没房，外地有房贷但已经结清了，再买房就按首套房利率算。 这对很多在外地有过贷款记录、回老家换房的人来说，省下的利息不是一丁半点。 二套房利率全国区间在3.35%到3.6%。 贷100万、30年等额本息，3.35%的利率月供4386，3.6%的话就是4548，每月差162。 换房的人贷款额度通常更高，这个差距还会更大。 要说2026年哪个贷款渠道减负最狠，公积金排第一。 央行统一下调了公积金利率0.25个百分点。 5年以上的首套房，从2.85%降到2.6%。 二套房从3.325%降到3.075%。 最关键的是——不用你跑腿、不用你申请、不用交任何材料。 2026年1月1日起，系统自动给你重新算月供。 2025年5月8日之前办的贷款，直接调；之后新办的，审批当天就执行新利率。 贷100万、30年等额本息，原来2.85%的时候月供4136，现在2.6%只要4003。 每个月少还133，一年省1596，三十年下来省出4万8。 现在买房，最佳方案就一个：能贷多少公积金就贷多少，剩下的走商贷。 公积金比商贷低了0.4到0.7个百分点，同样额度月供能少好几百。 已经背了房贷的人，2026年有两层降息福利，全部自动生效，不需要你操任何心。 第一层，公积金存量贷款统一降了0.25%，1月份就已经体现在扣款短信里了。 第二层，商业房贷。 所有商贷都是LPR浮动定价，到了你的"
+      "title": "天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰",
+      "source": "news.google.com",
+      "date": "2026-09-05",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZFNiMVV3MnM5V2FWenVjeUs4Z1YtdVhkYTZ6Ynd5eTd0b2xhaEhmYTZ2N2dTNUw4MF9XWmJpMmVjdVNOVlZNTlJHVkg2OWJYaGdXSU92YWtnY0dINldfWlhtM2VNSTNOQV9qQnhTVnlaUUROV05VNDFwQmw2dlhHUGFBTjBhNlVKSnh2RzBCaw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-05 <a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQZFNiMVV3MnM5V2FWenVjeUs4Z1YtdVhkYTZ6Ynd5eTd0b2x",
+      "content": "2026-09-05 <a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQZFNiMVV3MnM5V2FWenVjeUs4Z1YtdVhkYTZ6Ynd5eTd0b2xhaEhmYTZ2N2dTNUw4MF9XWmJpMmVjdVNOVlZNTlJHVkg2OWJYaGdXSU92YWtnY0dINldfWlhtM2VNSTNOQV9qQnhTVnlaUUROV05"
     },
     {
       "group": "property",
-      "title": "房贷族迎来大礼包!2026三大降息新政落地，月供实实在在往下减",
-      "source": "腾讯新闻",
-      "date": "2026-08-31",
-      "url": "https://view.inews.qq.com/a/20260831A04OQD00",
-      "summary": "8月27日，央行联合金融监管总局、住建部发布通知，全国存量房贷利率统一批量下调，9月底前全部自动调整到位。 这次调整的直接结果是：如果你的房贷是2024年以前办的，利率在4.2%以上，且是首套房浮动利率，那么你的贷款 ...",
-      "content": "财商在线通 2026-08-31 10:16发布于山东 8月27日，央行联合金融监管总局、住建部发布通知，全国存量房贷利率统一批量下调，9月底前全部自动调整到位。 这次调整的直接结果是：如果你的房贷是2024年以前办的，利率在4.2%以上，且是首套房浮动利率，那么你的贷款利率大概率会降到3.2%左右。 不需要你跑银行，不需要你提交任何材料，系统自动改。 100万贷款、30年期、等额本息还款，原来利率4.2%时，月供是4872元。 调整后利率3.2%，月供变成4307元。 一个月少还565元，一年省下6780元，整个还款周期少还20万利息。 如果你之前利率是5.6%，那差距更大。 月供从5600元降到4200元，一个月少还1400元，一年省1.68万。 这个政策覆盖的人群有多大？ 全国有房贷的家庭，绝大多数都在里面。 2024年之前买房的人，基本都赶上了利率高位，当时很多城市的首套房贷利率都在4.5%以上，部分城市甚至超过5%。 这次调整，就是把那些高出来的加点全部砍掉。 公积金贷款也同步降了。 2025年5月8日之前发放的公积金贷款，从2026年1月1日起利率下调25个基点。 首套房5年以上公积金贷款利率降到2.6%，二套房降到3.075%。 同样是系统自动调整，不用个人申请。 50万公积金贷款、20年期，原来利率2.85%时月供2758元，现在2.6%月供2694元，一个月少还64元，整个周期少还1.54万。 如果是100万、30年的公积金贷款，降息前月供4302元，降息后4170元，一个月少还132元，总利息少还将近5万。 组合贷家庭更划算，商贷部分享受商贷降息，公积金部分享受公积金降息，两边叠加，月供下降幅度更大。 不过这次批量调整不是所有人都能自动享受。 有几种情况需要自己主动去办。 第一种，二套房房贷。 这次批量调整只针对首套房，二套房存量房贷需要对照当地最新二套房贷加点标准，自己向银行申请利率优化。 具体能降到多少，要看当地政策，有的城市二套房贷也能降到LPR+20BP左右，有的城市可能更高一些。 第二种，固定利率房贷。 如果你当年签的是固定利率合同，不参与这次批量调整。 想享受低利率，需要先咨询银行能不能转成LPR浮动利率，转完之后再参与调整。 但要注意，如果你原来的固定利率本身就比较低，比如只有3%左右，那转浮动之后反而可能变高。 转之前一定要算清楚账。 第三种，“二套转首套”的人群。 比如你之前买房时因为有过贷款记录，被认定为二套房，但现在政策变了，你名下只有这一套房，符合首套认定标准。 这种情况需要自己带上房产证明、无房证明等材料，去银行线下网点提交申请，审核通过后就能享受首套房的利率优惠。 除了存量房贷，这次政策对新买房的人也有利好。 全国首套房最低首付比例降到15%，二套房降到25%。 一套总价200万的房子，首套房首付只要30万，二套房只要50万。 相比之前动辄30%甚至40%的首付比例，门槛确实低了不少。 还有财政贴息政策。 全国三十多个城市，针对卖旧买新的改善家庭、青年人才首套房购房，给予贷款利息1%到2%的财政补贴，贴息期限2到3年，每年贴息上限1万元。 比如你办100万商业房贷，执行利率3.05%，享受1%贴息后，实际利率降到2.05%，月供压力进一步缩小。 有些城市还放开了公积金直接支付首付的政策。 你公积金账户里的余额可以直接用来交首付，不用等到买房之后再提取，能减轻前期资金压力。 关于利率调整进度，可以在手机银行里查。 打开贷款页面，看合同信息，确认是浮动利率还是固定利率，是首套还是二套，当前加点数值是多少。 如果符合条件，等待系统自动调整就行。 公积金贷款也可以在公积金APP里查最新执行利率和月供。 有几个容易踩的坑需要提醒。 一个是不要盲目提前还款。 现在利率降下来了，你手里有现金，理财收益可能比房"
+      "title": "二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多",
+      "source": "news.google.com",
+      "date": "2026-09-10",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1WeVlJcW1wR0tLRVlhRjE3cFEwOTUwWWNSS19veGR5M214Qy1VY3I5LTJkNXV4SWtaeUQxZm55TnpyeU5zNDRYYTR5QjNaMlVPbkFCRTRwd3FSdjRYb2kySThVUEdiQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-10 <a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE1WeVlJcW1wR0tLRVlhRjE3cFEwOTUwWWNSS19veGR5M214Qy1",
+      "content": "2026-09-10 <a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE1WeVlJcW1wR0tLRVlhRjE3cFEwOTUwWWNSS19veGR5M214Qy1VY3I5LTJkNXV4SWtaeUQxZm55TnpyeU5zNDRYYTR5QjNaMlVPbkFCRTRwd3FSdjRYb2kySThVUEdiQQ?oc=5\" target=\"_blank"
     },
     {
       "group": "property",
-      "title": "六大行集体公告解读：消费贷贴息与存量房贷利率下调全解析",
-      "source": "新浪财经",
-      "date": "2026-08-01",
-      "url": "https://cj.sina.com.cn/articles/view/7879996505/1d5af345906801evxe",
-      "summary": "A：不追溯，仅针对2026年8月1日之后新办理的分期与消费贷业务。 Q：是不是自动生效，我需要申请吗？ A：需要办理对应消费贷或分期业务时走贴息通道，不是所有分期自动贴息，部分银行需要勾选\"财政贴息\"选项。 二、存量房贷利率调整与实体经济信",
-      "content": "2026年8月22日，工行、农行、中行、建行、交行、邮储六大国有银行同步发布集体公告，落实财政部、央行、金融监管总局联合印发的《关于进一步做好财政金融协同促内需政策有关工作的通知》（财金〔2026〕71号），政策自2026年8月1日实施至12月31日。本次公告覆盖消费贷/信用卡分期财政贴息、存量房贷利率批量调整、实体经济信贷倾斜、房地产风险化解、减费让利、资本补充等六大核心方向，是监管统一部署下的一揽子金融稳增长信号。 一、消费贷与信用卡分期财政贴息政策要点 六大行统一口径，核心变化如下： 通俗理解：普通人能省多少钱？ 以办理10万元3年期汽车分期、分期年化8%为例：贴息年化1%，同时不超过原利率50%（即4%），因此按年化1%贴息；一年可减少利息支出约1000元；在这家银行全年最多享受合计5000元贴息。 政策出台深层信号 常见疑问（来自各家银行公告问答） 二、存量房贷利率调整与实体经济信贷倾斜 六大行同步发布公告，集体表态内容高度趋同，核心统一内容如下： 三、集体发布公告背后的深层信号 四、对不同群体的实际影响 普通居民 利好购车、装修等大额消费，同等分期金额下利息负担下降，年度最多省5000元（单家银行）；存量房贷用户系统自动降息，月供减少；刚需买房人群房贷利率处于低位，贷款审批效率提升。 中小企业、个体户 更容易获得银行信用贷款，贷款利率更低，转账、账户各类费用减免，经营成本下降，贷款审批周期缩短。 房企及房地产上下游企业 优质房企可获得更多开发贷款、并购资金，停工楼盘资金保障加强，房企资金紧张局面有所缓解。 银行自身 息差收窄，盈利承压，但信贷规模大幅增长，资产规模持续扩张，风险抵御能力通过资本补充进一步增强。 五、风险提示 贴息只是降低利息，贷款本金仍需按期归还，切勿因为贴息盲目过度分期消费。同时，银行仍会审核还款能力，有逾期、负债过高依然无法办理贴息分期。 新浪财经头条意见反馈留言板 4001102288 欢迎批评指正"
+      "title": "政策密集出台 京沪深楼市成交齐增",
+      "source": "news.google.com",
+      "date": "2026-09-02",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5GNGRac0FwNVF2U3oxVUktV28wcE9Idm5ZSEhYY19zY3FPemZaVFNPS0RUTXBYN1lfQldEM2sxUF9HZUVUTEI5V3FuOXhoYjdGeWtSMVNKWWU2SE9aeXNnTjQzQjZHM0Ji?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-02 <a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE5GNGRac0FwNVF2U3oxVUktV28wcE9Idm5ZSEhYY19zY3FPemZ",
+      "content": "2026-09-02 <a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE5GNGRac0FwNVF2U3oxVUktV28wcE9Idm5ZSEhYY19zY3FPemZaVFNPS0RUTXBYN1lfQldEM2sxUF9HZUVUTEI5V3FuOXhoYjdGeWtSMVNKWWU2SE9aeXNnTjQzQjZHM0Ji?oc=5\" target=\"_bla"
     },
     {
       "group": "property",
-      "title": "重磅利好!2026年起房贷利率双降，月供压力大幅减轻|公积金贷款|二套房",
-      "source": "k.sina.cn",
-      "date": "2026-01-01",
-      "url": "https://k.sina.cn/article_7879922977_1d5ae152101901btac.html",
-      "summary": "新规还允许贷款人自主选择3个月至1年的重定价周期。 房贷族迎来重大利好! 根据政策，从2026年1月1日起，存量商业贷款利率将迎来下调，公积金贷款利率也将同步调整。 这一政策调整将显著减轻购房者的月供压力，为房地产市场注入新的活力。",
-      "content": "2026年1月1日起，存量商业贷款利率和公积金贷款利率将同步下调。商业贷款方面，首套房可降至3.05%；公积金贷款方面，首套房5年以上利率降至2.6%。以120万商业贷款为例，30年可节省利息超5.7万元；50万公积金贷款20年月供减少61.65元。新规还允许贷款人自主选择3个月至1年的重定价周期。 房贷族迎来重大利好！根据政策，从2026年1月1日起，存量商业贷款利率将迎来下调，公积金贷款利率也将同步调整。这一政策调整将显著减轻购房者的月供压力，为房地产市场注入新的活力。 商业贷款利率下调幅度显著，首套房可至3.05% 根据调整，2025年5月LPR已下调至1年期3.0%、5年期以上3.5%。对于选择1月1日作为重定价日的首套房贷客户，若执行LPR-45BP的贷款利率，房贷利率将降至3.05%。以120万元30年期商业贷款为例，采用等额本息还款方式，利率调整后首套房可节省利息57100.85元，二套房节省59070.01元。值得注意的是，自2024年11月1日起，贷款人可随时向银行申请将重定价周期调整为3个月、6个月或1年，这意味着部分按短期重定价的客户已享受到利率。 公积金贷款利率同步下调0.25个百分点，月供立减 根据中国人民银行《关于下调个人住房公积金贷款利率的通知》，自2025年5月8日起，公积金贷款利率下调0.25个百分点。首套房5年以上利率从2.85%降至2.6%，二套房不低于3.075%。以50万元20年期公积金贷款为例，月供从2735.59元降至2673.94元，每月减少61.65元。这一调整将直接减轻公积金贷款家庭的还款压力，特别是对刚需购房者而言是实实在在的利好。 此次利率双降政策释放出积极信号，既是对购房者的实质性减负，也有助于稳定房地产市场预期。在当前经济环境下，降低购房成本能够有效提振市场信心，促进房地产行业平稳健康发展。建议购房者密切关注政策变化，根据自身情况合理规划还款方案，充分享受政策红利。 - AI整理生成 -"
+      "title": "开源证券:《房地产行业周报：“8·28新政”效果仍有待观察，周度成交有所增长》",
+      "source": "news.google.com",
+      "date": "2026-09-06",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE42Um44c1Ntcmdmb004UHJuZWt0NDByMmMwYnhuQWJ0NWlhWlNZbjByZW9FVE5WRld4U0llZXpRdHltZU81Q1NUYmtiMEVMSUlS?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-06 <a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE42Um44c1Ntcmdmb004UHJuZWt0NDByMmMwYnhuQWJ0NWlhWlN",
+      "content": "2026-09-06 <a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE42Um44c1Ntcmdmb004UHJuZWt0NDByMmMwYnhuQWJ0NWlhWlNZbjByZW9FVE5WRld4U0llZXpRdHltZU81Q1NUYmtiMEVMSUlS?oc=5\" target=\"_blank\">开源证券:《房地产行业周报：“8·28新政”效果仍有待观"
     }
   ]
 };
