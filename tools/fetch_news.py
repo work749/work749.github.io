@@ -99,7 +99,7 @@ def _get(url, timeout=15):
 
 def search_ddg(q, max_n=10):
     try:
-        doc = _get("https://html.duckduckgo.com/html/?q=" + urllib.parse.quote(q))
+        doc = _get("https://html.duckduckgo.com/html/?q=" + urllib.parse.quote(q), timeout=8)
     except Exception as e:
         print("WARN ddg 失败: %s" % e, file=sys.stderr)
         return []
@@ -172,7 +172,8 @@ def search(q, max_n=10):
     return []
 
 
-def score_pool(items, kws):
+def score_pool(items, kws, min_score=1):
+    """按关键词命中 + 新闻域名加权打分；min_score 过滤弱相关（挡掉经营/管理软文、登录页等）。"""
     scored = []
     for x in items:
         txt = (x["title"] + " " + x["snippet"]).lower()
@@ -180,7 +181,7 @@ def score_pool(items, kws):
         h = host_of(x["url"])
         if any(d in h for d in NEWS):
             s += 3
-        if s > 0:
+        if s >= min_score:
             scored.append((s, x))
     scored.sort(key=lambda t: -t[0])
     return [x for _, x in scored]
@@ -235,15 +236,16 @@ def call_llm(context):
         headers={"Content-Type": "application/json", "Authorization": "Bearer " + KEY},
         method="POST",
     )
+    # 单发、50s 预算：本环境免费档对这个任务约需 100s+，超时即放弃，改用本地结构化结果。
     try:
-        with urllib.request.urlopen(req, timeout=90) as resp:
+        with urllib.request.urlopen(req, timeout=50) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         return data["choices"][0]["message"]["content"]
     except urllib.error.HTTPError as e:
         print("ERR: LLM HTTP %d: %s" % (e.code, e.read().decode("utf-8", "ignore")[:300]), file=sys.stderr)
         return None
     except Exception as e:
-        print("WARN LLM 调用失败: %s" % e, file=sys.stderr)
+        print("WARN LLM 调用失败(已放弃，改用本地结果): %s" % e, file=sys.stderr)
         return None
 
 
@@ -257,22 +259,116 @@ def extract_json(text):
         return None
 
 
+KNOWN_SOURCE = {
+    "sina.com.cn": "新浪财经", "sohu.com": "搜狐", "qq.com": "腾讯新闻", "cctv.com": "央视网",
+    "gmw.cn": "光明网", "gov.cn": "中国政府网", "ndrc.gov.cn": "国家发改委", "mofcom.gov.cn": "商务部",
+    "chinamoney.com.cn": "中国货币网", "stcn.com": "证券时报", "21jingji.com": "21世纪经济报道",
+    "cls.cn": "财联社", "yicai.com": "第一财经", "cs.com.cn": "中国证券报", "people.com.cn": "人民网",
+    "xinhuanet.com": "新华网", "caixin.com": "财新", "thepaper.cn": "澎湃新闻", "eastmoney.com": "东方财富",
+    "cnstock.com": "上海证券报", "jrj.com.cn": "金融界", "hexun.com": "和讯", "ce.cn": "中国经济网",
+    "chinanews.com.cn": "中国新闻网", "wallstreetcn.com": "华尔街见闻", "china.com.cn": "中国网",
+    "jwview.com": "中新经纬", "eeo.com.cn": "经济观察报", "mof.gov.cn": "财政部",
+}
+
+
+def friendly_source(u):
+    h = host_of(u)
+    for k, v in KNOWN_SOURCE.items():
+        if h == k or h.endswith("." + k) or ("." + k) in h:
+            return v
+    return h.replace("www.", "")
+
+
+def clean_title(t):
+    t = html.unescape((t or "").strip())
+    t = re.sub(r"\s+", " ", t)
+    # 去掉 " - 新浪财经" / " | 腾讯新闻" / " _ 国务院文件" 这类站点后缀
+    t = re.sub(r"\s*[\-\u2013\u2014|_｜|]\s*[^，。\s]{1,18}(网|新闻|财经|政府|官网|客户端|日报|周刊|时报|论坛|视点|观察)?\s*$", "", t)
+    t = t.strip(" .。…·-_|｜")
+    return t[:40]
+    return t[:40]
+
+
+def dedup_key(t):
+    """跨查询去重用的稳定核心：清洗后按首个分隔符截断，去掉站点后缀干扰。"""
+    t = clean_title(t)
+    core = re.split(r"[\s_\-｜|–—]+", t)[0]
+    return core if len(core) >= 6 else t
+
+
+def guess_date(url, snippet):
+    for s in (url, snippet or ""):
+        m = re.search(r"(20\d{2})[-./年](\d{1,2})[-./月](\d{1,2})", s)
+        if m:
+            return "%s-%02d-%02d" % (m.group(1), int(m.group(2)), int(m.group(3)))
+        m = re.search(r"(20\d{2})(\d{2})(\d{2})", s)
+        if m:
+            return "%s-%s-%s" % (m.group(1), m.group(2), m.group(3))
+    return ""
+
+
+def is_noise(x):
+    """剔除计算器/名词解释/登录页/站点首页等非新闻内容。"""
+    t = x["title"] or ""
+    u = x["url"] or ""
+    low = u.lower()
+    if any(k in t for k in ("计算器", "什么是", "登录", "首页", "概览", "查询")):
+        return True
+    if "经营" in t and "管理" in t:  # 经营/管理自嗨软文，非楼市新闻
+        return True
+        return True
+    if t.strip() in ("深圳政府在线", "自然人电子税务局", "中国政府网", "首页"):
+        return True
+    path = (urllib.parse.urlparse(u).path or "")
+    if path in ("", "/") or path.endswith("/login") or "/webstatic/" in low or path.endswith("login"):
+        return True
+    return False
+
+
+def local_structured(credit, prop):
+    """不依赖 LLM 的兜底结构化：每组取前 5（跳过非新闻噪声），清洗标题/来源/日期。"""
+    items = []
+    for grp, pool in (("credit", credit), ("property", prop)):
+        cnt = 0
+        for x in pool:  # pool 已按相关度排序（top-9）
+            if cnt >= 5:
+                break
+            if is_noise(x):
+                continue
+            cnt += 1
+            items.append({
+                "title": clean_title(x["title"]),
+                "source": friendly_source(x["url"]),
+                "date": guess_date(x["url"], x["snippet"]) or TODAY,
+                "url": x["url"],
+                "summary": (x["snippet"] or "").strip()[:120] or "（暂无摘要）",
+            })
+    return items
+
+
 def main():
     seen = set()
+    seen_title = set()
     credit_raw, prop_raw = [], []
     for q in CREDIT_QUERIES:
         for x in search(q):
             if x["url"] in seen or is_junk(x["url"]):
                 continue
-            seen.add(x["url"]); credit_raw.append(x)
+            tk = dedup_key(x["title"])
+            if tk in seen_title:
+                continue
+            seen.add(x["url"]); seen_title.add(tk); credit_raw.append(x)
     for q in PROP_QUERIES:
         for x in search(q):
             if x["url"] in seen or is_junk(x["url"]):
                 continue
-            seen.add(x["url"]); prop_raw.append(x)
+            tk = dedup_key(x["title"])
+            if tk in seen_title:
+                continue
+            seen.add(x["url"]); seen_title.add(tk); prop_raw.append(x)
 
-    credit = score_pool(credit_raw, CREDIT_KW)[:9]
-    prop = score_pool(prop_raw, PROP_KW)[:9]
+    credit = score_pool(credit_raw, CREDIT_KW, min_score=2)[:9]
+    prop = score_pool(prop_raw, PROP_KW, min_score=2)[:9]
     real = credit + prop
     if not real:
         print("ERR: 全部搜索源不可用，可能本机网络受限；保留昨日数据不覆盖。", file=sys.stderr)
@@ -283,14 +379,14 @@ def main():
     ctx_lines = []
     for i, x in enumerate(real):
         grp = "credit" if x in credit else "property"
-        ctx_lines.append("[%d][%s] %s\n   %s\n   %s" % (i + 1, grp, x["url"], x["title"], x["snippet"]))
+        snip = (x["snippet"] or "")[:160].replace("\n", " ")
+        ctx_lines.append("[%d][%s] %s\n   %s\n   %s" % (i + 1, grp, x["url"], x["title"], snip))
     text = call_llm("\n".join(ctx_lines))
     parsed = extract_json(text) if text else None
 
     if not isinstance(parsed, list) or not parsed:
-        print("WARN: LLM 未产出有效 JSON，改用原始搜索结果", file=sys.stderr)
-        parsed = [{"title": x["title"], "source": host_of(x["url"]), "date": TODAY,
-                   "url": x["url"], "summary": x["snippet"][:60] or "（暂无摘要）"} for x in real[:10]]
+        print("WARN: LLM 未产出有效 JSON，改用本地结构化结果（不依赖大模型）", file=sys.stderr)
+        parsed = local_structured(credit, prop)
 
     out = []
     for i, it in enumerate(parsed):
@@ -317,14 +413,69 @@ def main():
             "content": content,
         })
 
-    while len(out) < 10 and real:
-        x = real[len(out) % len(real)]
+    used_titles = set(clean_title(it.get("title", "")) for it in out)
+    for x in real:
+        if len(out) >= 10:
+            break
+        if is_noise(x):
+            continue
+        ct = clean_title(x["title"])
+        if ct in used_titles:
+            continue
+        used_titles.add(ct)
         out.append({
             "group": "credit" if len(out) < 5 else "property",
-            "title": x["title"][:40], "source": host_of(x["url"]),
-            "date": TODAY, "url": x["url"],
-            "summary": x["snippet"][:60] or "（暂无摘要）", "content": x["snippet"],
+            "title": clean_title(x["title"]), "source": friendly_source(x["url"]),
+            "date": guess_date(x["url"], x["snippet"]) or TODAY, "url": x["url"],
+            "summary": (x["snippet"] or "").strip()[:120] or "（暂无摘要）",
+            "content": fetch_content(x["url"]) or x["snippet"],
         })
+
+    # 最终按 URL 去重，避免同一篇文章在两组重复出现
+    _seen = set(); _out = []
+    for it in out:
+        if it["url"] in _seen:
+            continue
+        _seen.add(it["url"]); _out.append(it)
+    # 补位到 10（按组补，优先同组优质候选，跳过噪声与同文异链）
+    _ci = sum(1 for it in _out if it.get("group") == "credit")
+    _pi = len(_out) - _ci
+    _cores = set(dedup_key(it.get("title", "")) for it in _out)
+    for pool, grp, need in ((credit, "credit", 5 - _ci), (prop, "property", 5 - _pi)):
+        for x in pool:
+            if need <= 0:
+                break
+            if x["url"] in _seen or is_noise(x):
+                continue
+            if dedup_key(x["title"]) in _cores:
+                continue
+            _seen.add(x["url"]); _cores.add(dedup_key(x["title"])); need -= 1
+            _out.append({
+                "group": grp, "title": clean_title(x["title"]),
+                "source": friendly_source(x["url"]),
+                "date": guess_date(x["url"], x["snippet"]) or TODAY, "url": x["url"],
+                "summary": (x["snippet"] or "").strip()[:120] or "（暂无摘要）",
+                "content": fetch_content(x["url"]) or x["snippet"],
+            })
+    # 仍不足 10 条时，从全部候选跨组补满（仍跳过噪声与同文异链）
+    for x in real:
+        if len(_out) >= 10:
+            break
+        if x["url"] in _seen or is_noise(x):
+            continue
+        if dedup_key(x["title"]) in _cores:
+            continue
+        _seen.add(x["url"]); _cores.add(dedup_key(x["title"]))
+        grp = "credit" if len(_out) < 5 else "property"
+        _out.append({
+            "group": grp, "title": clean_title(x["title"]),
+            "source": friendly_source(x["url"]),
+            "date": guess_date(x["url"], x["snippet"]) or TODAY, "url": x["url"],
+            "summary": (x["snippet"] or "").strip()[:120] or "（暂无摘要）",
+            "content": fetch_content(x["url"]) or x["snippet"],
+        })
+
+    out = _out
 
     data = {"updated": TODAY, "items": out}
     with open(DATA_FILE, "w", encoding="utf-8") as f:
