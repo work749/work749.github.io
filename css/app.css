@@ -365,7 +365,12 @@ rt {
 .nr-body { font-size: 15px; line-height: 1.95; color: var(--text); }
 .nr-body p { margin: 0 0 14px; }
 .nr-body .nr-empty { color: var(--dim); }
-.nr-foot { display: flex; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-soft); }
+.nr-foot { display: flex; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-soft); align-items: center; }
+.nr-foot .nr-search {
+  margin-left: auto; font-size: 12.5px; color: var(--dim);
+  text-decoration: none; border-bottom: 1px dashed var(--line); padding-bottom: 1px;
+}
+.nr-foot .nr-search:hover { color: var(--accent); border-color: var(--accent); }
 @media (max-width: 560px) { .nr-panel { width: 100%; border-left: none; } }
 
 /* ---------------- 笛子 ---------------- */

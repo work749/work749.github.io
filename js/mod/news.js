@@ -1,8 +1,8 @@
 /* 行业要闻模块：助贷 / 信贷 + 房地产
-   增强点（2026-09-11）：
-   - URL 智能识别：文章页 vs 搜索结果/首页，按钮自动切"原文/搜索"
-   - 每条始终有"百度"按钮兜底，URL 不对也能找到
-   - 顶部显示抓取时间和源 fetch_news.py 输出状态 */
+   交互（2026-09-14 调整）：
+   - 点击整条 = 切换已读（可再点一次取消），不再弹出面板
+   - 右侧「详情」按钮 = 打开该条详细信息面板（站内展示，不跳走）
+   - Google News 跳转链接在 APP 内打不开 → 统一降级为百度站内搜索「搜原文 ↗」 */
 (function () {
   var group = "all";
   var current = null;   // 当前阅读面板打开的新闻
@@ -13,10 +13,12 @@
   function keyOf(n) { return n.url || n.title; }
   function isRead(n) { return Store.data.news.read.indexOf(keyOf(n)) >= 0; }
 
-  function toggleRead(n) {
-    var k = keyOf(n), arr = Store.data.news.read, i = arr.indexOf(k);
-    if (i >= 0) arr.splice(i, 1); else arr.push(k);
+  function toggleRead(n, quiet) {
+    var k = keyOf(n), arr = Store.data.news.read, i = arr.indexOf(k), now;
+    if (i >= 0) { arr.splice(i, 1); now = false; } else { arr.push(k); now = true; }
     Store.save(); render();
+    if (!quiet) { try { toast(now ? "已标记为已读" : "已取消已读", 1200); } catch (e) {} }
+    return now;
   }
 
   // 点击整条新闻：在站内弹出阅读面板显示新闻内容，不跳走、主页面不变；看过即标记已读
@@ -28,19 +30,19 @@
     tag.className = "nr-tag " + (isCredit ? "credit" : "property");
     $("#nrTitle").textContent = n.title || "";
     $("#nrMeta").textContent = [n.source, dateLabel(n.date)].filter(Boolean).join(" · ");
-    var body = n.content || n.summary || "";
+    var body = (n.content || n.summary || "").trim();
     $("#nrBody").innerHTML = body
       ? body.split(/\n+/).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("")
-      : '<p class="nr-empty">（暂无正文，可点下方「查看原文 / 搜索」看完整内容）</p>';
-    var link = $("#nrLink");
-    link.href = n.url || "#";
-    link.textContent = isHomeOrSearch(n.url) ? "百度搜索原文 ↗" : "查看原文 ↗";
-    $("#nrMark").textContent = isRead(n) ? "已读" : "标为已读";
+      : '<p class="nr-empty">（该条暂无收录正文，可点下方「搜原文 ↗」在百度查找完整内容）</p>';
+    // 底部「搜原文」：Google News 跳转链接在部分环境打不开，统一走百度站内搜索（必达）
+    var link = $("#nrSearch");
+    link.href = baiduUrl(n);
+    $("#nrMark").textContent = isRead(n) ? "已读 ✓" : "标为已读";
     var reader = $("#newsReader");
     reader.hidden = false;
     document.body.classList.add("nr-open");
     current = n;
-    if (!isRead(n)) toggleRead(n);   // 打开即算已读
+    if (!isRead(n)) toggleRead(n, true);   // 打开详情即算已读（静默，不弹提示）
   }
   function closeReader() {
     var reader = $("#newsReader");
@@ -48,22 +50,13 @@
     document.body.classList.remove("nr-open");
   }
 
-  // 判断链接是不是"文章页"——如果落到首页/搜索结果，按钮应显示"搜索"
-  function isHomeOrSearch(url) {
+  // Google News 的链接是不透明跳转页，APP 内嵌浏览器 / 部分环境打不开 → 降级为百度站内搜索
+  function isDeadLink(url) {
     if (!url) return true;
-    try {
-      var u = new URL(url);
-      var p = u.pathname;
-      if (p === "" || p === "/" || p === "/index.html" || p === "/index.htm" || p === "/default.html") return true;
-      var host = u.hostname;
-      var isSearchEngine = /(google|baidu|bing|sogou)\./.test(host);
-      if (isSearchEngine) {
-        // 落到这些搜索引擎的搜索/微信搜结果
-        if (/\/(search|s\?|weixin|web)|[\?&](q|wd|query)=/.test(p + u.search)) return true;
-      }
-      return false;
-    } catch (e) { return true; }
+    return /news\.google\.com/.test(url) || /^\s*javascript:/i.test(url);
   }
+  // 可靠的跳转地址：能直达就用原链，否则用百度站内搜索（必达）
+  function safeUrl(n) { return isDeadLink(n.url) ? baiduUrl(n) : n.url; }
   // 把 URL 截短成"域名/路径前 18 字"的形式
   function shortUrl(url) {
     try {
@@ -73,11 +66,14 @@
       return u.hostname.replace(/^www\./, "") + p;
     } catch (e) { return (url || "").slice(0, 30); }
   }
-  // 百度站内搜索（用 site: 锁媒体域，更精准）
+  // 百度搜索（能直达的原链用 site: 锁媒体域；Google 跳转页则用「标题 + 来源名」，否则搜不到）
   function baiduUrl(n) {
     var host = "";
     try { host = new URL(n.url).hostname.replace(/^www\./, ""); } catch (e) {}
-    var q = (host ? "site:" + host + " " : "") + (n.title || "");
+    if (isDeadLink(n.url)) host = "";
+    var q = n.title || "";
+    if (host) q = "site:" + host + " " + q;
+    else if (n.source && q.indexOf(n.source) < 0) q = q + " " + n.source;
     return "https://www.baidu.com/s?wd=" + encodeURIComponent(q);
   }
 
@@ -106,12 +102,14 @@
         '<div class="s">' + esc(n.summary || "") + "</div>" +
         '<div class="m"><span class="tag ' + cls + '">' + name + "</span>" +
         "<span>" + esc(n.source || "") + "</span><span>" + dateLabel(n.date) + "</span>" +
-        '<span class="src-link" title="' + esc(n.url) + '">' + esc(shortUrl(n.url)) + '</span>' +
+        '<a class="src-link" href="' + esc(safeUrl(n)) + '" target="_blank" rel="noopener" ' +
+        'title="' + esc(isDeadLink(n.url) ? "原链接不可直达，点此搜索原文：" + (n.title || "") : n.url) + '">' +
+        esc(isDeadLink(n.url) ? "搜原文 ↗" : shortUrl(n.url)) + "</a>" +
         "</div>" +
         "</div>" +
         '<div class="acts">' +
-        '<button class="btn sm" data-act="read">' + (isRead(n) ? "已读" : "标已读") + '</button>' +
-        '<span class="open-hint">点击整条阅读</span>' +
+        '<button class="btn sm" data-act="detail">详情</button>' +
+        '<span class="open-hint">点击整条标记已读</span>' +
         "</div></div>";
     }).join("");
 
@@ -121,10 +119,12 @@
       var i = parseInt(item.dataset.i, 10);
       var n = all[i];
       if (!n) return;
-      // 点"标已读"按钮：只切换已读，不打开
-      if (e.target.closest('[data-act="read"]')) { toggleRead(n); return; }
-      // 整条其余区域点击：直接打开该新闻
-      openNews(n);
+      // 点「详情」按钮：打开该条详细信息（不跳走）
+      if (e.target.closest('[data-act="detail"]')) { openNews(n); return; }
+      // 点来源链接：让它自己跳，不触发已读切换
+      if (e.target.closest(".src-link")) return;
+      // 整条其余区域点击：切换已读
+      toggleRead(n);
     };
   }
 
@@ -145,8 +145,8 @@
       });
       $("#nrMark").addEventListener("click", function () {
         if (!current) return;
-        toggleRead(current);
-        $("#nrMark").textContent = isRead(current) ? "已读" : "标为已读";
+        toggleRead(current, true);
+        $("#nrMark").textContent = isRead(current) ? "已读 ✓" : "标为已读";
       });
     }
     document.addEventListener("keydown", function (e) {

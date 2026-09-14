@@ -101,28 +101,43 @@ check("生词卡渲染", $$("#nceWords .word-card").length > 0);
 check("新闻 10 条", $$("#newsList .news-item").length === 10,
   `实际 ${$$("#newsList .news-item").length}`);
 check("新闻含助贷/房产两类", $$("#newsList .tag.credit").length > 0 && $$("#newsList .tag.property").length > 0);
-// 2026-09-11 交互增强：整条点击直接打开，仅保留"标已读"按钮
-check("每条新闻都能直接打开（带 data-url）",
+// 2026-09-14 交互调整：整条点击=切换已读；右侧「详情」按钮=打开详细信息面板
+check("每条新闻都能打开详情（带 data-url）",
   $$("#newsList .news-item[data-url]").length === 10, `实际 ${$$("#newsList .news-item[data-url]").length}`);
-check("每条只有一个标已读按钮、无多余链接",
-  $$("#newsList .news-item .acts button[data-act='read']").length === 10 &&
+check("每条只有一个详情按钮、无外链按钮",
+  $$("#newsList .news-item .acts button[data-act='detail']").length === 10 &&
   $$("#newsList .news-item .acts a").length === 0);
-check("每条都有 src-link 短链",
+check("每条都有 src-link 链接",
   $$("#newsList .src-link").length === 10);
-// 模拟点击整条新闻：应弹出站内阅读面板，不再 window.open 跳走
+// 模拟点击整条新闻：应切换已读，且不弹出面板、不跳走
 let openedUrl = null;
 w.open = (u) => { openedUrl = u; return {}; };
 const firstItem = $("#newsList .news-item");
 firstItem.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
-check("点击整条新闻弹出站内阅读面板（不跳走）",
+const readItem = $("#newsList .news-item");
+check("点击整条新闻标记为已读（不弹面板、不跳走）",
+  readItem.classList.contains("read") && $("#newsReader").hidden === true && openedUrl === null,
+  `read=${readItem.classList.contains("read")} readerHidden=${$("#newsReader").hidden}`);
+// 再点一次：取消已读（可反复切换）
+readItem.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+check("再点一次可取消已读",
+  !$("#newsList .news-item").classList.contains("read") && openedUrl === null);
+
+// 点「详情」按钮：弹出站内详细信息面板
+$$("#newsList .news-item [data-act='detail']")[0]
+  .dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+check("点详情按钮弹出详细信息面板（不跳走）",
   !$("#newsReader").hidden && openedUrl === null,
   `readerHidden=${$("#newsReader").hidden} opened=${openedUrl}`);
-check("阅读面板显示该条标题与正文",
+check("详情面板显示该条标题与正文",
   $("#nrTitle").textContent.length > 0 && $("#nrBody").innerHTML.length > 0,
   `title=${$("#nrTitle").textContent}`);
+check("详情面板无「查看原文」外链按钮，改为可打开的搜原文链接",
+  $("#nrLink") === null && /baidu\.com\/s\?wd=/.test(($("#nrSearch") || {}).href || ""),
+  `href=${($("#nrSearch") || {}).href}`);
 // 关闭面板
 $("#nrClose").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
-check("点击关闭后阅读面板隐藏", $("#newsReader").hidden === true);
+check("点击关闭后详情面板隐藏", $("#newsReader").hidden === true);
 
 const fluteLessons = (w.FLUTE_COURSE || []).reduce((a, s) => a + s.lessons.length, 0);
 check("笛子课程 >= 34 节", $$("#fluteCourse .lesson").length === fluteLessons && fluteLessons >= 34,
