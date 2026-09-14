@@ -14,11 +14,20 @@ window.NEWS_DATA = {
     {
       "group": "credit",
       "title": "央行、金融监管总局、证监会、外汇局，最新发声",
+      "source": "经济形势报告网",
+      "date": "2026-09-11",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE04SEY1czZfSFhfUlFKbkRxTTVEZFBzOTgxejhsY1UwaEV0OVNSdDFkMEhsblAxS3BJdEhZa09qTXdUaTVrdkhRX1htUFZpcVl6SzEwX0RZLVczTzN2b3Q0dmRB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-11 央行、金融监管总局、证监会、外汇局，最新发声  经济形势报告网",
+      "content": "2026-09-11 央行、金融监管总局、证监会、外汇局，最新发声  经济形势报告网"
+    },
+    {
+      "group": "credit",
+      "title": "中国人民银行：开展金融支持民营和普惠小微企业发展专项行动",
       "source": "新浪财经",
-      "date": "2026-09-10",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOV3daTUpnOEtjRmVyZC1jbWdzbTBtTkdyVkR1R0lieU1MR3Z4NUUwZFBzZk5QQWkxSmNtcDlvSTlyaGRaaVUwLUhOX0swTFZVSkpDT2lRdWlGaE11MjFQWkpKbjljUnFnWTAtVkhFc0VRMDVYZEJySG5qelMyRXNrWA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-10 央行、金融监管总局、证监会、外汇局，最新发声  新浪财经",
-      "content": "2026-09-10 央行、金融监管总局、证监会、外汇局，最新发声  新浪财经"
+      "date": "2026-09-14",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUEJMc3F3dm9xT1lFMDV3Q1BJbWRKZlNjbWRxc3kxbEJ1czFaZlN5blNpWU45THdQdlViRVIta0NTaUhRYXYtNUhOMURJVndSVkhmcGdIVVBLYlBHMlk5V3NsY0ZJbGVMY3BtLTFvQ3M5VktBZjFtNEZrUkNyUl9NV2pybkFSVVU?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-14 中国人民银行：开展金融支持民营和普惠小微企业发展专项行动  新浪财经",
+      "content": "2026-09-14 中国人民银行：开展金融支持民营和普惠小微企业发展专项行动  新浪财经"
     },
     {
       "group": "credit",
@@ -39,15 +48,6 @@ window.NEWS_DATA = {
       "content": "2026-09-08 警惕非法互联网贷款陷阱！北京金融监管局发文提示-中新网  chinanews.com.cn"
     },
     {
-      "group": "credit",
-      "title": "告别流量依赖！多家银行收缩助贷合作白名单，自营渠道如何建",
-      "source": "新浪财经",
-      "date": "2026-09-09",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVC0ycHRpVkVkUTI0QTIwU0RUeHJ2RUlhcWtPdmstYW1CRi1tUVFjSjRHdVJURlBJVXlKcWVEblFJY3R2UFBuZFB4THpsVUM4NlhLbkJMcWNxOFZSSFh0YWJ5TVM5SUZKY1RrUXBJVzIydHUwaURlQnpYZXpFTC1uTGJ2anFadXExSnZKb0c2WDNjZHdYTV9fd1ZST1R4S1JHR1g0RngzYWxWWUg0WFlUTzg5THI?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-09 告别流量依赖！多家银行收缩助贷合作白名单，自营渠道如何建  新浪财经",
-      "content": "2026-09-09 告别流量依赖！多家银行收缩助贷合作白名单，自营渠道如何建  新浪财经"
-    },
-    {
       "group": "property",
       "title": "8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小",
       "source": "澎湃新闻",
@@ -62,17 +62,17 @@ window.NEWS_DATA = {
       "source": "腾讯新闻",
       "date": "2026-09-05",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZFNiMVV3MnM5V2FWenVjeUs4Z1YtdVhkYTZ6Ynd5eTd0b2xhaEhmYTZ2N2dTNUw4MF9XWmJpMmVjdVNOVlZNTlJHVkg2OWJYaGdXSU92YWtnY0dINldfWlhtM2VNSTNOQV9qQnhTVnlaUUROV05VNDFwQmw2dlhHUGFBTjBhNlVKSnh2RzBCaw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-05 天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰  qq.com",
-      "content": "2026-09-05 天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰  qq.com"
+      "summary": "2026-09-05 天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰  腾讯新闻",
+      "content": "2026-09-05 天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰  腾讯新闻"
     },
     {
       "group": "property",
       "title": "二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多",
-      "source": "奥一网",
+      "source": "mp.oeeee.com",
       "date": "2026-09-10",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1WeVlJcW1wR0tLRVlhRjE3cFEwOTUwWWNSS19veGR5M214Qy1VY3I5LTJkNXV4SWtaeUQxZm55TnpyeU5zNDRYYTR5QjNaMlVPbkFCRTRwd3FSdjRYb2kySThVUEdiQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-10 二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多  奥一网",
-      "content": "2026-09-10 二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多  奥一网"
+      "summary": "2026-09-10 二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多  mp.oeeee.com",
+      "content": "2026-09-10 二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多  mp.oeeee.com"
     },
     {
       "group": "property",
