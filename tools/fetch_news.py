@@ -161,8 +161,8 @@ def search_baidu(q, max_n=10):
 
 
 def search(q, max_n=10):
-    """多源容错：DDG → Bing → 百度。"""
-    for fn in (search_ddg, search_bing, search_baidu):
+    """多源容错：Bing → 百度 → DDG（DDG 仅作最后兜底，避免本环境 8s 超时浪费）。"""
+    for fn in (search_bing, search_baidu, search_ddg):
         try:
             r = fn(q, max_n)
             if r:
