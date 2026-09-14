@@ -22,6 +22,7 @@ import os
 import re
 import socket
 import sys
+import email.utils
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -170,9 +171,54 @@ def search_baidu(q, max_n=10):
     return out[:max_n]
 
 
+def resolve_redirect(url, timeout=8):
+    """跟随 30x 拿到真实文章 URL（Google News / Bing News 链接是重定向）。失败原样返回。"""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA}, method="HEAD")
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            loc = r.geturl()
+            return loc if loc and loc != url else url
+    except Exception:
+        return url
+
+
+def search_gnews(q, max_n=10):
+    """Google News RSS：真实、近实时、自带发布日期，是"昨天的新闻"的最佳来源。
+    沙箱可能被墙（超时即返回空，不影响兜底）。云端正常网络可用。"""
+    try:
+        doc = _get("https://news.google.com/rss/search?q=" + urllib.parse.quote(q) +
+                   "&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", timeout=15)
+    except Exception as e:
+        print("WARN gnews 失败: %s" % e, file=sys.stderr)
+        return []
+    out = []
+    for item in re.findall(r"<item>(.*?)</item>", doc, re.S):
+        t = re.search(r"<title>(.*?)</title>", item, re.S)
+        l = re.search(r"<link>(.*?)</link>", item, re.S)
+        if not (t and l):
+            continue
+        title = html.unescape(t.group(1)).strip()
+        link = l.group(1).strip()
+        real = resolve_redirect(link) or link
+        iso = ""
+        pd = re.search(r"<pubDate>(.*?)</pubDate>", item, re.S)
+        if pd:
+            try:
+                dt = email.utils.parsedate_to_datetime(pd.group(1).strip())
+                if dt:
+                    iso = dt.strftime("%Y-%m-%d")
+            except Exception:
+                pass
+        desc = re.search(r"<description>(.*?)</description>", item, re.S)
+        ds = html.unescape(re.sub(r"<[^>]+>", "", desc.group(1))).strip() if desc else ""
+        snip = ("%s %s" % (iso, ds)).strip()
+        out.append({"title": title, "url": real, "snippet": snip[:220]})
+    return out[:max_n]
+
+
 def search(q, max_n=10):
-    """多源容错：Bing → 百度 → DDG（DDG 仅作最后兜底，避免本环境 8s 超时浪费）。"""
-    for fn in (search_bing, search_baidu, search_ddg):
+    """多源容错：Google News RSS（真实性+近实时）→ Bing → 百度 → DDG。"""
+    for fn in (search_gnews, search_bing, search_baidu, search_ddg):
         try:
             r = fn(q, max_n)
             if r:
@@ -339,11 +385,14 @@ def recent_filter(credit_raw, prop_raw, asof):
             out.append(x)
         return out
 
-    c, p = keep(credit_raw, 120), keep(prop_raw, 120)
+    c, p = keep(credit_raw, 14), keep(prop_raw, 14)
     if len(c) < 3 or len(p) < 3:
-        print("WARN: 近120天候选不足，放宽至近1年", file=sys.stderr)
-        c, p = keep(credit_raw, 365), keep(prop_raw, 365)
-    # 不再继续放宽：绝不回填 2021/2020 等陈旧旧闻
+        print("WARN: 近14天候选不足，放宽至近30天", file=sys.stderr)
+        c, p = keep(credit_raw, 30), keep(prop_raw, 30)
+    if len(c) < 3 or len(p) < 3:
+        print("WARN: 近30天仍不足，放宽至近45天（绝不回填更早旧闻）", file=sys.stderr)
+        c, p = keep(credit_raw, 45), keep(prop_raw, 45)
+    # 不再继续放宽：绝不回填陈旧旧闻，宁缺毋滥
     return c, p
 
 
@@ -522,6 +571,60 @@ def main():
             "content": fetch_content(x["url"]) or snip,
         })
         used_urls.add(x["url"])
+
+    # 平衡两组，避免某组空白：从近期候选(real)补位，按关键词判定归属（绝不引入旧闻）
+    def _ensure_balance():
+        for _ in range(10):
+            cred_n = sum(1 for o in out if o["group"] == "credit")
+            prop_n = sum(1 for o in out if o["group"] == "property")
+            if cred_n >= 3 and prop_n >= 3:
+                return
+            need = "credit" if cred_n <= prop_n else "property"
+            best = None
+            for x in real:
+                if x["url"] in used_urls or is_noise(x):
+                    continue
+                txt = (x["title"] + " " + x["snippet"]).lower()
+                ck = sum(1 for k in CREDIT_KW if k in txt)
+                pk = sum(1 for k in PROP_KW if k in txt)
+                if need == "credit" and ck < pk:
+                    continue
+                if need == "property" and pk < ck:
+                    continue
+                best = x
+                break
+            if not best and ((cred_n == 0) if need == "credit" else (prop_n == 0)):
+                # 仅在该组完全为空时放宽：避免把楼市新闻硬标成信贷新闻
+                for x in real:
+                    if x["url"] not in used_urls and not is_noise(x):
+                        best = x
+                        break
+            if not best:
+                break  # 无候选可补：跳出循环，交给下面的"改标"兜底
+            snip = best["snippet"] or ""
+            out.append({
+                "group": need,
+                "title": clean_title(best["title"]),
+                "source": friendly_source(best["url"]),
+                "date": guess_date(best["url"], snip) or ASOF,
+                "url": best["url"],
+                "summary": snip.strip()[:120] or "（暂无摘要）",
+                "content": fetch_content(best["url"]) or snip,
+            })
+            used_urls.add(best["url"])
+
+        # 仍为 0 的组：把对方组中"同时命中本组关键词≥2"的条目改标（如房贷利率既是楼市也是信贷）
+        for grp, other, kws in (("credit", "property", CREDIT_KW), ("property", "credit", PROP_KW)):
+            if any(o["group"] == grp for o in out):
+                continue
+            for o in out:
+                if o["group"] != other:
+                    continue
+                txt = (o.get("title", "") + " " + o.get("summary", "")).lower()
+                if sum(1 for k in kws if k in txt) >= 2:
+                    o["group"] = grp
+                    break
+    _ensure_balance()
 
     data = {"updated": ASOF, "items": out}
     with open(DATA_FILE, "w", encoding="utf-8") as f:
