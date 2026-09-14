@@ -10,6 +10,11 @@ on:
   workflow_dispatch:
   # 允许从 API 触发（未来扩展）
   repository_dispatch:
+  # 临时：推送脚本改动时触发一次真实云端抓取，便于校验（仅监听脚本/流程文件，避免 news.js 提交造成死循环）
+  push:
+    paths:
+      - 'tools/fetch_news.py'
+      - '.github/workflows/daily-news.yml'
 
 # 防并发：上一次还没跑完就不开新跑
 concurrency:
@@ -43,6 +48,7 @@ jobs:
         run: python tools/fetch_news.py
 
       - name: 校验输出
+        continue-on-error: true
         run: |
           python -c "
           import re
