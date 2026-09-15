@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-13",
+  "updated": "2026-09-14",
   "items": [
     {
       "group": "credit",
@@ -22,15 +22,6 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "中国人民银行：开展金融支持民营和普惠小微企业发展专项行动",
-      "source": "新浪财经",
-      "date": "2026-09-14",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUEJMc3F3dm9xT1lFMDV3Q1BJbWRKZlNjbWRxc3kxbEJ1czFaZlN5blNpWU45THdQdlViRVIta0NTaUhRYXYtNUhOMURJVndSVkhmcGdIVVBLYlBHMlk5V3NsY0ZJbGVMY3BtLTFvQ3M5VktBZjFtNEZrUkNyUl9NV2pybkFSVVU?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-14 中国人民银行：开展金融支持民营和普惠小微企业发展专项行动  新浪财经",
-      "content": "2026-09-14 中国人民银行：开展金融支持民营和普惠小微企业发展专项行动  新浪财经"
-    },
-    {
-      "group": "credit",
       "title": "青岛银行：主动清退互联网合作类消费贷款业务，9月推出自营消费贷产品",
       "source": "新京报",
       "date": "2026-09-04",
@@ -48,31 +39,31 @@ window.NEWS_DATA = {
       "content": "2026-09-08 警惕非法互联网贷款陷阱！北京金融监管局发文提示-中新网  chinanews.com.cn"
     },
     {
+      "group": "credit",
+      "title": "渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动",
+      "source": "大河财立方",
+      "date": "2026-09-14",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBFXzBwa09vNTlfSDNaMU82eDZwOGV1Qi1XZjFVRThLRWl6WVh0VlptQXY2UjluMGU3Z0xIUXRMcXl1bElmWUp5b1F2ZTV6MVg3eHJTWlhEOWt5Ulg2M0xzajEzclh0Y3lsOWc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-14 渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动  大河财立方",
+      "content": "2026-09-14 渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动  大河财立方"
+    },
+    {
       "group": "property",
-      "title": "8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小",
+      "title": "8月70城房价：上海新房二手房均涨",
+      "source": "guancha.cn",
+      "date": "2026-09-15",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA2MFg2Z1JhQlJLRDNoSU02RVFHdkVtTERIajdJT3dFTURxUDVQcjlqVmN5R1AyYnRHSzd1VEFOZHg2Q1JpNHpCR1NVcGlLdlYxd09TYVlvcnhSR3JKSzNpanM0d1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 8月70城房价：上海新房二手房均涨  guancha.cn",
+      "content": "2026-09-15 8月70城房价：上海新房二手房均涨  guancha.cn"
+    },
+    {
+      "group": "property",
+      "title": "全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄",
       "source": "澎湃新闻",
-      "date": "2026-09-03",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE01NFd5Z2lxd0hNV3QxQnZXVW1NQWpoSUt4cldERXJUd1c2MWgxQ3k5Y0t5anJoeFRmaDA1dE5mV0ZLZ0Q5S1ZQcmlHVEVBQnBHREJ5VTJaNnlvaWQ0YkE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-03 8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小  thepaper.cn",
-      "content": "2026-09-03 8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小  thepaper.cn"
-    },
-    {
-      "group": "property",
-      "title": "天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰",
-      "source": "腾讯新闻",
-      "date": "2026-09-05",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZFNiMVV3MnM5V2FWenVjeUs4Z1YtdVhkYTZ6Ynd5eTd0b2xhaEhmYTZ2N2dTNUw4MF9XWmJpMmVjdVNOVlZNTlJHVkg2OWJYaGdXSU92YWtnY0dINldfWlhtM2VNSTNOQV9qQnhTVnlaUUROV05VNDFwQmw2dlhHUGFBTjBhNlVKSnh2RzBCaw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-05 天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰  腾讯新闻",
-      "content": "2026-09-05 天津新房凭四代宅逆袭，二手房还扛得住吗？2026年下半年房价走势清晰  腾讯新闻"
-    },
-    {
-      "group": "property",
-      "title": "二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多",
-      "source": "mp.oeeee.com",
-      "date": "2026-09-10",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1WeVlJcW1wR0tLRVlhRjE3cFEwOTUwWWNSS19veGR5M214Qy1VY3I5LTJkNXV4SWtaeUQxZm55TnpyeU5zNDRYYTR5QjNaMlVPbkFCRTRwd3FSdjRYb2kySThVUEdiQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-10 二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多  mp.oeeee.com",
-      "content": "2026-09-10 二手房价连续两周回升！深圳“金九”迎开门红，涨价业主增多  mp.oeeee.com"
+      "date": "2026-09-15",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mbW50MlJIRnJqQ0hjRl9KMVVnSVJSUG5nbGxiMGdtdEJBNDA3YWNJT1hlVXBuVDVVdExDVmw2NUJPV1dxX1ctaXUzbjlBUFpCMEVqZDhTQ3dnX0cyZEtybA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄  thepaper.cn",
+      "content": "2026-09-15 全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄  thepaper.cn"
     },
     {
       "group": "property",
@@ -82,6 +73,15 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5GNGRac0FwNVF2U3oxVUktV28wcE9Idm5ZSEhYY19zY3FPemZaVFNPS0RUTXBYN1lfQldEM2sxUF9HZUVUTEI5V3FuOXhoYjdGeWtSMVNKWWU2SE9aeXNnTjQzQjZHM0Ji?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-09-02 政策密集出台 京沪深楼市成交齐增  chinanews.com.cn",
       "content": "2026-09-02 政策密集出台 京沪深楼市成交齐增  chinanews.com.cn"
+    },
+    {
+      "group": "property",
+      "title": "楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？ - QQ Ne",
+      "source": "腾讯新闻",
+      "date": "2026-09-14",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1sZE92eXdSQ284OHpwTVNjelpycUd6ZWVxOGd1MkF4MXh5X2dINHlHSVk1N2ZMRnZjRmMxSHdHZHkzdkNUb0kzeGtnQzIwaGt5VGw0ZVlB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-14 楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？  QQ News",
+      "content": "2026-09-14 楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？  QQ News"
     },
     {
       "group": "property",
