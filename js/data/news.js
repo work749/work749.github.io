@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-14",
+  "updated": "2026-09-15",
   "items": [
     {
       "group": "credit",
@@ -10,6 +10,15 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOXpIT0VrYlpOMFdJZGNUaVdlZE5LcDZlMGNEQmMtTFNBd1NpUUlfRUh6UW1yS0NNaXlha1BTYlY4RF9panFGeVcwakJiTzFLMmNLdTNObzU4QjZ5RjAzY0JzNHBndmlnM043eFZvX21kVzVXYjhyQVFvM1lWdFNaZHpKOG5OWHh6YktOZQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-09-10 10万亿经营贷暗藏风险，银行上调利率  Sohu",
       "content": "2026-09-10 10万亿经营贷暗藏风险，银行上调利率  Sohu"
+    },
+    {
+      "group": "credit",
+      "title": "个人消费贷贴息政策提额扩围",
+      "source": "搜狐",
+      "date": "2026-09-16",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE96emVPcmlkMXhWclNBY3ZsSDZJcjJOU1pxUTFjUFpXZUZhdXBEWncyTC0wV0ptM2gzWDVVQVYxakc1R2Q2bjhGZjZUUFpuekVySGc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu",
+      "content": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu"
     },
     {
       "group": "credit",
@@ -31,15 +40,6 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "警惕非法互联网贷款陷阱！北京金融监管局发文提示-中新网",
-      "source": "中国新闻网",
-      "date": "2026-09-08",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ESU0zWEdMZjM5dVU5WWxTbnprWmZjNHV4YUg5aV8yMnJISkFpSE1iUXprMmlaRm1pS3J6RGtPNEE4b3FVTUtKWGFOT1lMWktyTGtRc0RGcDZUS3dnM1owZ3JXMFFQYk5r?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-08 警惕非法互联网贷款陷阱！北京金融监管局发文提示-中新网  chinanews.com.cn",
-      "content": "2026-09-08 警惕非法互联网贷款陷阱！北京金融监管局发文提示-中新网  chinanews.com.cn"
-    },
-    {
-      "group": "credit",
       "title": "渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动",
       "source": "大河财立方",
       "date": "2026-09-14",
@@ -58,21 +58,30 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄",
-      "source": "澎湃新闻",
-      "date": "2026-09-15",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mbW50MlJIRnJqQ0hjRl9KMVVnSVJSUG5nbGxiMGdtdEJBNDA3YWNJT1hlVXBuVDVVdExDVmw2NUJPV1dxX1ctaXUzbjlBUFpCMEVqZDhTQ3dnX0cyZEtybA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄  thepaper.cn",
-      "content": "2026-09-15 全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄  thepaper.cn"
+      "title": "【楼市日报】北京二手房成交达650套位居第三，前两名分别是谁？",
+      "source": "手机网易网",
+      "date": "2026-09-16",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5CalA2ZC1QRFlRUTBhN3VzckxuZkJMSXFoaHRrakNDMXZEdUlDWU5ybmQ1eVJKQWJzd0Qxcl9rVUFkT0ZDMmwyX1JhSWxscDFMYmljRXhQNTQ3cmdkTmx0bm53?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 【楼市日报】北京二手房成交达650套位居第三，前两名分别是谁？  手机网易网",
+      "content": "2026-09-16 【楼市日报】北京二手房成交达650套位居第三，前两名分别是谁？  手机网易网"
     },
     {
       "group": "property",
-      "title": "政策密集出台 京沪深楼市成交齐增",
-      "source": "中国新闻网",
-      "date": "2026-09-02",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5GNGRac0FwNVF2U3oxVUktV28wcE9Idm5ZSEhYY19zY3FPemZaVFNPS0RUTXBYN1lfQldEM2sxUF9HZUVUTEI5V3FuOXhoYjdGeWtSMVNKWWU2SE9aeXNnTjQzQjZHM0Ji?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-02 政策密集出台 京沪深楼市成交齐增  chinanews.com.cn",
-      "content": "2026-09-02 政策密集出台 京沪深楼市成交齐增  chinanews.com.cn"
+      "title": "8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小",
+      "source": "澎湃新闻",
+      "date": "2026-09-03",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9BbjRVdVpNQTZzaXQ0c0RwdDVBQWVSVkhNWHVGc0FKMzZLRFNkOTlFTmdxSG1kNHBxb0w3aEtSM3RhQkdJUWw5a0o4MDJhWnBiTHZILXFqbi1GMHlIZnlXdA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-03 8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小  thepaper.cn",
+      "content": "2026-09-03 8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小  thepaper.cn"
+    },
+    {
+      "group": "property",
+      "title": "一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华",
+      "source": "搜狐",
+      "date": "2026-09-16",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVE1mMlJRaE0xaG9xallQVWNZaDJfSGszZzZ2ZU55bUQtWFppWVFoR0hFMkxRNTBKQkhPZWd2Q1M5bEtfaVJORjlIVUJ5RVZ0YVpYSGFwUGUybi0wcDJxTkJmRnNhd3ZIaHVHZ3NmQ2UyR1A5bjhGdlp3Q2JPTGpVUWhoVGVyeFZY?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  Sohu",
+      "content": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  Sohu"
     },
     {
       "group": "property",
@@ -82,15 +91,6 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1sZE92eXdSQ284OHpwTVNjelpycUd6ZWVxOGd1MkF4MXh5X2dINHlHSVk1N2ZMRnZjRmMxSHdHZHkzdkNUb0kzeGtnQzIwaGt5VGw0ZVlB?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-09-14 楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？  QQ News",
       "content": "2026-09-14 楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？  QQ News"
-    },
-    {
-      "group": "property",
-      "title": "开源证券:《房地产行业周报：“8·28新政”效果仍有待观察，周度成交有所增长》",
-      "source": "发现报告",
-      "date": "2026-09-06",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE42Um44c1Ntcmdmb004UHJuZWt0NDByMmMwYnhuQWJ0NWlhWlNZbjByZW9FVE5WRld4U0llZXpRdHltZU81Q1NUYmtiMEVMSUlS?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-06 开源证券:《房地产行业周报：“8·28新政”效果仍有待观察，周度成交有所增长》  发现报告",
-      "content": "2026-09-06 开源证券:《房地产行业周报：“8·28新政”效果仍有待观察，周度成交有所增长》  发现报告"
     }
   ]
 };
