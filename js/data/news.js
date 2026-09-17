@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-15",
+  "updated": "2026-09-16",
   "items": [
     {
       "group": "credit",
@@ -13,10 +13,19 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
+      "title": "贷款还清征信记录仍在，富民银行助贷业务引质疑",
+      "source": "新浪财经",
+      "date": "2026-09-16",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPd0I2bUswdzliT1N6Ujlrcm05azJpd001a0Roa3lhQWJjemktZ0R2QWVWcUxyYmtqOTE5a1pVTW1vby1tN0xFYVR6M0tfeWp6YTYtWmdSc2h1TUJwRU1qcDdSMXFmTjRxeGVfNTQ2QnJwdXhKclp5bkt3ZHZubHhMdWtGSkFlRGtJN2lNTVMzTFBJX2Z5bzcwa0ktQkVfX0lUakpxNU1uTk56M2p1di11d0p4eHJwSkpBXzhhLUkwRUFHQk5yR21EckJlTTR0ZEZTemNmUzZCOGpBRHRpUnhj?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 贷款还清征信记录仍在，富民银行助贷业务引质疑  新浪财经",
+      "content": "2026-09-16 贷款还清征信记录仍在，富民银行助贷业务引质疑  新浪财经"
+    },
+    {
+      "group": "credit",
       "title": "个人消费贷贴息政策提额扩围",
       "source": "搜狐",
       "date": "2026-09-16",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE96emVPcmlkMXhWclNBY3ZsSDZJcjJOU1pxUTFjUFpXZUZhdXBEWncyTC0wV0ptM2gzWDVVQVYxakc1R2Q2bjhGZjZUUFpuekVySGc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOSlFkSEh1SE44OGFpcVJ3Z1ZySHNVcDE3QzBJSDdUenIwSFQyVjZVSFRLM2dkMEhQcF9SUGdtNlY5bkpBYk80WmFrNl8wNzFBMV9nS2tFdlpVYU95SWp1aFhseDlEYnFDTGxWMDlrSmRwVlAxZExjcVFRU3VCYTVyNFlHc0JRTFhE?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu",
       "content": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu"
     },
@@ -39,58 +48,49 @@ window.NEWS_DATA = {
       "content": "2026-09-04 青岛银行：主动清退互联网合作类消费贷款业务，9月推出自营消费贷产品  新京报"
     },
     {
-      "group": "credit",
-      "title": "渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动",
-      "source": "大河财立方",
-      "date": "2026-09-14",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBFXzBwa09vNTlfSDNaMU82eDZwOGV1Qi1XZjFVRThLRWl6WVh0VlptQXY2UjluMGU3Z0xIUXRMcXl1bElmWUp5b1F2ZTV6MVg3eHJTWlhEOWt5Ulg2M0xzajEzclh0Y3lsOWc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-14 渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动  大河财立方",
-      "content": "2026-09-14 渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动  大河财立方"
-    },
-    {
       "group": "property",
       "title": "8月70城房价：上海新房二手房均涨",
-      "source": "guancha.cn",
+      "source": "观察者网",
       "date": "2026-09-15",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA2MFg2Z1JhQlJLRDNoSU02RVFHdkVtTERIajdJT3dFTURxUDVQcjlqVmN5R1AyYnRHSzd1VEFOZHg2Q1JpNHpCR1NVcGlLdlYxd09TYVlvcnhSR3JKSzNpanM0d1E?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 8月70城房价：上海新房二手房均涨  guancha.cn",
-      "content": "2026-09-15 8月70城房价：上海新房二手房均涨  guancha.cn"
+      "summary": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网",
+      "content": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网"
     },
     {
       "group": "property",
-      "title": "【楼市日报】北京二手房成交达650套位居第三，前两名分别是谁？",
-      "source": "手机网易网",
-      "date": "2026-09-16",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5CalA2ZC1QRFlRUTBhN3VzckxuZkJMSXFoaHRrakNDMXZEdUlDWU5ybmQ1eVJKQWJzd0Qxcl9rVUFkT0ZDMmwyX1JhSWxscDFMYmljRXhQNTQ3cmdkTmx0bm53?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-16 【楼市日报】北京二手房成交达650套位居第三，前两名分别是谁？  手机网易网",
-      "content": "2026-09-16 【楼市日报】北京二手房成交达650套位居第三，前两名分别是谁？  手机网易网"
+      "title": "北京最新房价数据出炉，二手房连续7个月跌幅放缓 - QQ News",
+      "source": "腾讯新闻",
+      "date": "2026-09-15",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE04ZXpNZFhnekh3VXFZU245MW9KWEtuX3VXV01oZjVNU1BPU0d0MWxUckZLVDFrM2RYMS1OTXE0RzRXSFdaOTlzYkhUWVBHc205Rng1ZUpB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 北京最新房价数据出炉，二手房连续7个月跌幅放缓  QQ News",
+      "content": "2026-09-15 北京最新房价数据出炉，二手房连续7个月跌幅放缓  QQ News"
     },
     {
       "group": "property",
-      "title": "8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小",
-      "source": "澎湃新闻",
-      "date": "2026-09-03",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9BbjRVdVpNQTZzaXQ0c0RwdDVBQWVSVkhNWHVGc0FKMzZLRFNkOTlFTmdxSG1kNHBxb0w3aEtSM3RhQkdJUWw5a0o4MDJhWnBiTHZILXFqbi1GMHlIZnlXdA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-03 8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小  thepaper.cn",
-      "content": "2026-09-03 8月深圳一二手住宅成交量同比增长8.5%，二手房议价空间减小  thepaper.cn"
+      "title": "美联储加息再添压力美国房贷利率连续四周攀升逼近7% 楼市复苏恐进一步推迟提供者智",
+      "source": "英为财情 Investing.com",
+      "date": "2026-09-17",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9FaDJhRlZqNjFzRmRQdXoxX2RrbjgzWXlvQ1VmbFEzVnl6S0xYOHlWMjFTbUl2dTRYY0VXX29Lenc5SlpfVG90bEhqUUI0YUhfY3AwRk1mT0x1aEM2d3NuZWdVcHZGbUxQQlJwZWpWUEk?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-17 美联储加息再添压力美国房贷利率连续四周攀升逼近7% 楼市复苏恐进一步推迟提供者智通财经  英为财情 Investing.com",
+      "content": "2026-09-17 美联储加息再添压力美国房贷利率连续四周攀升逼近7% 楼市复苏恐进一步推迟提供者智通财经  英为财情 Investing.com"
     },
     {
       "group": "property",
       "title": "一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华",
-      "source": "搜狐",
+      "source": "奥一网",
       "date": "2026-09-16",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVE1mMlJRaE0xaG9xallQVWNZaDJfSGszZzZ2ZU55bUQtWFppWVFoR0hFMkxRNTBKQkhPZWd2Q1M5bEtfaVJORjlIVUJ5RVZ0YVpYSGFwUGUybi0wcDJxTkJmRnNhd3ZIaHVHZ3NmQ2UyR1A5bjhGdlp3Q2JPTGpVUWhoVGVyeFZY?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  Sohu",
-      "content": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  Sohu"
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5tMkZnWVhETjNzZHZVdFBBUVY1QnE0NXRBUzlLV0s5Yk1NQ0hlUWVXQWZFbUJXcXQzOHQtSGFuYmRZclFJRFFKYXhBQzVDME5aLTY0MnMxbjlTUDY0VzBUYVlvVXplZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  奥一网",
+      "content": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  奥一网"
     },
     {
       "group": "property",
-      "title": "楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？ - QQ Ne",
-      "source": "腾讯新闻",
-      "date": "2026-09-14",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1sZE92eXdSQ284OHpwTVNjelpycUd6ZWVxOGd1MkF4MXh5X2dINHlHSVk1N2ZMRnZjRmMxSHdHZHkzdkNUb0kzeGtnQzIwaGt5VGw0ZVlB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-14 楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？  QQ News",
-      "content": "2026-09-14 楼市新政落地十几天，上海深圳房价分化！2026年，房子能不能买？  QQ News"
+      "title": "一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企",
+      "source": "雷达财经",
+      "date": "2026-09-16",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfQTVxZFEtWjJxdlloMmNLdGdBa3ZoQldNaFN2ZUdmT3FkTW4tRDRkVkQzZXExSzhjcl9mblBXMU1sM291cjNSTmRHZURXZ1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企稳  雷达财经",
+      "content": "2026-09-16 一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企稳  雷达财经"
     }
   ]
 };
