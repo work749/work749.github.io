@@ -1,96 +1,96 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "items": [
     {
       "group": "credit",
-      "title": "哪个银行借钱快？2026年个人消费贷款利率对比与选择参考",
-      "source": "finance.tom.com",
-      "date": "2026-09-09",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuQWJzVWFZeVh6R21oRDVYMl9ZRkprUUlBckdKX1Y0WjQybGhZWXpCV1cyMEdRaFR6VkR6TGozSGNvLUl1Mk01RlREcWFVNTg4dDkxSThORkltUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-09 哪个银行借钱快？2026年个人消费贷款利率对比与选择参考  finance.tom.com",
-      "content": "2026-09-09 哪个银行借钱快？2026年个人消费贷款利率对比与选择参考  finance.tom.com"
-    },
-    {
-      "group": "credit",
-      "title": "10万亿经营贷暗藏风险，银行上调利率",
+      "title": "个人消费贷贴息政策提额扩围",
       "source": "搜狐",
-      "date": "2026-09-10",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOXpIT0VrYlpOMFdJZGNUaVdlZE5LcDZlMGNEQmMtTFNBd1NpUUlfRUh6UW1yS0NNaXlha1BTYlY4RF9panFGeVcwakJiTzFLMmNLdTNObzU4QjZ5RjAzY0JzNHBndmlnM043eFZvX21kVzVXYjhyQVFvM1lWdFNaZHpKOG5OWHh6YktOZQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-10 10万亿经营贷暗藏风险，银行上调利率  Sohu",
-      "content": "2026-09-10 10万亿经营贷暗藏风险，银行上调利率  Sohu"
-    },
-    {
-      "group": "credit",
-      "title": "贷款还清征信记录仍在，富民银行助贷业务引质疑",
-      "source": "新浪财经",
-      "date": "2026-09-15",
-      "url": "https://news.google.com/rss/articles/CBMitwVBVV95cUxNc3daVXRob3ViWlpqQk5RREZCQkJhU0ozLVdYbEdtVE5fUVpqNjVRSDZjbXJtSWExVkNMMFJsRzUxVlZ5dk9RenpQMnMtOGNOYmpoUnRzZlZEeW5TUkNhVkt4ZmFLaVpoLXBkLWMxRWdGOElReFNjMThRY3kyczI4aXhORDNrU2ExODNyMzIxTG92ZXo2dWNOU0xVRmROLU0zM1lDVGo1MGpydWJkMlBmMlk2WjA0VUQ0RzIyN1NGdDlzRkViUE5XMUR5SGJJNmZkU3JaZHprc0lNeWtCMlhrOHo4QnVSYnRESlhDbVZXOXYzWFY0RndhTXRrbnNxOTdrMkZ1eHhDY2VwdUpYUFZzNFFJQW94cHVnNDFqZmplcFpZYlFzMFBmeUpNS0dqSEl0WjRacmx1T0VUd29rTjJ5ck9UV0J3MVFMU0E0Mjl4anJiUXhJMGQ5NlBfYi1WcGthaHFDTnFoLXhBQk4yQlU3b3dFWnZvM0F6c2ZQejVOTHhFZDkwM2xYVVY1TzByS3BDeDJ4ZnZBTGRoQU5iNzBoeEVqTWRtanh2UnBIRkdub21hRm9ZeV95cjlaVkp4MkZuaEJFemlNOTN2ekdHa1lTYmpDdU9DMHJQVF9FOXlmb1ZuOGVGMUFGOFRvTU1YX194RWpULVoyVGs5SWdCX3Q1bkNydlRMWko2cnVDekRicmpjUTdiM19oNGR1QW16M1U3bGdFRjlJUG52SE83dnFoQ2hXNWg5YWRxM1RFSmt2UVpyT0k2RnE2N3R3NEtHSnF2dVpWMXd5VUNkczdnTjF1WDNVQWREOWp3c01nSTk0djNYamtIaWlxUHpnZ25KNHZMeVdycTFMRWxsYlBKLUEtazU0Sm9QdUFWQXdzZ29OT0lEazZEblRCX3FpdUIxX2hWSnVrb2tLZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 贷款还清征信记录仍在，富民银行助贷业务引质疑  新浪财经",
-      "content": "2026-09-15 贷款还清征信记录仍在，富民银行助贷业务引质疑  新浪财经"
-    },
-    {
-      "group": "credit",
-      "title": "中国人民银行：开展金融支持民营和普惠小微企业发展专项行动",
-      "source": "新浪财经",
-      "date": "2026-09-14",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUEJMc3F3dm9xT1lFMDV3Q1BJbWRKZlNjbWRxc3kxbEJ1czFaZlN5blNpWU45THdQdlViRVIta0NTaUhRYXYtNUhOMURJVndSVkhmcGdIVVBLYlBHMlk5V3NsY0ZJbGVMY3BtLTFvQ3M5VktBZjFtNEZrUkNyUl9NV2pybkFSVVU?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-14 中国人民银行：开展金融支持民营和普惠小微企业发展专项行动  新浪财经",
-      "content": "2026-09-14 中国人民银行：开展金融支持民营和普惠小微企业发展专项行动  新浪财经"
-    },
-    {
-      "group": "credit",
-      "title": "印尼央行：消费者保护应融入数字金融架构 - Shangbao Indonesia",
-      "source": "Shangbao Indonesia",
-      "date": "2026-09-18",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAxRjhLXzI5c0pDbHRRRXVLM3RYM2tBM25wYWpPSWNrSHIyaVVfcWdlRVlUZXE2Q3kxWFd2NXBKc2lISEQ2dDBkQWhQSkh0c090U0Z6Q2IyNW5XQlZGRnVqMkhHUHBzQzItUjh2N0I4QmQ5aUw1aUhxU3Jn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-18 印尼央行：消费者保护应融入数字金融架构  Shangbao Indonesia",
-      "content": "2026-09-18 印尼央行：消费者保护应融入数字金融架构  Shangbao Indonesia"
-    },
-    {
-      "group": "property",
-      "title": "8月70城房价：上海新房二手房均涨",
-      "source": "观察者网",
-      "date": "2026-09-15",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA2MFg2Z1JhQlJLRDNoSU02RVFHdkVtTERIajdJT3dFTURxUDVQcjlqVmN5R1AyYnRHSzd1VEFOZHg2Q1JpNHpCR1NVcGlLdlYxd09TYVlvcnhSR3JKSzNpanM0d1E?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网",
-      "content": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网"
-    },
-    {
-      "group": "property",
-      "title": "美联储加息再添压力 美国房贷利率连续四周攀升逼近7% 楼市复苏恐进一步推迟",
-      "source": "新浪财经",
-      "date": "2026-09-17",
-      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPdjYxa01pQVN4RGhIUTZ1c2V2QjI4cGt6ZFNhVTlad29kbENWU0JKR21vaUNXSGJ1VF94ZVYteVdkeVFnM1FjOWlvQ1N3QVNUTGlxeTdVMWlrb2tjVWJiNTFDZHpoQ1dZOWM1OGN1VjN6Z0JlenVhTGdBSzhpeWJvTzk1T2x4Vi1obk8yOXJheFZWclpPZTFPYjdBSEs3cWVaaXFJWnBjVk9sYXpCdkF5czZEYVZRUklBRVZiVEJQVWJrSlhLYkVTbzlDeTB5bGNVclBPbndwVENEMGNvYkpydnZXZko?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-17 美联储加息再添压力 美国房贷利率连续四周攀升逼近7% 楼市复苏恐进一步推迟  新浪财经",
-      "content": "2026-09-17 美联储加息再添压力 美国房贷利率连续四周攀升逼近7% 楼市复苏恐进一步推迟  新浪财经"
-    },
-    {
-      "group": "property",
-      "title": "一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华",
-      "source": "奥一网",
       "date": "2026-09-16",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5tMkZnWVhETjNzZHZVdFBBUVY1QnE0NXRBUzlLV0s5Yk1NQ0hlUWVXQWZFbUJXcXQzOHQtSGFuYmRZclFJRFFKYXhBQzVDME5aLTY0MnMxbjlTUDY0VzBUYVlvVXplZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  奥一网",
-      "content": "2026-09-16 一二手房价实现6连涨，深圳启动\"金九银十\"好房嘉年华  奥一网"
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE96emVPcmlkMXhWclNBY3ZsSDZJcjJOU1pxUTFjUFpXZUZhdXBEWncyTC0wV0ptM2gzWDVVQVYxakc1R2Q2bjhGZjZUUFpuekVySGc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu",
+      "content": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu"
+    },
+    {
+      "group": "credit",
+      "title": "央行、金融监管总局、证监会、外汇局，最新发声",
+      "source": "经济形势报告网",
+      "date": "2026-09-11",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE04SEY1czZfSFhfUlFKbkRxTTVEZFBzOTgxejhsY1UwaEV0OVNSdDFkMEhsblAxS3BJdEhZa09qTXdUaTVrdkhRX1htUFZpcVl6SzEwX0RZLVczTzN2b3Q0dmRB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-11 央行、金融监管总局、证监会、外汇局，最新发声  经济形势报告网",
+      "content": "2026-09-11 央行、金融监管总局、证监会、外汇局，最新发声  经济形势报告网"
+    },
+    {
+      "group": "credit",
+      "title": "渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动",
+      "source": "大河财立方",
+      "date": "2026-09-14",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBFXzBwa09vNTlfSDNaMU82eDZwOGV1Qi1XZjFVRThLRWl6WVh0VlptQXY2UjluMGU3Z0xIUXRMcXl1bElmWUp5b1F2ZTV6MVg3eHJTWlhEOWt5Ulg2M0xzajEzclh0Y3lsOWc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-14 渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动  大河财立方",
+      "content": "2026-09-14 渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动  大河财立方"
+    },
+    {
+      "group": "credit",
+      "title": "新一期贷款市场报价利率未作调整",
+      "source": "人民网",
+      "date": "2026-09-20",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1PUGZUU0RrNEdIaGxsNlNtYUJxTHQ5LTZER0dTRXBTMFNKS1ZROUZDUG1jSWY1OGtmZzhWNkhfVFBXbHdZYXhmOGpFUmRmbUkteU1LZmxOZFlJWHgzUUltQkVXcC1ZX09OLXEwUzN3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-20 新一期贷款市场报价利率未作调整  人民网",
+      "content": "2026-09-20 新一期贷款市场报价利率未作调整  人民网"
+    },
+    {
+      "group": "credit",
+      "title": "央行：9月LPR报价1年期为3.0%，5年期以上为3.5%",
+      "source": "央视网",
+      "date": "2026-09-20",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE92UERoUEhfdjFnLWVSN1A0ZXk2QWlsOVF4VG9VZGZXRURBTmxieko0eGJ4dFQzOUVNZDA0Rlk3akNnNDJtMjN3VlFmcGVBM1VvNm9qUzFDMEVmYzliZnpaRnowQ2xUMzQ3MHlyYVZEQmFsbzBUTjdSSlY5dw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-20 央行：9月LPR报价1年期为3.0%，5年期以上为3.5%  经济频道",
+      "content": "2026-09-20 央行：9月LPR报价1年期为3.0%，5年期以上为3.5%  经济频道"
     },
     {
       "group": "property",
-      "title": "广州二手房按揭比例降至35.6%",
-      "source": "新浪财经",
-      "date": "2026-09-18",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBYbXJ6SWM3bDd3XzBPWXRRRzQybGd2cFNBNGtCLWZmbGZxTnBtMGtsTUVMRzJiZTd1QkhZNTcxOFpHckQyaWZ0dU9wTFhhVlU?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-18 广州二手房按揭比例降至35.6%  新浪财经",
-      "content": "2026-09-18 广州二手房按揭比例降至35.6%  新浪财经"
-    },
-    {
-      "group": "property",
-      "title": "8月70城房价：一线城市新房转涨，上海领跑，市场筑底修复",
-      "source": "搜狐",
+      "title": "北京最新房价数据出炉，二手房连续7个月跌幅放缓 - QQ News",
+      "source": "腾讯新闻",
       "date": "2026-09-15",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUGVXVzlITnROTFRsRXJXSUVvQ2JmZWJ1LUtQelpORWdnbnRGc0dnREhPM2hLWkRidUt5VEFlQlBUdmxqLU9ZVnFFd0lMVjhnVDZwT2xqb3duNVBuWGcxMldETUZxRmViSmlSTTA5NmlGUmttQy1DekJRbVpJS0FqUzlzTnB1aFJ1?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 8月70城房价：一线城市新房转涨，上海领跑，市场筑底修复  Sohu",
-      "content": "2026-09-15 8月70城房价：一线城市新房转涨，上海领跑，市场筑底修复  Sohu"
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE04ZXpNZFhnekh3VXFZU245MW9KWEtuX3VXV01oZjVNU1BPU0d0MWxUckZLVDFrM2RYMS1OTXE0RzRXSFdaOTlzYkhUWVBHc205Rng1ZUpB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 北京最新房价数据出炉，二手房连续7个月跌幅放缓  QQ News",
+      "content": "2026-09-15 北京最新房价数据出炉，二手房连续7个月跌幅放缓  QQ News"
+    },
+    {
+      "group": "property",
+      "title": "一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企",
+      "source": "雷达财经",
+      "date": "2026-09-16",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfQTVxZFEtWjJxdlloMmNLdGdBa3ZoQldNaFN2ZUdmT3FkTW4tRDRkVkQzZXExSzhjcl9mblBXMU1sM291cjNSTmRHZURXZ1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-16 一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企稳  雷达财经",
+      "content": "2026-09-16 一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企稳  雷达财经"
+    },
+    {
+      "group": "property",
+      "title": "国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七",
+      "source": "mrjjxw.com",
+      "date": "2026-09-15",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBtVlE1ako1ZGZBM0gyNXNYY2VfVXlRd290bENQMkV3WkQ1dlhNQnlib3NlX2hpZE9OMkZMZWFla3dFOFhnWjhYTzFENWFUNk9JRGVQVmZDMU5BNlpWQVVzaVk3bnhWQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七区宅地｜房产早参  mrjjxw.com",
+      "content": "2026-09-15 国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七区宅地｜房产早参  mrjjxw.com"
+    },
+    {
+      "group": "property",
+      "title": "2026年法国二手房价格走势：房价继续下跌，巴黎和大巴黎相对抗跌",
+      "source": "欧洲头条",
+      "date": "2026-09-20",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQ0hjQm9tMzQycWlqbTdGOXpvQ3lNYmtKYjdZeWhueU9sTVlFb3lVcThCS1c3M2k3aHNXeU1vRWdGZkc3OVVlRmduMUV0ZENwTzdjbU5HU3FYSTlVcHlVYjVwYzhrXzJhWVRXeGNoeWZKVW1fd3BoVGlMSnprcG5Bd08wT2JPenMyRkVLZWtwRXVFbDQ1bnJFeGFSV3RoQnpOS1NBS2NFY1FxQkxRV1p3Wk9KeWw2Ukw2bmRHaFhIc3hNcHZlUHlMY21jbVpGdWMxYXBabTVDajFSal9Yd0E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-20 2026年法国二手房价格走势：房价继续下跌，巴黎和大巴黎相对抗跌  欧洲头条",
+      "content": "2026-09-20 2026年法国二手房价格走势：房价继续下跌，巴黎和大巴黎相对抗跌  欧洲头条"
+    },
+    {
+      "group": "property",
+      "title": "9月第1周桂林新房价格6649元/平，环比上周持平",
+      "source": "fang.com",
+      "date": "2026-09-07",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1QN2RscU1SV2FtZkNVbFo0QjViSWx3ZGwzMVBmUHZNRTZhQnBiR1RWdjRONVdNWjY1Q2lFazRMd1FPelBqSWw5b3owcjV6RHZ3ZnlwZVFTYkNJcDAxazZn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-07 9月第1周桂林新房价格6649元/平，环比上周持平  fang.com",
+      "content": "2026-09-07 9月第1周桂林新房价格6649元/平，环比上周持平  fang.com"
     }
   ]
 };
