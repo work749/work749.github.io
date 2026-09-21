@@ -1,15 +1,24 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "items": [
+    {
+      "group": "credit",
+      "title": "LPR连续16个月“按兵不动”|贷款市场报价利率|中国人民银行|同业拆借|逆回购",
+      "source": "finance.sina.cn",
+      "date": "2026-09-21",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPcmtMeDdpZ2JEaXFuVVFJbEVkZ0Q5N3pFWFdPR2QxbGxUZk9MSm4tTE1tUzdONnRtWVhQREpSNWdENTJFb011MWpOYms4SFhoRnhTS29fR1ZNTHBvSXJFYmt1SDZLcUU1VUliZDB1d0NwckY1bjhrU2ZqSzMzSlhCdXF5dlpLR0czSnF3dXpUZjlNUUVxa0dZRUhwQ0M2d2pUZHBmdFYxQ0xrd1hWakpOcl8xaGlSWUtKZTBOMlhOZGRFYmpTV19RSlo3THJ4TFlwanA2b1NHY1VyTnptejBnMWYxVWF3c2FNWHBXQzdvYnowX0Q5Zk81YkN2MWhoV0FjRlpMeGs3Yy1NZktNa0NHQmktWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-21 LPR连续16个月“按兵不动”|贷款市场报价利率|中国人民银行|同业拆借|逆回购|王青_手机新浪网  finance.sina.cn",
+      "content": "2026-09-21 LPR连续16个月“按兵不动”|贷款市场报价利率|中国人民银行|同业拆借|逆回购|王青_手机新浪网  finance.sina.cn"
+    },
     {
       "group": "credit",
       "title": "个人消费贷贴息政策提额扩围",
       "source": "搜狐",
       "date": "2026-09-16",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE96emVPcmlkMXhWclNBY3ZsSDZJcjJOU1pxUTFjUFpXZUZhdXBEWncyTC0wV0ptM2gzWDVVQVYxakc1R2Q2bjhGZjZUUFpuekVySGc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu",
-      "content": "2026-09-16 个人消费贷贴息政策提额扩围  Sohu"
+      "summary": "2026-09-16 个人消费贷贴息政策提额扩围  搜狐网",
+      "content": "2026-09-16 个人消费贷贴息政策提额扩围  搜狐网"
     },
     {
       "group": "credit",
@@ -22,6 +31,15 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
+      "title": "【个贷明示综合融资成本统一格式公布方便贷款人横向比较和选择】个人贷款的“明白纸”",
+      "source": "手机新浪网",
+      "date": "2026-09-21",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBKZkFtUXgzTXlRZHF0NW43dzBUZVNVaWVyWE95NU83Nmo4NjdqZnBGRlNYdUFMZWFQa3dGUzVzbDQtal93ZXJwNHdnS29kb3BHSG82N1paTXBqS3NfZU5NQV8tcw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-21 【个贷明示综合融资成本统一格式公布方便贷款人横向比较和选择】个人贷款的“明白纸”——《个人贷款业务明示综合融资成本规定》实施一个多月后，各类金融机构统一的操作细则终于落地。http://t.cn/AXOENPAB 20",
+      "content": "2026-09-21 【个贷明示综合融资成本统一格式公布方便贷款人横向比较和选择】个人贷款的“明白纸”——《个人贷款业务明示综合融资成本规定》实施一个多月后，各类金融机构统一的操作细则终于落地。http://t.cn/AXOENPAB 2026年9月18日，中国互联网金融协会、中国银行业协会  手机新浪网"
+    },
+    {
+      "group": "credit",
       "title": "渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动",
       "source": "大河财立方",
       "date": "2026-09-14",
@@ -30,22 +48,22 @@ window.NEWS_DATA = {
       "content": "2026-09-14 渤海银行郑州分行开展“清朗金融网络 守护安心消费”金融教育宣传周活动  大河财立方"
     },
     {
-      "group": "credit",
-      "title": "新一期贷款市场报价利率未作调整",
-      "source": "人民网",
+      "group": "property",
+      "title": "新政后深圳楼市现三大变化，二手房贷款40年买家占比8%",
+      "source": "新京报",
       "date": "2026-09-20",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1PUGZUU0RrNEdIaGxsNlNtYUJxTHQ5LTZER0dTRXBTMFNKS1ZROUZDUG1jSWY1OGtmZzhWNkhfVFBXbHdZYXhmOGpFUmRmbUkteU1LZmxOZFlJWHgzUUltQkVXcC1ZX09OLXEwUzN3?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-20 新一期贷款市场报价利率未作调整  人民网",
-      "content": "2026-09-20 新一期贷款市场报价利率未作调整  人民网"
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBuaW94NXkydGRPN1VpNUhsaTJFRHdJMWtQak0yRl9VR0VFVm1ZU2c0aVVTS1NFeHdCYUV1QnVyYVFvX0RRRG1PMEQ3SmJ3VWxvNncwcVhXYUROTmQ4ZzRxb3RoQXg?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-20 新政后深圳楼市现三大变化，二手房贷款40年买家占比8%  新京报",
+      "content": "2026-09-20 新政后深圳楼市现三大变化，二手房贷款40年买家占比8%  新京报"
     },
     {
-      "group": "credit",
-      "title": "央行：9月LPR报价1年期为3.0%，5年期以上为3.5%",
-      "source": "央视网",
-      "date": "2026-09-20",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE92UERoUEhfdjFnLWVSN1A0ZXk2QWlsOVF4VG9VZGZXRURBTmxieko0eGJ4dFQzOUVNZDA0Rlk3akNnNDJtMjN3VlFmcGVBM1VvNm9qUzFDMEVmYzliZnpaRnowQ2xUMzQ3MHlyYVZEQmFsbzBUTjdSSlY5dw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-20 央行：9月LPR报价1年期为3.0%，5年期以上为3.5%  经济频道",
-      "content": "2026-09-20 央行：9月LPR报价1年期为3.0%，5年期以上为3.5%  经济频道"
+      "group": "property",
+      "title": "8月70城房价：上海新房二手房均涨",
+      "source": "观察者网",
+      "date": "2026-09-15",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA2MFg2Z1JhQlJLRDNoSU02RVFHdkVtTERIajdJT3dFTURxUDVQcjlqVmN5R1AyYnRHSzd1VEFOZHg2Q1JpNHpCR1NVcGlLdlYxd09TYVlvcnhSR3JKSzNpanM0d1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网",
+      "content": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网"
     },
     {
       "group": "property",
@@ -58,39 +76,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企",
-      "source": "雷达财经",
-      "date": "2026-09-16",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfQTVxZFEtWjJxdlloMmNLdGdBa3ZoQldNaFN2ZUdmT3FkTW4tRDRkVkQzZXExSzhjcl9mblBXMU1sM291cjNSTmRHZURXZ1E?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-16 一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企稳  雷达财经",
-      "content": "2026-09-16 一线城市8月房价走势分化：上海领涨全国，北京新房价格5连跌， 专家称有望四季度企稳  雷达财经"
-    },
-    {
-      "group": "property",
-      "title": "国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七",
-      "source": "mrjjxw.com",
-      "date": "2026-09-15",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBtVlE1ako1ZGZBM0gyNXNYY2VfVXlRd290bENQMkV3WkQ1dlhNQnlib3NlX2hpZE9OMkZMZWFla3dFOFhnWjhYTzFENWFUNk9JRGVQVmZDMU5BNlpWQVVzaVk3bnhWQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七区宅地｜房产早参  mrjjxw.com",
-      "content": "2026-09-15 国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七区宅地｜房产早参  mrjjxw.com"
-    },
-    {
-      "group": "property",
-      "title": "2026年法国二手房价格走势：房价继续下跌，巴黎和大巴黎相对抗跌",
-      "source": "欧洲头条",
+      "title": "2026年第36周深圳楼市双倍狂欢？一二手成交齐翻倍！",
+      "source": "房天下",
       "date": "2026-09-20",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQ0hjQm9tMzQycWlqbTdGOXpvQ3lNYmtKYjdZeWhueU9sTVlFb3lVcThCS1c3M2k3aHNXeU1vRWdGZkc3OVVlRmduMUV0ZENwTzdjbU5HU3FYSTlVcHlVYjVwYzhrXzJhWVRXeGNoeWZKVW1fd3BoVGlMSnprcG5Bd08wT2JPenMyRkVLZWtwRXVFbDQ1bnJFeGFSV3RoQnpOS1NBS2NFY1FxQkxRV1p3Wk9KeWw2Ukw2bmRHaFhIc3hNcHZlUHlMY21jbVpGdWMxYXBabTVDajFSal9Yd0E?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-20 2026年法国二手房价格走势：房价继续下跌，巴黎和大巴黎相对抗跌  欧洲头条",
-      "content": "2026-09-20 2026年法国二手房价格走势：房价继续下跌，巴黎和大巴黎相对抗跌  欧洲头条"
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE02cmlNaHBRT3M3S2d3X3RfQmVfNklmeC01eUVpak1VaDNVanBNSlRyQ1Z6elVXS3FUTFVLVGRWRE4xS1UwOHQ0eWtzdE9HQld2Tm53?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-20 2026年第36周深圳楼市双倍狂欢？一二手成交齐翻倍！  房天下",
+      "content": "2026-09-20 2026年第36周深圳楼市双倍狂欢？一二手成交齐翻倍！  房天下"
     },
     {
       "group": "property",
-      "title": "9月第1周桂林新房价格6649元/平，环比上周持平",
-      "source": "fang.com",
-      "date": "2026-09-07",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1QN2RscU1SV2FtZkNVbFo0QjViSWx3ZGwzMVBmUHZNRTZhQnBiR1RWdjRONVdNWjY1Q2lFazRMd1FPelBqSWw5b3owcjV6RHZ3ZnlwZVFTYkNJcDAxazZn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-07 9月第1周桂林新房价格6649元/平，环比上周持平  fang.com",
-      "content": "2026-09-07 9月第1周桂林新房价格6649元/平，环比上周持平  fang.com"
+      "title": "全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄",
+      "source": "澎湃新闻",
+      "date": "2026-09-15",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1Xb1dZYU40Q3ZCQUQzLVY5VmtoWnd2Q0g4YTlxRU4yazJSbTNWMTlvX3FVYkhyYUtJRnhDcEFSQnFqSEw1M3NPb0FiMXBKb09obkw1Z2llQlBySmVnUVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄  thepaper.cn",
+      "content": "2026-09-15 全国新建商品房待售面积连续六个月下降，各线城市二手房价格同比降幅收窄  thepaper.cn"
     }
   ]
 };
