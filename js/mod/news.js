@@ -137,6 +137,25 @@
       Store.save(); render(); toast("已全部标记为已读");
     };
 
+    // ---- 手动刷新：点一下立刻拉最新（跳过节流） ----
+    var rbtn = $("#newsRefresh");
+    if (rbtn) rbtn.onclick = function () {
+      try { toast("正在拉取最新要闻…", 1000); } catch (e) {}
+      newsRefreshLive(true, function (ok, date, changed) {
+        if (ok && !changed) { try { toast("已是最新（" + dateLabel(date) + "）", 1400); } catch (e) {} }
+        else if (!ok) { try { toast("拉取失败，稍后再试（当前为缓存数据）", 1400); } catch (e) {} }
+      });
+    };
+
+    // ---- 手机 APP 从后台切回 / 网络恢复：自动拉最新（有网就更新，WebView 不重载页面也能刷） ----
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) newsRefreshLive();
+    });
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) newsRefreshLive();            // iOS/浏览器 bfcache 恢复
+    });
+    window.addEventListener("online", function () { newsRefreshLive(); });
+
     // ---- 站内阅读面板：关闭 / ESC / 面板内「标为已读」 ----
     var reader = $("#newsReader");
     if (reader) {
@@ -155,12 +174,29 @@
   }
 
   // ---- 自动拉取最新要闻 ----
-  // 每天北京时间 7:00 由 GitHub Actions 更新 js/data/news.js。
-  // 网页/APP 打开即拉最新，无需 WorkBuddy 推送；离线则保留本地（或上次缓存）。
-  function newsLiveUrl() {
-    // 同源（网页托管在 github.io）用相对路径，APP 离线包用绝对地址
-    if (location.hostname.indexOf("github.io") >= 0) return "js/data/news.js";
-    return "https://work749.github.io/js/data/news.js";
+  // 数据源每天北京时间 7:00 更新 js/data/news.js（服务器）。
+  // 网页/APP 打开即拉最新；APP 从后台切回（WebView 不重载页面）时也会自动拉，
+  // 只要手机有网就能拿到当天要闻；离线则保留本地缓存。
+  var lastFetch = 0;
+  var FETCH_GAP = 5 * 60 * 1000;   // 自动拉取最小间隔：5 分钟内切后台再回来不重复请求
+  function newsLiveUrls() {
+    // 多源容错：github.io 在部分手机网络不可达 → 依次尝试 jsDelivr CDN 镜像（国内一般可达）
+    var urls = [];
+    if (location.hostname.indexOf("github.io") >= 0) urls.push("js/data/news.js");
+    urls.push("https://work749.github.io/js/data/news.js");
+    urls.push("https://cdn.jsdelivr.net/gh/work749/work749.github.io@main/js/data/news.js");
+    return urls;
+  }
+  function fetchWithTimeout(url, ms) {
+    if (typeof AbortController !== "undefined") {
+      var c = new AbortController();
+      var t = setTimeout(function () { c.abort(); }, ms);
+      return fetch(url, { cache: "no-store", signal: c.signal }).then(
+        function (r) { clearTimeout(t); return r; },
+        function (e) { clearTimeout(t); throw e; }
+      );
+    }
+    return fetch(url, { cache: "no-store" });
   }
   function newsLoadCache() {
     try {
@@ -175,22 +211,34 @@
       localStorage.setItem("zxm.news.cache", JSON.stringify({ t: Date.now(), data: window.NEWS_DATA }));
     } catch (e) {}
   }
-  function newsRefreshLive() {
-    if (typeof fetch !== "function") return;          // jsdom/极旧环境直接跳过
+  // force=true 手动刷新，跳过节流；done(ok, date, changed) 供手动刷新反馈
+  function newsRefreshLive(force, done) {
+    if (typeof fetch !== "function") { if (done) done(false); return; }
+    var now = Date.now();
+    if (!force && now - lastFetch < FETCH_GAP) { if (done) done(false); return; }
+    lastFetch = now;
     var prevDate = window.NEWS_DATA && window.NEWS_DATA.updated;
-    var url = newsLiveUrl() + "?t=" + Date.now();
-    fetch(url, { cache: "no-store" }).then(function (r) {
-      if (!r.ok) throw new Error("http " + r.status);
-      return r.text();
-    }).then(function (txt) {
-      if (!/NEWS_DATA\s*=/.test(txt)) return;
-      (0, eval)(txt);                                 // 重新赋值 window.NEWS_DATA
-      newsSaveCache();
-      render();
-      if (window.NEWS_DATA.updated && window.NEWS_DATA.updated !== prevDate) {
-        try { toast("行业要闻已更新（" + dateLabel(window.NEWS_DATA.updated) + "）", 1600); } catch (e) {}
-      }
-    }).catch(function () {});                         // 离线/失败：保留本地数据
+    var urls = newsLiveUrls();
+    var i = 0;
+    function tryNext() {
+      if (i >= urls.length) { if (done) done(false); return; }   // 全部源失败：保留本地缓存
+      var u = urls[i++] + "?t=" + Date.now();
+      fetchWithTimeout(u, 8000).then(function (r) {
+        if (!r.ok) throw new Error("http " + r.status);
+        return r.text();
+      }).then(function (txt) {
+        if (!/NEWS_DATA\s*=/.test(txt)) throw new Error("bad payload");
+        (0, eval)(txt);                                 // 重新赋值 window.NEWS_DATA
+        newsSaveCache();
+        render();
+        var changed = window.NEWS_DATA.updated && window.NEWS_DATA.updated !== prevDate;
+        if (changed) {
+          try { toast("行业要闻已更新（" + dateLabel(window.NEWS_DATA.updated) + "）", 1600); } catch (e) {}
+        }
+        if (done) done(true, window.NEWS_DATA.updated, changed);
+      }).catch(tryNext);                                 // 该源失败：试下一个源
+    }
+    tryNext();
   }
 
   window.MOD = window.MOD || {};

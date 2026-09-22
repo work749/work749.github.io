@@ -3,19 +3,21 @@
 """
 每日 7:00（北京时间）抓 10 条助贷/房产要闻，写入 js/data/news.js。
 
-真实新闻来源（多源容错，按序尝试，谁通用谁）：
-  - DuckDuckGo HTML（免密钥，干净，普通网络可用）
-  - Bing 网页搜索（兜底）
-  - 百度网页搜索（兜底）
-拿到真实标题/链接/摘要后，用 ZXM_API_KEY 调大模型整理成结构化 JSON + 影响摘要 + 正文摘录。
-
-注意：本 key 下智谱自带的 web_search 工具实测未生效（模型会整段编造），故不用它。
+真实新闻来源（多级容错，2026-09-22 重构）：
+  1. 智谱独立 web_search API（主力）：服务端搜索，绕开本机对 gnews 的网络限制，
+     返回真实标题/发布日期/正文摘录（link 常为空 → 前端自动降级「搜原文」）。
+     注意：这是 /web_search 独立接口；chat 接口挂 web_search 工具实测无效，勿混用。
+  2. 新浪财经滚动新闻 API（补充）：国内必达，真实 URL + 当日日期 + 媒体名。
+  3. gnews / Bing / 百度 / DDG（兜底）：本机网络受限时基本不可用，保留给云端/正常网络。
+拿到候选后用 ZXM_API_KEY 调大模型整理成结构化 JSON；LLM 产出条目同样过噪声过滤。
+质量门禁：不足 6 条或任一组 < 2 条 → 不写文件（保留已有数据），退出码 4。
 
 环境变量：
   ZXM_API_KEY   必填，智谱 GLM API 密钥
   ZXM_BASE_URL  选填，默认 https://open.bigmodel.cn/api/paas/v4
   ZXM_MODEL     选填，默认 glm-4-flash
 """
+import time
 import datetime
 import json
 import os
@@ -82,6 +84,28 @@ PROP_BASE = [
     "限购 城市 放开",
 ]
 PROP_QUERIES = [time_bias(q) for q in PROP_BASE]
+
+# 智谱 web_search 专用查询（2026-09-22 调优：搜索引擎语义，不加月份偏置，实测召回更准）
+ZHIPU_CREDIT = [
+    "贷款市场报价利率 LPR 最新公布",
+    "消费贷 银行 最新政策",
+    "消费贷 贴息 政策",
+    "助贷 互联网贷款 监管 新规",
+    "经营贷 违规 监管 处罚",
+    "个人征信 央行 新规",
+    "普惠金融 央行 政策",
+    "公积金 贷款 新政",
+]
+ZHIPU_PROP = [
+    "存量房贷利率 调整",
+    "房贷利率 下调 最新",
+    "70城房价 国家统计局",
+    "楼市 新政 止跌回稳",
+    "二手房 成交 一线城市",
+    "限购 放开 城市",
+    "保障房 政策",
+    "深圳 楼市 成交",
+]
 
 CREDIT_KW = ["贷", "信贷", "lpr", "利率", "央行", "监管", "征信", "普惠", "消费", "经营",
             "金融", "银行", "助贷", "货币", "降准", "贴息", "还款"]
@@ -225,8 +249,68 @@ def search_gnews(q, max_n=10):
     return out[:max_n]
 
 
+def search_zhipu(q, max_n=10):
+    """智谱独立 web_search API：服务端执行搜索，不受本机网络限制，
+    返回真实标题/正文摘录/发布日期（link 常为空，前端自动降级「搜原文」）。"""
+    if not (KEY and BASE):
+        return []
+    body = {"search_engine": "search_std", "search_query": q, "count": max_n}
+    req = urllib.request.Request(
+        BASE + "/web_search",
+        data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+        headers={"Content-Type": "application/json", "Authorization": "Bearer " + KEY},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            d = json.loads(r.read().decode("utf-8"))
+    except Exception as e:
+        print("WARN zhipu_search 失败(%s): %s" % (q[:20], e), file=sys.stderr)
+        return []
+    out = []
+    for x in (d.get("search_result") or [])[:max_n]:
+        title = html.unescape(str(x.get("title") or "")).strip()
+        if not title:
+            continue
+        date = str(x.get("publish_date") or "")[:10]
+        content = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", str(x.get("content") or "")))).strip()
+        snip = ("%s %s" % (date, content)).strip()[:260]
+        link = (x.get("link") or "").strip()
+        if link and not link.startswith("http"):
+            link = ""
+        it = {"title": title, "url": link, "snippet": snip,
+              "src_name": str(x.get("media") or "").strip()[:20]}
+        out.append(it)
+    return out
+
+
+def search_sina_roll(max_n=50):
+    """新浪财经滚动新闻 API：国内必达，真实 URL、自带日期与媒体名；
+    属跨主题财经滚动，由关键词过滤后再分归 credit/property。"""
+    out = []
+    try:
+        doc = _get("https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2516&k=&num=%d&page=1" % max_n, timeout=15)
+        d = json.loads(doc)
+        for x in ((d.get("result") or {}).get("data") or []):
+            title = str(x.get("title") or "").strip()
+            url = str(x.get("url") or "").strip()
+            if not title or not url.startswith("http"):
+                continue
+            try:
+                date = time.strftime("%Y-%m-%d", time.localtime(int(x.get("ctime") or 0)))
+            except Exception:
+                date = ""
+            intro = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", str(x.get("intro") or "")))).strip()
+            out.append({"title": title, "url": url,
+                        "snippet": ("%s %s" % (date, intro)).strip()[:260],
+                        "src_name": str(x.get("media_name") or "新浪财经").strip()[:20]})
+    except Exception as e:
+        print("WARN sina_roll 失败: %s" % e, file=sys.stderr)
+    return out
+
+
 def search(q, max_n=10):
-    """多源容错：Google News RSS（真实性+近实时）→ Bing → 百度 → DDG。"""
+    """兜底链（本机网络受限时多数超时）：Google News RSS → Bing → 百度 → DDG。"""
     for fn in (search_gnews, search_bing, search_baidu, search_ddg):
         try:
             r = fn(q, max_n)
@@ -238,14 +322,26 @@ def search(q, max_n=10):
 
 
 def score_pool(items, kws, min_score=1):
-    """按关键词命中 + 新闻域名加权打分；min_score 过滤弱相关（挡掉经营/管理软文、登录页等）。"""
+    """标题关键词×2 + 摘要×1 + 新闻域名加权 + 新鲜度加权；min_score 过滤弱相关。"""
     scored = []
+    ad = datetime.date.fromisoformat(ASOF)
     for x in items:
-        txt = (x["title"] + " " + x["snippet"]).lower()
-        s = sum(1 for k in kws if k in txt)
+        t = x["title"].lower()
+        st = (x["snippet"] or "").lower()
+        s = 2 * sum(1 for k in kws if k in t) + sum(1 for k in kws if k in st)
         h = host_of(x["url"])
         if any(d in h for d in NEWS):
             s += 3
+        d = guess_date(x["url"], x["snippet"])
+        if d:
+            try:
+                age = (ad - datetime.date.fromisoformat(d)).days
+                if age < 0 or age <= 7:
+                    s += 2   # 一周内（含当天发布）= 昨日要闻优先
+                elif age <= 14:
+                    s += 1
+            except Exception:
+                pass
         if s >= min_score:
             scored.append((s, x))
     scored.sort(key=lambda t: -t[0])
@@ -277,15 +373,19 @@ def call_llm(context):
         "你是「曾小满工作台」的每日要闻编辑，服务深圳银行助贷从业者。\n"
         "下面给了真实搜索结果（已标注 [credit]/[property]、链接/标题/摘要），你必须且只能基于这些真实结果整理新闻，"
         "绝对不能编造链接、来源或日期。\n"
+        "选材标准（重要）：只要真实的行业政策、监管动态、市场数据新闻（如 LPR/存量房贷/消费贷政策/公积金新政/"
+        "70城房价/城市成交/银行信贷风险）；坚决剔除：地方宣传活动稿、论坛会议通稿、贷款攻略/避坑类软文、"
+        "泛财经投资建议（股市/债市/商品/汇率，与助贷房贷无关）。\n"
         "输出严格 JSON 数组，不要任何额外文字、Markdown 或代码块标记。\n"
         "每条字段：\n"
-        "  title   短标题（20字内）\n"
-        "  source  媒体简称（从链接域名或摘要推断）\n"
-        "  date    YYYY-MM-DD，优先用今天 %s；若摘要含明确日期则用它\n"
-        "  url     必须是下面真实链接之一，禁止自造\n"
+        "  group   \"credit\" 或 \"property\"\n"
+        "  title   短标题（20字内，保留关键数字与城市名）\n"
+        "  source  媒体简称（从链接域名或摘要推断，不要写机构正文前缀）\n"
+        "  date    YYYY-MM-DD，优先用今天 %s；若素材含明确日期则用它\n"
+        "  url     必须是素材给出的真实链接之一，禁止自造；素材未给链接就输出空字符串\n"
         "  summary 30-60字，说清对助贷从业者或楼市的实际影响\n"
-        "分组：先 5 条 credit（助贷/信贷/LPR/消费贷/经营贷/监管/征信/普惠金融），"
-        "再 5 条 property（楼市/限购/房贷/利率/深圳成交/房价）。\n"
+        "共 10 条：5 条 credit（助贷/信贷/LPR/消费贷/经营贷/监管/征信/普惠金融/公积金），"
+        "5 条 property（楼市/限购/房贷利率/深圳成交/房价）；同一事件只保留一条，宁可少选也不凑数。\n"
         "只输出 JSON 本身。"
     ) % ASOF
     user = "真实搜索结果：\n" + context
@@ -304,9 +404,9 @@ def call_llm(context):
         headers={"Content-Type": "application/json", "Authorization": "Bearer " + KEY},
         method="POST",
     )
-    # 单发、50s 预算：本环境免费档对这个任务约需 100s+，超时即放弃，改用本地结构化结果。
+    # 单发、110s 预算：本环境免费档对这个任务约需 100s+（2026-09-22 由 50s 上调），超时即放弃改用本地结果。
     try:
-        with urllib.request.urlopen(req, timeout=50) as resp:
+        with urllib.request.urlopen(req, timeout=110) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         return data["choices"][0]["message"]["content"]
     except urllib.error.HTTPError as e:
@@ -353,6 +453,9 @@ def source_of(item, url=""):
         nm2 = (item.get("src_name") or "").strip()
         if nm2:
             return nm2[:20]
+        nm3 = _src_from_snippet(item.get("snippet") or "")
+        if nm3:
+            return nm3
     return friendly_source(url)
 
 
@@ -379,6 +482,48 @@ def dedup_key(t):
     t = clean_title(t)
     core = re.split(r"[\s_\-｜|–—]+", t)[0]
     return core if len(core) >= 6 else t
+
+
+def _bigrams(t):
+    t = re.sub(r"[^\u4e00-\u9fffA-Za-z0-9]", "", t or "")
+    return set(t[i:i + 2] for i in range(len(t) - 1)) if len(t) > 1 else {t}
+
+
+def title_dup(a, b):
+    """标题近似重复（LLM 改写标题会绕过 dedup_key）：2-gram 短串包含率 >= 0.7 视为同一条。"""
+    A, B = _bigrams(a), _bigrams(b)
+    if not A or not B:
+        return False
+    inter = len(A & B)
+    small = A if len(A) <= len(B) else B
+    return inter / len(small) >= 0.6
+
+
+def _num_sig(t):
+    """数字指纹：数据类新闻（LPR/房价/利率）的去重依据，忽略年份。"""
+    s = set(re.findall(r"\d+(?:\.\d+)?%?", t or ""))
+    s.discard("2026")
+    return s
+
+
+def same_story(t_a, s_a, t_b, s_b):
+    """同一条新闻判定：标题 2-gram 相似，或数字指纹高度重合（如同一期 LPR/房价数据）。"""
+    if title_dup(t_a, t_b):
+        return True
+    A = _num_sig((t_a or "") + " " + (s_a or ""))
+    B = _num_sig((t_b or "") + " " + (s_b or ""))
+    if A and B:
+        inter = len(A & B)
+        small = A if len(A) <= len(B) else B
+        if inter >= 2 and inter / len(small) >= 0.6:
+            return True
+    return False
+
+
+def _src_from_snippet(s):
+    """从正文摘录里提取「来源：XXX」作为媒体名。"""
+    m = re.search(r"来源[：:]\s*([\u4e00-\u9fffA-Za-z0-9（）]{2,14})", s or "")
+    return m.group(1).strip() if m else ""
 
 
 def guess_date(url, snippet):
@@ -430,15 +575,19 @@ def is_noise(x):
     t = x["title"] or ""
     u = x["url"] or ""
     low = u.lower()
-    if any(k in t for k in ("计算器", "什么是", "登录", "首页", "概览", "查询")):
+    if any(k in t for k in ("计算器", "什么是", "登录", "首页", "概览", "查询", "攻略", "避坑",
+                            "宣传周", "论坛", "峰会", "沙龙", "课程", "报名", "直播", "回放",
+                            "训练营", "公开课")):
         return True
     if "经营" in t and "管理" in t:  # 经营/管理自嗨软文，非楼市新闻
         return True
         return True
     if t.strip() in ("深圳政府在线", "自然人电子税务局", "中国政府网", "首页"):
         return True
-    path = (urllib.parse.urlparse(u).path or "")
-    if path in ("", "/") or path.endswith("/login") or "/webstatic/" in low or path.endswith("login"):
+    path = (urllib.parse.urlparse(u).path or "") if u else None
+    if path is None:
+        pass  # 无 URL（智谱搜索结果常见）：不代表垃圾，前端自动降级「搜原文」
+    elif path in ("", "/") or path.endswith("/login") or "/webstatic/" in low or path.endswith("login"):
         return True
     if "zhihu.com/topic" in low or "/topic/" in low:
         return True
@@ -474,22 +623,52 @@ def main():
     seen = set()
     seen_title = set()
     credit_raw, prop_raw = [], []
-    for q in CREDIT_QUERIES:
-        for x in search(q):
-            if x["url"] in seen or is_junk(x["url"]):
-                continue
-            tk = dedup_key(x["title"])
-            if tk in seen_title:
-                continue
-            seen.add(x["url"]); seen_title.add(tk); credit_raw.append(x)
-    for q in PROP_QUERIES:
-        for x in search(q):
-            if x["url"] in seen or is_junk(x["url"]):
-                continue
-            tk = dedup_key(x["title"])
-            if tk in seen_title:
-                continue
-            seen.add(x["url"]); seen_title.add(tk); prop_raw.append(x)
+
+    def _add(x, grp):
+        u = x["url"] or ""
+        key = u or ("t:" + dedup_key(x["title"]))
+        tk = dedup_key(x["title"])
+        if key in seen or is_junk(u) or tk in seen_title:
+            return
+        seen.add(key)
+        seen_title.add(tk)
+        (credit_raw if grp == "credit" else prop_raw).append(x)
+
+    # 1) 智谱 web_search（主力源：服务端搜索，绕开本机网络限制）
+    #    注意：不加"YYYY年M月"月份偏置——实测加了反而劣化召回；新鲜度交给 publish_date + recent_filter。
+    zhipu_hits = 0
+    for q in ZHIPU_CREDIT:
+        for x in search_zhipu(q):
+            zhipu_hits += 1
+            _add(x, "credit")
+    for q in ZHIPU_PROP:
+        for x in search_zhipu(q):
+            zhipu_hits += 1
+            _add(x, "property")
+    print("INFO: zhipu 命中 %d（credit %d / property %d）" % (zhipu_hits, len(credit_raw), len(prop_raw)), file=sys.stderr)
+
+    # 2) 新浪财经滚动（真实 URL + 当日新闻；只按标题关键词分组，避免正文提了一嘴"信贷"的泛财经混入）
+    for x in search_sina_roll():
+        if is_junk(x["url"]):
+            continue
+        t_low = x["title"].lower()
+        ck = sum(1 for k in CREDIT_KW if k in t_low)
+        pk = sum(1 for k in PROP_KW if k in t_low)
+        if ck >= 2 and ck > pk:
+            _add(x, "credit")
+        elif pk >= 2 and pk > ck:
+            _add(x, "property")
+
+    # 3) 兜底：主源候选不足时才启用 gnews/Bing/百度/DDG（本机网络受限时基本超时）
+    if len(credit_raw) < 4 or len(prop_raw) < 4:
+        print("WARN: 主源候选不足（credit %d / property %d），启用搜索兜底链"
+              % (len(credit_raw), len(prop_raw)), file=sys.stderr)
+        for q in CREDIT_QUERIES:
+            for x in search(q):
+                _add(x, "credit")
+        for q in PROP_QUERIES:
+            for x in search(q):
+                _add(x, "property")
 
     # 只保留近期（昨天的新闻），不足再逐级放宽
     credit_raw, prop_raw = recent_filter(credit_raw, prop_raw, ASOF)
@@ -528,50 +707,75 @@ def main():
         return "credit" if sum(1 for k in CREDIT_KW if k in t) >= sum(1 for k in PROP_KW if k in t) else "property"
 
     out = []
-    used_urls = set()
+    used_keys = set()
+
+    def _uk(u, t):
+        """去重键：有 URL 用 URL，无 URL（智谱搜索常见）用标题。"""
+        return u or ("t:" + dedup_key(t))
+
     for it in parsed:
         if not isinstance(it, dict) or len(out) >= 10:
             continue
         url = str(it.get("url", "")).strip()
-        if url not in real_urls:
-            h = host_of(url)
-            url = next((x["url"] for x in real if h and h in x["url"]), real[0]["url"])
-        if url in used_urls:
+        title = str(it.get("title", "")).strip()
+        summary = str(it.get("summary", "") or "").strip()
+        # LLM 自造/不认识的链接（不在真实候选里）：置空，前端自动降级「搜原文」，绝不信大模型给的 URL
+        if url and url not in real_urls:
+            url = ""
+        # 质量门禁：LLM 产出同样要过噪声/垃圾过滤（2026-09-22 修复：此前绕过过滤导致登录页/计算器入库）
+        if is_noise({"title": title, "url": url, "snippet": summary}):
+            continue
+        if url and is_junk(url):
+            continue
+        k = _uk(url, title)
+        if k in used_keys or any(same_story(title, summary, o["title"], o.get("summary", "")) for o in out):
             continue
         grp = _group_of(it, url)
-        snip = next((x["snippet"] for x in real if x["url"] == url), "")
-        content = fetch_content(url) or snip
+        # 按链接或标题回找真实候选，带出其正文摘录（比 LLM 摘要更完整）
+        snip = next((x["snippet"] for x in real if (url and x["url"] == url) or title_dup(title, x["title"])), "")
+        content = fetch_content(url) if url else ""
+        content = content or snip or summary
+        # 来源清洗：LLM 偶尔把日期当来源；候选 src_name → 正文「来源：」→ 域名 → 兜底
+        src = str(it.get("source", "") or "").strip()
+        if re.match(r"^\d{4}[-/年.]", src):
+            src = ""
+        if not src:
+            src = next((x.get("src_name") for x in real if (url and x["url"] == url) or title_dup(title, x["title"])), "")
+        if not src:
+            src = _src_from_snippet(snip or summary)
+        if not src and url:
+            src = friendly_source(url)
         out.append({
             "group": grp,
-            "title": str(it.get("title", "")).strip()[:40] or "(无标题)",
-            "source": str(it.get("source", "") or host_of(url)).strip()[:20],
+            "title": title[:40] or "(无标题)",
+            "source": (src or "行业资讯")[:20],
             "date": (str(it.get("date", guess_date(url, snip)) or ASOF))[:10],
             "url": url,
-            "summary": str(it.get("summary", "") or snip or "（暂无摘要）").strip()[:120],
+            "summary": (summary or snip or "（暂无摘要）").strip()[:120],
             "content": content,
         })
-        used_urls.add(url)
+        used_keys.add(k)
 
     # 不足 10 条：从近期候选按真实 group 补位（跳过噪声/重复）
     def _add_from(pool, grp):
         for x in pool:
             if len(out) >= 10:
                 return
-            if x["url"] in used_urls or is_noise(x):
+            if _uk(x["url"], x["title"]) in used_keys or is_noise(x):
                 continue
-            if dedup_key(x["title"]) in set(dedup_key(o.get("title", "")) for o in out):
+            if any(same_story(x["title"], x["snippet"], o.get("title", ""), o.get("summary", "")) for o in out):
                 continue
             snip = x["snippet"] or ""
             out.append({
                 "group": grp,
                 "title": clean_title(x["title"]),
-                "source": source_of(x, x["url"]),
+                "source": (source_of(x, x["url"]) or "行业资讯"),
                 "date": guess_date(x["url"], snip) or ASOF,
                 "url": x["url"],
                 "summary": snip.strip()[:120] or "（暂无摘要）",
-                "content": fetch_content(x["url"]) or snip,
+                "content": (fetch_content(x["url"]) if x["url"] else "") or snip,
             })
-            used_urls.add(x["url"])
+            used_keys.add(_uk(x["url"], x["title"]))
 
     for _ in range(10):
         before = len(out)
@@ -585,25 +789,27 @@ def main():
         if len(out) >= 10:
             break
         g = "credit" if x in credit else "property"
-        if x["url"] in used_urls or is_noise(x):
+        if _uk(x["url"], x["title"]) in used_keys or is_noise(x):
             continue
-        if dedup_key(x["title"]) in set(dedup_key(o.get("title", "")) for o in out):
+        if any(same_story(x["title"], x["snippet"], o.get("title", ""), o.get("summary", "")) for o in out):
             continue
         snip = x["snippet"] or ""
         out.append({
             "group": g,
             "title": clean_title(x["title"]),
-            "source": friendly_source(x["url"]),
+            "source": (source_of(x, x["url"]) or "行业资讯"),
             "date": guess_date(x["url"], snip) or ASOF,
             "url": x["url"],
             "summary": snip.strip()[:120] or "（暂无摘要）",
-            "content": fetch_content(x["url"]) or snip,
+            "content": (fetch_content(x["url"]) if x["url"] else "") or snip,
         })
-        used_urls.add(x["url"])
+        used_keys.add(_uk(x["url"], x["title"]))
 
     # 平衡两组，避免某组空白：从近期候选(real)补位，按关键词判定归属（绝不引入旧闻）
     def _ensure_balance():
         for _ in range(10):
+            if len(out) >= 10:
+                return
             cred_n = sum(1 for o in out if o["group"] == "credit")
             prop_n = sum(1 for o in out if o["group"] == "property")
             if cred_n >= 3 and prop_n >= 3:
@@ -611,7 +817,9 @@ def main():
             need = "credit" if cred_n <= prop_n else "property"
             best = None
             for x in real:
-                if x["url"] in used_urls or is_noise(x):
+                if _uk(x["url"], x["title"]) in used_keys or is_noise(x):
+                    continue
+                if any(same_story(x["title"], x["snippet"], o.get("title", ""), o.get("summary", "")) for o in out):
                     continue
                 txt = (x["title"] + " " + x["snippet"]).lower()
                 ck = sum(1 for k in CREDIT_KW if k in txt)
@@ -625,7 +833,7 @@ def main():
             if not best and ((cred_n == 0) if need == "credit" else (prop_n == 0)):
                 # 仅在该组完全为空时放宽：避免把楼市新闻硬标成信贷新闻
                 for x in real:
-                    if x["url"] not in used_urls and not is_noise(x):
+                    if _uk(x["url"], x["title"]) not in used_keys and not is_noise(x):
                         best = x
                         break
             if not best:
@@ -638,9 +846,9 @@ def main():
                 "date": guess_date(best["url"], snip) or ASOF,
                 "url": best["url"],
                 "summary": snip.strip()[:120] or "（暂无摘要）",
-                "content": fetch_content(best["url"]) or snip,
+                "content": (fetch_content(best["url"]) if best["url"] else "") or snip,
             })
-            used_urls.add(best["url"])
+            used_keys.add(_uk(best["url"], best["title"]))
 
         # 仍为 0 的组：把对方组中"同时命中本组关键词≥2"的条目改标（如房贷利率既是楼市也是信贷）
         for grp, other, kws in (("credit", "property", CREDIT_KW), ("property", "credit", PROP_KW)):
@@ -654,6 +862,20 @@ def main():
                     o["group"] = grp
                     break
     _ensure_balance()
+
+    # ---- 主题相关性终检：标题+摘要不含任何组关键词的泛财经剔除（瑞银配置建议/期货监管等） ----
+    out = [o for o in out if any(k in (o["title"] + " " + o["summary"]).lower()
+                                 for k in CREDIT_KW + PROP_KW)]
+    out = out[:10]  # 上限 10 条
+
+    # ---- 质量门禁（2026-09-22 新增）：不足 6 条或任一组 < 2 条 → 不写文件，保留已有数据 ----
+    # 此前 0 条/纯垃圾结果也会覆盖 news.js，导致线上数据被清空/倒退。
+    cred_n = sum(1 for o in out if o["group"] == "credit")
+    prop_n = sum(1 for o in out if o["group"] == "property")
+    if len(out) < 6 or cred_n < 2 or prop_n < 2:
+        print("SKIP: 质量门禁未达标（共 %d 条：credit %d / property %d），保留原有数据不覆盖"
+              % (len(out), cred_n, prop_n), file=sys.stderr)
+        sys.exit(4)
 
     data = {"updated": ASOF, "items": out}
     with open(DATA_FILE, "w", encoding="utf-8") as f:
