@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "items": [
     {
       "group": "credit",
@@ -31,12 +31,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "助贷新规周年纪实 资金大变平台缩表",
-      "source": "新浪财经_金融信息服务商",
-      "date": "2026-09-22",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPOEhqcXdwVzM0THZEc3FlUzZWQk1SX2RMRnF3UG5GYTItbVExbHIyMmpGd0Y1RHJWM0UxaUlOa1pRdTJpRkFzdWpPa0ZoQkVOSFBMaUFQZkRMNGd2cF9QNmZGcmJ5RHlQOHk0OE9GM241bl9zZ28zZTlWOWFRNno2MUx2MTlET193OWN4Z3l1LUEwMElfcGpkVkYwODBNZEVyTmxzbi1n?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-22 助贷新规周年纪实 资金大变平台缩表  新浪财经_金融信息服务商",
-      "content": "2026-09-22 助贷新规周年纪实 资金大变平台缩表  新浪财经_金融信息服务商"
+      "title": "央行：强化大型企业账款治理 6月末普惠小微贷款余额38.5万亿元",
+      "source": "观点网",
+      "date": "2026-09-15",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBWTGxYai1wbm9FbGRSRE9GNF9OS2NGVklCckcyZUpJTjZ5aC12eEZpZmRYU2dPMW5lTGhrT09qdWlkM2dnMncyNkswTm9NUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-15 央行：强化大型企业账款治理 6月末普惠小微贷款余额38.5万亿元  观点网",
+      "content": "2026-09-15 央行：强化大型企业账款治理 6月末普惠小微贷款余额38.5万亿元  观点网"
+    },
+    {
+      "group": "property",
+      "title": "深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变 - finance.si",
+      "source": "finance.sina.com.cn",
+      "date": "2026-09-23",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQd2NHMDFHZ09WYjduZHU4MldvSXp6SkpZcTY2T0ZHZm05ZzFUb3hJeDlfVFdOVDRPTDFDaFlQV0kxYV8yNHF2VjBMV2NONlltUzZIc0VQUk5welhtaFBLX2xGbjhHMzY5NXhiTU1GWVo4bm9BNVlxWXEwVFlSbXVnRDJWWmRoWGk0WlpsS0R4RS1fYWZpR2xydnBQRndCR3RaaGhwQlpJNlZHWlBCaGJOeEJJMTlSbDlrWklYa2g2WG1pZ24zYkhYejlYU2oxUnBCWEpxQUU1MA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-23 深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变  finance.sina.com.cn",
+      "content": "2026-09-23 深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变  finance.sina.com.cn"
     },
     {
       "group": "property",
@@ -58,12 +67,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七",
-      "source": "mrjjxw.com",
-      "date": "2026-09-15",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBtVlE1ako1ZGZBM0gyNXNYY2VfVXlRd290bENQMkV3WkQ1dlhNQnlib3NlX2hpZE9OMkZMZWFla3dFOFhnWjhYTzFENWFUNk9JRGVQVmZDMU5BNlpWQVVzaVk3bnhWQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七区宅地｜房产早参  mrjjxw.com",
-      "content": "2026-09-15 国家统计局：一线城市二手房价连续6个月环比上涨；正弘置业溢价近33%竞得郑州二七区宅地｜房产早参  mrjjxw.com"
+      "title": "2024金九楼市表现深度解析：市场走势、成交数据与行业动态全观察",
+      "source": "eu.36kr.com",
+      "date": "2026-09-22",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBWdDNrQlFxTGNDcm1VSGY0ZUtDWHRHdHRMUVNRbXVFU3l5b0hpQjZBSWpGRDlubEg5NXd6NUF5c0dxUkhEZk1PQWRpN0JKWGplM0ZV?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-22 2024金九楼市表现深度解析：市场走势、成交数据与行业动态全观察  eu.36kr.com",
+      "content": "2026-09-22 2024金九楼市表现深度解析：市场走势、成交数据与行业动态全观察  eu.36kr.com"
+    },
+    {
+      "group": "property",
+      "title": "楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？",
+      "source": "21世纪经济报道",
+      "date": "2026-09-22",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRUwzeThqOTFwU0pTdHU2SURFak1XM3VkTDZFSE5NRUNXT0xnX2dfOHltdFUyQVo4TVlrYjN2WUUtcV9KZDFSaGVQZFUzcUJ2NDBXUHJuVFFOcXJSc1ROWmpQSHozQl8yNVV0VXdadE5VMGtuUTdaVlBjRUFwdVpDb2hoY1owWVhDdDhET0cxdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-22 楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？  21jingji.com",
+      "content": "2026-09-22 楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？  21jingji.com"
     }
   ]
 };
