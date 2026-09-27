@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "items": [
     {
       "group": "credit",
@@ -8,24 +8,24 @@ window.NEWS_DATA = {
       "source": "21世纪经济报道",
       "date": "2026-09-20",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZlFyeW5yM0xSMEJlNEtQcmFEZFY4Zy00b3NTOXRmWE9BdTQxWnhLR29rbFlpWFJCR2lRSTAyY0wyT0ktMG5VT3U1VVZ0VTVqc1NtOWllT0w5WFhuWXRuUjZvZ2hsc1dLNm1XMEU2MjFJa3Ftb2ZoLWlRSHhLX3pOZUd3UWUwblpweE1KZGNpTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21财经",
-      "content": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21财经"
+      "summary": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21jingji.com",
+      "content": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21jingji.com"
     },
     {
       "group": "credit",
-      "title": "头部城商行已停止助贷产品，还有哪些银行仍在依赖助贷？",
-      "source": "financeun.com",
+      "title": "9.30大限将至，助贷行业从拼流量转向精细化经营",
+      "source": "经济观察报",
       "date": "2026-09-23",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5WYTB5VTRSSWFGeHpPd1p1LTREY3ZpM1ozcG9aN0FOSjdmekxwRF9MT0w1cGg2VkVxdXRxSXR6ZklhV3pFSkozbTd5eEJvR2ltZHRYNTF5b2Q5bzQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-23 头部城商行已停止助贷产品，还有哪些银行仍在依赖助贷？  financeun.com",
-      "content": "2026-09-23 头部城商行已停止助贷产品，还有哪些银行仍在依赖助贷？  financeun.com"
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fY09PQml3a2Q3TTFxR3lqMXRRMzVSWXE0M1BpNXY0OFVoMHdLZ2VZV0ZmTHJjRnFfVnU5MUxqT2hWR3ZTdDh0QVdkMDJGak1mN251U0Zn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-23 9.30大限将至，助贷行业从拼流量转向精细化经营  eeo.com.cn",
+      "content": "2026-09-23 9.30大限将至，助贷行业从拼流量转向精细化经营  eeo.com.cn"
     },
     {
       "group": "property",
       "title": "深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变",
       "source": "新浪财经",
       "date": "2026-09-24",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPZDlpZW13UDNOQnJWUFZ6a29VN182Ym5NTVZ2UUhDc2tFODY5SXlpd3VubWxjLTE5T0MtcXFPbzVBWWxscWVUWndoV1pyME9Wc1VnU3Q1RXNuNFR0RWZidkZJMjFiZGpmV2ZxdHVDZFpGcklmQktySUhyeGtDdFRkNi0wOVdJTktTMWRsN3VDUW5iOU1SaGdpcjBVRzZRUURySzFCRmM1b1hHajBVd3pLa1JqRG1vZGN2Y2cxTXAxQi1HOWtkZ3dPS2g4Rmd4TlNaRklkcDRmLTJyQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPX0tIRXBSazFaZERObWNERXJZTWZ6U1RSZllUNlU5LVpZeWxFaF81RUJkakc2RHhEY1o3MEQ3a2ZwSnRBdHBEZG54djNPSmNvbGlkY1NPOEhlSm9iMm5ucHJMdEo5dm5PaWJ6VTAyT2ZFZmZmaGhNVzFJMW9jNUFSR1dSaEZESTd2LTFWS3c5bjA5am1pQ2FSdDJPeEV0TFBMSmVYQWNZdm9KWEpFUGdoY3U0OUVRNlR4d1pBcDJ1UnlDVEFqYjZuQzBKWm1rZjhiNG1FdzlZOEFjUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-09-24 深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变  新浪财经",
       "content": "2026-09-24 深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变  新浪财经"
     },
@@ -49,15 +49,6 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "央行、金融监管总局、证监会、外汇局，最新发声",
-      "source": "经济形势报告网",
-      "date": "2026-09-11",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE04SEY1czZfSFhfUlFKbkRxTTVEZFBzOTgxejhsY1UwaEV0OVNSdDFkMEhsblAxS3BJdEhZa09qTXdUaTVrdkhRX1htUFZpcVl6SzEwX0RZLVczTzN2b3Q0dmRB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-11 央行、金融监管总局、证监会、外汇局，最新发声  经济形势报告网",
-      "content": "2026-09-11 央行、金融监管总局、证监会、外汇局，最新发声  经济形势报告网"
-    },
-    {
-      "group": "credit",
       "title": "央行：强化大型企业账款治理 6月末普惠小微贷款余额38.5万亿元",
       "source": "观点网",
       "date": "2026-09-15",
@@ -67,12 +58,39 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "最新财新周刊｜信贷分化中",
-      "source": "财新",
+      "title": "新一期贷款市场报价利率保持不变",
+      "source": "中国经济网",
+      "date": "2026-09-27",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE16bDQ3WERUMlZVNmcyb1JpZ05ReVFuRWdiXy1rQS1WYVNQVlQyTDRkc3ZjWUZGYTZIU3BVWnI2VHZ6TG9pSzdMZDdGVUx3NmJBQ1JiVGVaVEVCLWgzdXJtV1ZaTVBHQ0k4N0RUdDF1QQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-27 新一期贷款市场报价利率保持不变  中国经济网",
+      "content": "2026-09-27 新一期贷款市场报价利率保持不变  中国经济网"
+    },
+    {
+      "group": "property",
+      "title": "2026年09月25日深圳楼市单日成交断崖回落？整月数据仍强势",
+      "source": "fang.com",
       "date": "2026-09-26",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5zU2lYRGVGRFpXOTJveTlpelRZLVd5emNhR0JlRXo4S3JhbWZ5NWFhVGlmeXVqUDlWVXo4cWN4dFJYT2FUR215TzhuOFFRQ1dFdFdmNWtIVkZkT2hOSGNtRw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-26 最新财新周刊｜信贷分化中  weekly.caixin.com",
-      "content": "2026-09-26 最新财新周刊｜信贷分化中  weekly.caixin.com"
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE84VEtJbW90ZmJhcU1Td3JUZFZqbVpsVEszUjd6QzJEYUdnSFA3b1J4Rl9OZ24wQUwySUdzanhYYVdCdktMRFVkOGllNXhZclowRzlN?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-26 2026年09月25日深圳楼市单日成交断崖回落？整月数据仍强势  fang.com",
+      "content": "2026-09-26 2026年09月25日深圳楼市单日成交断崖回落？整月数据仍强势  fang.com"
+    },
+    {
+      "group": "property",
+      "title": "2024金九楼市表现深度解析：市场走势、成交数据与行业动态全观察",
+      "source": "36Kr",
+      "date": "2026-09-22",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBWdDNrQlFxTGNDcm1VSGY0ZUtDWHRHdHRMUVNRbXVFU3l5b0hpQjZBSWpGRDlubEg5NXd6NUF5c0dxUkhEZk1PQWRpN0JKWGplM0ZV?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-22 2024金九楼市表现深度解析：市场走势、成交数据与行业动态全观察  36Kr",
+      "content": "2026-09-22 2024金九楼市表现深度解析：市场走势、成交数据与行业动态全观察  36Kr"
+    },
+    {
+      "group": "property",
+      "title": "楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？",
+      "source": "21世纪经济报道",
+      "date": "2026-09-22",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRUwzeThqOTFwU0pTdHU2SURFak1XM3VkTDZFSE5NRUNXT0xnX2dfOHltdFUyQVo4TVlrYjN2WUUtcV9KZDFSaGVQZFUzcUJ2NDBXUHJuVFFOcXJSc1ROWmpQSHozQl8yNVV0VXdadE5VMGtuUTdaVlBjRUFwdVpDb2hoY1owWVhDdDhET0cxdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-22 楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？  21jingji.com",
+      "content": "2026-09-22 楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？  21jingji.com"
     }
   ]
 };
