@@ -1,7 +1,25 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "items": [
+    {
+      "group": "credit",
+      "title": "央行等八部门联合发文，银行放贷逻辑要变了",
+      "source": "中国金融网",
+      "date": "2026-09-28",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zVEFZZlUtYW1MRHhONlpIYXhVcjhPVkstR2g0dHVfOFp2MmpJOTNvdFZrbUxBUlltSUZMY0RUbFN6UUM0eGRiTTd4VGhpZjNlY0J3VWI2bk9HX0E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-28 央行等八部门联合发文，银行放贷逻辑要变了  中国金融网",
+      "content": "2026-09-28 央行等八部门联合发文，银行放贷逻辑要变了  中国金融网"
+    },
+    {
+      "group": "credit",
+      "title": "监管新规落地在即互联网助贷行业整改提速- 中国日报网 - China Daily",
+      "source": "China Daily",
+      "date": "2026-09-29",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5VjFqXzg0c29mUkRneTVxNzNNWURwZXMyNjVnZEdSbmJneHFLbnBqejJXMkxPNEg5ZWxCbkliQ1c1VGR1OGxDQ25QeFFuM2ViWklrY0xtN3F2bTlrbE9ueTZsM1VsNTZUWnJHTVUzU0hSdTZicW1KQkI1R0FYdVk?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-29 监管新规落地在即互联网助贷行业整改提速- 中国日报网  China Daily",
+      "content": "2026-09-29 监管新规落地在即互联网助贷行业整改提速- 中国日报网  China Daily"
+    },
     {
       "group": "credit",
       "title": "2026年9月20日贷款市场报价利率（LPR）公布",
@@ -10,15 +28,6 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZlFyeW5yM0xSMEJlNEtQcmFEZFY4Zy00b3NTOXRmWE9BdTQxWnhLR29rbFlpWFJCR2lRSTAyY0wyT0ktMG5VT3U1VVZ0VTVqc1NtOWllT0w5WFhuWXRuUjZvZ2hsc1dLNm1XMEU2MjFJa3Ftb2ZoLWlRSHhLX3pOZUd3UWUwblpweE1KZGNpTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21财经",
       "content": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21财经"
-    },
-    {
-      "group": "credit",
-      "title": "9.30大限将至，助贷行业从拼流量转向精细化经营",
-      "source": "经济观察报",
-      "date": "2026-09-23",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fY09PQml3a2Q3TTFxR3lqMXRRMzVSWXE0M1BpNXY0OFVoMHdLZ2VZV0ZmTHJjRnFfVnU5MUxqT2hWR3ZTdDh0QVdkMDJGak1mN251U0Zn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-23 9.30大限将至，助贷行业从拼流量转向精细化经营  eeo.com.cn",
-      "content": "2026-09-23 9.30大限将至，助贷行业从拼流量转向精细化经营  eeo.com.cn"
     },
     {
       "group": "credit",
@@ -49,39 +58,12 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？",
+      "title": "多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？ - QQ News",
       "source": "腾讯新闻",
       "date": "2026-09-25",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5FeDJUNFRmc0ZMYlNkcWwzNjQwT291b3A2ZTJzVkdsZFBRYTRjUVY2cUFoUTdRaG9CZXVqRndNNHZvNVVWTG1GT09yd3NmWlJQWVJWczhR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-25 多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？  qq.com",
-      "content": "2026-09-25 多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？  qq.com"
-    },
-    {
-      "group": "credit",
-      "title": "最新财新周刊｜信贷分化中",
-      "source": "财新",
-      "date": "2026-09-26",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5zU2lYRGVGRFpXOTJveTlpelRZLVd5emNhR0JlRXo4S3JhbWZ5NWFhVGlmeXVqUDlWVXo4cWN4dFJYT2FUR215TzhuOFFRQ1dFdFdmNWtIVkZkT2hOSGNtRw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-26 最新财新周刊｜信贷分化中  财新周刊",
-      "content": "2026-09-26 最新财新周刊｜信贷分化中  财新周刊"
-    },
-    {
-      "group": "credit",
-      "title": "广发银行领央行1712 万元罚单：十项违法叠加，12名责任人同步受罚_公司新闻_",
-      "source": "证券之星",
-      "date": "2026-09-28",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5yQjlzN3d6NGI4LTZfby1SMUZ2dElwMUlUTjlBWDJ0NXRRbkNZS0dsbmlfdWNoaUlldC1RbXVKOUhKTkRFWU1Qakk5SWNGT1dSSnRKUkh3ZEdNNHZMUFlmZA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-28 广发银行领央行1712 万元罚单：十项违法叠加，12名责任人同步受罚_公司新闻_财经  证券之星",
-      "content": "2026-09-28 广发银行领央行1712 万元罚单：十项违法叠加，12名责任人同步受罚_公司新闻_财经  证券之星"
-    },
-    {
-      "group": "property",
-      "title": "楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？",
-      "source": "21世纪经济报道",
-      "date": "2026-09-22",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRUwzeThqOTFwU0pTdHU2SURFak1XM3VkTDZFSE5NRUNXT0xnX2dfOHltdFUyQVo4TVlrYjN2WUUtcV9KZDFSaGVQZFUzcUJ2NDBXUHJuVFFOcXJSc1ROWmpQSHozQl8yNVV0VXdadE5VMGtuUTdaVlBjRUFwdVpDb2hoY1owWVhDdDhET0cxdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-22 楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？  21财经",
-      "content": "2026-09-22 楼市新政出台逾3周，深圳一手住宅日均备案量“原地踏步”？  21财经"
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5jX0tvSlZKUzkyM0JYZzlIUDdfb0p4cGJCZW96M3l2SHI1T2JzRHM0eU00Wmh5Wm9FVVc4dHdHVi02R0M2bHctWjlMM252cHVqMGZtejRoWllkbXBkeUhtSkln?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-25 多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？  QQ News",
+      "content": "2026-09-25 多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？  QQ News"
     }
   ]
 };
