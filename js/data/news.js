@@ -1,15 +1,15 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "items": [
     {
       "group": "credit",
-      "title": "央行等八部门联合发文，银行放贷逻辑要变了",
-      "source": "中国金融网",
-      "date": "2026-09-28",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zVEFZZlUtYW1MRHhONlpIYXhVcjhPVkstR2g0dHVfOFp2MmpJOTNvdFZrbUxBUlltSUZMY0RUbFN6UUM0eGRiTTd4VGhpZjNlY0J3VWI2bk9HX0E?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-28 央行等八部门联合发文，银行放贷逻辑要变了  中国金融网",
-      "content": "2026-09-28 央行等八部门联合发文，银行放贷逻辑要变了  中国金融网"
+      "title": "金融营销新规落地！贷款中介集体“消失”：业内人士称八成公司停业放假，助贷人等着转",
+      "source": "21世纪经济报道",
+      "date": "2026-09-30",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRjRMOFJVLV91MVNjMkFrSENJWW5aRmpTSGNHdU9SbkpGYXU2ekNObnFaOWRQamhzYkZvN2h1UFpXUmJQTkc3QUNvUGw0bWpHbmhWQU9BZnRxV0EwV1Y2Uk1OOEZqd1h0dkhScXkwc2h1a3QyQUZwQmFhalh3T2FndmNmYWN2dXY0WjBRZDJGRQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-30 金融营销新规落地！贷款中介集体“消失”：业内人士称八成公司停业放假，助贷人等着转行？  21财经",
+      "content": "2026-09-30 金融营销新规落地！贷款中介集体“消失”：业内人士称八成公司停业放假，助贷人等着转行？  21财经"
     },
     {
       "group": "credit",
@@ -22,15 +22,6 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "2026年9月20日贷款市场报价利率（LPR）公布",
-      "source": "21世纪经济报道",
-      "date": "2026-09-20",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZlFyeW5yM0xSMEJlNEtQcmFEZFY4Zy00b3NTOXRmWE9BdTQxWnhLR29rbFlpWFJCR2lRSTAyY0wyT0ktMG5VT3U1VVZ0VTVqc1NtOWllT0w5WFhuWXRuUjZvZ2hsc1dLNm1XMEU2MjFJa3Ftb2ZoLWlRSHhLX3pOZUd3UWUwblpweE1KZGNpTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21财经",
-      "content": "2026-09-20 2026年9月20日贷款市场报价利率（LPR）公布  21财经"
-    },
-    {
-      "group": "credit",
       "title": "新一期贷款市场报价利率保持不变",
       "source": "中国经济网",
       "date": "2026-09-27",
@@ -40,21 +31,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变 - finance.si",
-      "source": "finance.sina.com.cn",
-      "date": "2026-09-24",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPZDlpZW13UDNOQnJWUFZ6a29VN182Ym5NTVZ2UUhDc2tFODY5SXlpd3VubWxjLTE5T0MtcXFPbzVBWWxscWVUWndoV1pyME9Wc1VnU3Q1RXNuNFR0RWZidkZJMjFiZGpmV2ZxdHVDZFpGcklmQktySUhyeGtDdFRkNi0wOVdJTktTMWRsN3VDUW5iOU1SaGdpcjBVRzZRUURySzFCRmM1b1hHajBVd3pLa1JqRG1vZGN2Y2cxTXAxQi1HOWtkZ3dPS2g4Rmd4TlNaRklkcDRmLTJyQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-24 深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变  finance.sina.com.cn",
-      "content": "2026-09-24 深圳楼市“金九”升温：二手房成交加快，买卖双方博弈生变  finance.sina.com.cn"
+      "title": "“8·28”楼市新政满月观察｜深圳新房现售成交占比明显提升，二手房议价空间持续收",
+      "source": "每日经济新闻",
+      "date": "2026-09-28",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9HMkxHOEN6QUJqb0ZObVpubkpHTWhRd0dHWlFoTXlKLWlVTW9ralhiNUo1VUZwTTRYejZ3V0dvcjNkcTVReTZtYjBXSEdmNUlsaEc2T1ZFVWE3UVFLaExNd1lLM00xQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-28 “8·28”楼市新政满月观察｜深圳新房现售成交占比明显提升，二手房议价空间持续收窄  每日经济新闻",
+      "content": "2026-09-28 “8·28”楼市新政满月观察｜深圳新房现售成交占比明显提升，二手房议价空间持续收窄  每日经济新闻"
     },
     {
       "group": "property",
-      "title": "8月70城房价：上海新房二手房均涨",
-      "source": "观察者网",
-      "date": "2026-09-15",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA2MFg2Z1JhQlJLRDNoSU02RVFHdkVtTERIajdJT3dFTURxUDVQcjlqVmN5R1AyYnRHSzd1VEFOZHg2Q1JpNHpCR1NVcGlLdlYxd09TYVlvcnhSR3JKSzNpanM0d1E?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网",
-      "content": "2026-09-15 8月70城房价：上海新房二手房均涨  观察者网"
+      "title": "新政后深圳楼市现三大变化，二手房贷款40年买家占比8%",
+      "source": "新京报",
+      "date": "2026-09-20",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1kNGl1a1k3Snp6em01MjYzVjJVTW9qN3d4VnZMVjllbklUUEhac2NhWnlaQU5tWGtkV2N0Ym1EdXR1d1ZSWm9heW9qX0VyOVJOZzRCYk9tNnZZbnE5ZFlOZDdn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-20 新政后深圳楼市现三大变化，二手房贷款40年买家占比8%  新京报",
+      "content": "2026-09-20 新政后深圳楼市现三大变化，二手房贷款40年买家占比8%  新京报"
     },
     {
       "group": "credit",
