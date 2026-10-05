@@ -1,60 +1,69 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-09-29",
+  "updated": "2026-10-04",
   "items": [
     {
       "group": "credit",
-      "title": "金融营销新规落地！贷款中介集体“消失”：业内人士称八成公司停业放假，助贷人等着转",
-      "source": "21世纪经济报道",
-      "date": "2026-09-30",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRjRMOFJVLV91MVNjMkFrSENJWW5aRmpTSGNHdU9SbkpGYXU2ekNObnFaOWRQamhzYkZvN2h1UFpXUmJQTkc3QUNvUGw0bWpHbmhWQU9BZnRxV0EwV1Y2Uk1OOEZqd1h0dkhScXkwc2h1a3QyQUZwQmFhalh3T2FndmNmYWN2dXY0WjBRZDJGRQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-30 金融营销新规落地！贷款中介集体“消失”：业内人士称八成公司停业放假，助贷人等着转行？  21财经",
-      "content": "2026-09-30 金融营销新规落地！贷款中介集体“消失”：业内人士称八成公司停业放假，助贷人等着转行？  21财经"
-    },
-    {
-      "group": "credit",
-      "title": "监管新规落地在即互联网助贷行业整改提速- 中国日报网 - China Daily",
-      "source": "China Daily",
-      "date": "2026-09-29",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5VjFqXzg0c29mUkRneTVxNzNNWURwZXMyNjVnZEdSbmJneHFLbnBqejJXMkxPNEg5ZWxCbkliQ1c1VGR1OGxDQ25QeFFuM2ViWklrY0xtN3F2bTlrbE9ueTZsM1VsNTZUWnJHTVUzU0hSdTZicW1KQkI1R0FYdVk?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-29 监管新规落地在即互联网助贷行业整改提速- 中国日报网  China Daily",
-      "content": "2026-09-29 监管新规落地在即互联网助贷行业整改提速- 中国日报网  China Daily"
-    },
-    {
-      "group": "credit",
-      "title": "新一期贷款市场报价利率保持不变",
-      "source": "中国经济网",
-      "date": "2026-09-27",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE16bDQ3WERUMlZVNmcyb1JpZ05ReVFuRWdiXy1rQS1WYVNQVlQyTDRkc3ZjWUZGYTZIU3BVWnI2VHZ6TG9pSzdMZDdGVUx3NmJBQ1JiVGVaVEVCLWgzdXJtV1ZaTVBHQ0k4N0RUdDF1QQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-27 新一期贷款市场报价利率保持不变  中国经济网",
-      "content": "2026-09-27 新一期贷款市场报价利率保持不变  中国经济网"
-    },
-    {
-      "group": "property",
-      "title": "“8·28”楼市新政满月观察｜深圳新房现售成交占比明显提升，二手房议价空间持续收",
-      "source": "每日经济新闻",
-      "date": "2026-09-28",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9HMkxHOEN6QUJqb0ZObVpubkpHTWhRd0dHWlFoTXlKLWlVTW9ralhiNUo1VUZwTTRYejZ3V0dvcjNkcTVReTZtYjBXSEdmNUlsaEc2T1ZFVWE3UVFLaExNd1lLM00xQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-28 “8·28”楼市新政满月观察｜深圳新房现售成交占比明显提升，二手房议价空间持续收窄  每日经济新闻",
-      "content": "2026-09-28 “8·28”楼市新政满月观察｜深圳新房现售成交占比明显提升，二手房议价空间持续收窄  每日经济新闻"
-    },
-    {
-      "group": "property",
-      "title": "新政后深圳楼市现三大变化，二手房贷款40年买家占比8%",
+      "title": "财政央行协同发力！居民购房贷款贴息政策即将落地，多家银行可“免申即享”",
       "source": "新京报",
-      "date": "2026-09-20",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1kNGl1a1k3Snp6em01MjYzVjJVTW9qN3d4VnZMVjllbklUUEhac2NhWnlaQU5tWGtkV2N0Ym1EdXR1d1ZSWm9heW9qX0VyOVJOZzRCYk9tNnZZbnE5ZFlOZDdn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-20 新政后深圳楼市现三大变化，二手房贷款40年买家占比8%  新京报",
-      "content": "2026-09-20 新政后深圳楼市现三大变化，二手房贷款40年买家占比8%  新京报"
+      "date": "2026-09-30",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1vRjVKbjlBVy1RSkRfT3NPRDU2amVuaWRPRk1iaHBUTk4xTF9SVFd4MDNoRjRDUkhmdHZHWDFwR1FNaTFCbVZDVXkxckYtYnJhUEppYlZiV2d4ei1LQzJkNzJR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-30 财政央行协同发力！居民购房贷款贴息政策即将落地，多家银行可“免申即享”  新京报",
+      "content": "2026-09-30 财政央行协同发力！居民购房贷款贴息政策即将落地，多家银行可“免申即享”  新京报"
     },
     {
       "group": "credit",
-      "title": "多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？ - QQ News",
+      "title": "法国央行行长就利率发出警告",
+      "source": "环球市场播报",
+      "date": "2026-10-06",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-10-06/doc-iniuezxx6178713.shtml",
+      "summary": "2026-10-05 法国央行行长Emmanuel Moulin在采访中警告称，如果法国不采取行动整顿财政问题，可能会“被利率扼住咽喉”。 Moulin表示，尽管近几日主权债市场的走势“严重且令人担忧”...",
+      "content": "法国央行行长Emmanuel Moulin在采访中警告称，如果法国不采取行动整顿财政问题，可能会“被利率扼住咽喉”。 Moulin表示，尽管近几日主权债市场的走势“严重且令人担忧”，但法国仍可能重新赢得投资者信心。 Moulin表示，“法国不是欧债危机时期的希腊” “如果法国今年能够按照政府提出的方案通过预算，削减支出并缩。小赤字，那么这一财政整顿行动将令市场安心”。 责任编辑：李桐 24小时滚动播报最新的财经资讯和视频，更多粉丝福利扫描二维码关注（sinafinance） 新浪财经意见反馈留言板 新浪简介|广告服务|About Sina 联系我们|招聘信息|通行证注册 产品答疑|网站律师|SINA English Copyright © 1996-2026 SINA Corporation All Rights Reserved 新浪公司 版权所有"
+    },
+    {
+      "group": "credit",
+      "title": "这些房贷利率，将阶段性降至“2字头”",
+      "source": "21世纪经济报道",
+      "date": "2026-10-01",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZXJuVldkSEUyUzJhWVB1Zi12SzQ3cVBSMFNDZENNT3dOVmRkcjg3Tk1TaHZRY2xYWGtxQk9zQkY4TDQ2Y0pVQmVXVmhVVTNpRm5WU2xUUG9PczBUeXVWUlZlQllfR3FRUEFEcXhYTVhCcVBCWVZaSGtYS2lQTHFjTUNPQ3h0YUJZY1dQd2I0SQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-01 这些房贷利率，将阶段性降至“2字头”  21财经",
+      "content": "2026-10-01 这些房贷利率，将阶段性降至“2字头”  21财经"
+    },
+    {
+      "group": "credit",
+      "title": "个人房贷贴息政策10月1日起实施 哪些首套房可享1个百分点贴息？",
+      "source": "财新",
+      "date": "2026-09-29",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5GX0NScWpvV0YtYWtuQWpxNFdqQU1nS3BDWTlGT3VMVlJkZDhSMGFJak5nMkl2bENHYTBkVmVGbmVwYVQ4T09WNFFpbU05N19nblBMVTM5MmpSRnVNYkd3Z0l3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-29 个人房贷贴息政策10月1日起实施 哪些首套房可享1个百分点贴息？  财新",
+      "content": "2026-09-29 个人房贷贴息政策10月1日起实施 哪些首套房可享1个百分点贴息？  财新"
+    },
+    {
+      "group": "property",
+      "title": "房贷贴息来了！100万房贷利息可少还近5万，专家：降低购房成本，一二线城市楼市金",
+      "source": "中新经纬",
+      "date": "2026-09-29",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBWUmc0RjdKenVNZG5FRkU0WEdGLTRDN3d6cWhfM1BfRExQZGRtUWRwc3NCVUtjc3pvYXBjWEp5V2YtNW1TTXhSVnlDWFBJNDZsMGZZQWR1eFZJVlB2WnN2cmhxYzNsSkU?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-09-29 房贷贴息来了！100万房贷利息可少还近5万，专家：降低购房成本，一二线城市楼市金九银十有望活跃｜宅男财经  jwview.com",
+      "content": "2026-09-29 房贷贴息来了！100万房贷利息可少还近5万，专家：降低购房成本，一二线城市楼市金九银十有望活跃｜宅男财经  jwview.com"
+    },
+    {
+      "group": "property",
+      "title": "2026年前八个月新房降12.1%、二手房增10.6%，买房人的选择变了？ -",
       "source": "腾讯新闻",
-      "date": "2026-09-25",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5jX0tvSlZKUzkyM0JYZzlIUDdfb0p4cGJCZW96M3l2SHI1T2JzRHM0eU00Wmh5Wm9FVVc4dHdHVi02R0M2bHctWjlMM252cHVqMGZtejRoWllkbXBkeUhtSkln?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-09-25 多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？  QQ News",
-      "content": "2026-09-25 多地已落地房贷贴息，10月会全国统一吗？存量房贷能不能领？  QQ News"
+      "date": "2026-10-02",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9GVXE2OHdrSXJNdTM1WEl6bk00TG82Z3NnVFQ0QmxUWUZmdXpRT3U3OHctSHpMOGZvM0R3SWlKX3czdmdpSzVQNXlsUm1MbWxHNTVzY1dn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-02 2026年前八个月新房降12.1%、二手房增10.6%，买房人的选择变了？  QQ News",
+      "content": "2026-10-02 2026年前八个月新房降12.1%、二手房增10.6%，买房人的选择变了？  QQ News"
+    },
+    {
+      "group": "property",
+      "title": "上海新房环比涨0.4%，2030年房价会走向同涨同跌吗？ - QQ News",
+      "source": "腾讯新闻",
+      "date": "2026-10-03",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE42UW5IQkhaUlhCQnJlSGxfYktmSDBrSGs4cjVEdXptcmpQOTQxRnZpZGt3OEE0YnhsX2hhUWxrZ0pGcjFSVFJ3Z2N3Y3luRS0zaGxfZmxn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-03 上海新房环比涨0.4%，2030年房价会走向同涨同跌吗？  QQ News",
+      "content": "2026-10-03 上海新房环比涨0.4%，2030年房价会走向同涨同跌吗？  QQ News"
     }
   ]
 };
