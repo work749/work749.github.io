@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "items": [
     {
       "group": "credit",
@@ -13,21 +13,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
+      "title": "民生银行发行100亿元金融债券 首个计息周期票面利率1.58%",
+      "source": "观点网",
+      "date": "2026-10-16",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzeVVFOEV2WjFwSFNfZ25BUzdwelZ5NjV1OHZEcktUSmVmaGtuZmVjb3lnUWlTWDlNbUF1VGpDUHc3TWU3eVFnMmpZZjZmNS0zVEpLMjZWYXlpX0oyS1NmaVJn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-16 民生银行发行100亿元金融债券 首个计息周期票面利率1.58%  观点网",
+      "content": "2026-10-16 民生银行发行100亿元金融债券 首个计息周期票面利率1.58%  观点网"
+    },
+    {
+      "group": "credit",
       "title": "房贷贴息后有购房者利率降至2%，“已审未发”贷款可咨询经办行 - finance",
       "source": "finance.sina.com.cn",
       "date": "2026-10-13",
       "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQbnFqdG9zcml5QXJVSk9XSzl2QXVCSk5aVk5iQlRrVDdEdFlQVUVPaGlOOUpwRFgtQnFkRl9QZV9NeEJmTmdmc002WlNGb1pUbXZfNnh1MktHVlNlRHk2dF9xSl9zbVNUVmExUHVWUWVmOXZzWVhSb1VaVng0NF9FRHVLZHlGejB6Y20wQ1g3Rk5LZzhLbXVVU0txdk51cnAxMDlBYlYzNERNbUdKZzFoMHd2RWJ0ZDlzVWo0dFR1OEotSXRaMFdJUl8zeVhBZnBNMFJqNm1iUXE3Y1NMenBYWDd2YXZnbnpnSVlVVHN5S2VHUUxUUFA0ZnZWQkNYSTRtbmluSHRyUl9HRGM2MGlSdGo1azdVc2xuOGc?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-10-13 房贷贴息后有购房者利率降至2%，“已审未发”贷款可咨询经办行  finance.sina.com.cn",
       "content": "2026-10-13 房贷贴息后有购房者利率降至2%，“已审未发”贷款可咨询经办行  finance.sina.com.cn"
-    },
-    {
-      "group": "property",
-      "title": "政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成",
-      "source": "mrjjxw.com",
-      "date": "2026-10-08",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzajBoQmEyYWZtYmQ5MGxUYkZQZjlTOFNHYTZvSThMM055WHpPLTlxR3BiTDU4UjNkUlNNUHhNclNSZml6WGROcGNlOVdEMlpsU25Ec19mQzBnOXFUdl9TSUpPOHJJdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-08 政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成交面积同比增长33.8%  mrjjxw.com",
-      "content": "2026-10-08 政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成交面积同比增长33.8%  mrjjxw.com"
     },
     {
       "group": "property",
@@ -48,13 +48,22 @@ window.NEWS_DATA = {
       "content": "2026-10-11 房地产救市进入时间换空间阶段：首套房贷贴息与现房销售改革同步推进  虎嗅网"
     },
     {
-      "group": "credit",
-      "title": "越南国家银行代表团参加2026年国际货币基金组织与世界银行集团年会 - Thôn",
-      "source": "Thông tấn xã Việt Na",
+      "group": "property",
+      "title": "政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成",
+      "source": "mrjjxw.com",
+      "date": "2026-10-08",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzajBoQmEyYWZtYmQ5MGxUYkZQZjlTOFNHYTZvSThMM055WHpPLTlxR3BiTDU4UjNkUlNNUHhNclNSZml6WGROcGNlOVdEMlpsU25Ec19mQzBnOXFUdl9TSUpPOHJJdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-08 政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成交面积同比增长33.8%  mrjjxw.com",
+      "content": "2026-10-08 政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成交面积同比增长33.8%  mrjjxw.com"
+    },
+    {
+      "group": "property",
+      "title": "中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大，调整压力仍存 港美股资",
+      "source": "华盛通",
       "date": "2026-10-15",
-      "url": "https://news.google.com/rss/articles/CBMixgNBVV95cUxPbG9HMTdycGZVaDZINmpBbmZINVFvbXlrZE9DVnJxdmw2aFB3cHZhenFjNV9aQVUwV1dCOVptUFBIYWFVeEpIS25TejdvdksyNjdBZHJYRXhhQXJfREU2QUJNVk1UNzVXUW1sZko2T20tNTM4RG8wd2VKSldVMUtLeURxMjctTDlPQS1TQ1p0WWVXdkRFWDZyUmNsZDZHZEJLWlZTbVBPbi1CcXNNNW5qUHVrRFhSX2o5aG1wUE16SG90ZzY5RHlhRGZQYzRJanFlOW1qMDlMQU1NRk11QlRkQmFfamJfRjczOEI4R0NUN3dqblRWVVRrMzRaYTVZampCOUZfNVB3eWZrNjNDenNKWnozSnByVzhPNGRaeGR2R0FkWnpPVU0tMWxnOVdINXdNWGFNOEo5Z3hyTEpYbm5CTWp6X21Xbk1DaHNoWUI3VmpjOEdoWlAxZTNpN3NHb2tqVnR5SFBsenVWQl8zcE1WWUdUWXdIWkpudWV2azlVc1h4cHFmM2xtaG5jOUViSHE3NTVfX01TeHhpRmdwVGZMUGFNRVlyaWhSbmJZWU5mUFhNWWlIYnoycl92NENLd0dlNHlGNmNn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-15 越南国家银行代表团参加2026年国际货币基金组织与世界银行集团年会  Thông tấn xã Việt Nam",
-      "content": "2026-10-15 越南国家银行代表团参加2026年国际货币基金组织与世界银行集团年会  Thông tấn xã Việt Nam"
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ka2tXYkk1Z1RNYTJwOW1aRkhHLW5qZ1BLRVhZME80YU5XZHJ2Uld2dWw4anBnUEcwM0NwYktDTURnVWt2UWlfS0RmSnQ5alZ0QmdVV0hSVlhkTFNpRXFGUVhB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-15 中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大，调整压力仍存 港美股资讯  华盛通",
+      "content": "2026-10-15 中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大，调整压力仍存 港美股资讯  华盛通"
     }
   ]
 };
