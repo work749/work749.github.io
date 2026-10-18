@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "items": [
     {
       "group": "credit",
@@ -31,15 +31,6 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达",
-      "source": "东方财富",
-      "date": "2026-10-09",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4xaUZEY2dLUDlqcWcza25aNGJ5Z1dST25lUU9YZGVYWV91eUwzV01wYzBoeUMtLUJFemFqU3pSZ21ydGJrQVJCWTdHRkp1NWZKN3gyOUNYUE44WjN4WWZDeVlUc3JIZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-09 国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达  东方财富",
-      "content": "2026-10-09 国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达  东方财富"
-    },
-    {
-      "group": "property",
       "title": "房地产救市进入时间换空间阶段：首套房贷贴息与现房销售改革同步推进",
       "source": "虎嗅网",
       "date": "2026-10-11",
@@ -58,12 +49,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大，调整压力仍存 港美股资",
-      "source": "华盛通",
+      "title": "国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达",
+      "source": "东方财富",
+      "date": "2026-10-09",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4xaUZEY2dLUDlqcWcza25aNGJ5Z1dST25lUU9YZGVYWV91eUwzV01wYzBoeUMtLUJFemFqU3pSZ21ydGJrQVJCWTdHRkp1NWZKN3gyOUNYUE44WjN4WWZDeVlUc3JIZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-09 国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达  东方财富",
+      "content": "2026-10-09 国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达  东方财富"
+    },
+    {
+      "group": "property",
+      "title": "上海新房还在涨，北京广州深圳却在跌：2026年买房，为什么二手房反超了新房？ -",
+      "source": "腾讯新闻",
       "date": "2026-10-15",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ka2tXYkk1Z1RNYTJwOW1aRkhHLW5qZ1BLRVhZME80YU5XZHJ2Uld2dWw4anBnUEcwM0NwYktDTURnVWt2UWlfS0RmSnQ5alZ0QmdVV0hSVlhkTFNpRXFGUVhB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-15 中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大，调整压力仍存 港美股资讯  华盛通",
-      "content": "2026-10-15 中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大，调整压力仍存 港美股资讯  华盛通"
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBWV0RadV90LXZpbXlCbUNMRnVLT1RaUzFBdzVNeENwM0NIYkJid0gxQlJPb2J4WVJlVHQwd1BERWswbWNnUW5DOHlZVTZzSmYxWVNUQWNn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-15 上海新房还在涨，北京广州深圳却在跌：2026年买房，为什么二手房反超了新房？  QQ News",
+      "content": "2026-10-15 上海新房还在涨，北京广州深圳却在跌：2026年买房，为什么二手房反超了新房？  QQ News"
     }
   ]
 };
