@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "items": [
     {
       "group": "credit",
@@ -10,6 +10,15 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOU1pwemhJYXVHbXRKSmd2bGlrVTNNTkNVRG9SMWdzM3N3bUN3TGV1WUYyTURHSEJvX0xrZGNiRGxyRWROTElyMl92enMwekZtaGdaVHdJQV9YLVF4cGJuY0xwZlZjVkUyVTJIU1dIT1JvSUE0YnRMaExaOWNIdy0xNkFmZXN2YW1fdW1nVXk4NA?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-10-12 房贷贴息新政落地：对商业银行经营影响几何？  21财经",
       "content": "2026-10-12 房贷贴息新政落地：对商业银行经营影响几何？  21财经"
+    },
+    {
+      "group": "credit",
+      "title": "提醒各位股友！银行AI风控上线，低息经营贷、消费贷炒股这条路彻底堵死了",
+      "source": "东方财富",
+      "date": "2026-10-18",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE02am1qS3pMLUZRWmNQRGs3d1lxb09ENXhDSk12ZWNwVUxKY2VJY0V5LTdSY1V5S1VrVUJDWWJ1Y0YyZm0wcEkyQ21SNnNKUHRsUXFtcmNEMUw0WEoySEpYOXAtTWRYbDQ1ZzIw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-18 提醒各位股友！银行AI风控上线，低息经营贷、消费贷炒股这条路彻底堵死了  财富号",
+      "content": "2026-10-18 提醒各位股友！银行AI风控上线，低息经营贷、消费贷炒股这条路彻底堵死了  财富号"
     },
     {
       "group": "credit",
@@ -37,15 +46,6 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1rUTZWZGM3R1RLYk50R2VaNHF5WlM2Z1JlbS1MeDZUdG5ScGJTZ2drUEJtR3BxemhTNm9UWF9xM1V4N09XU1dERVdHNW51UnZoeXhUWDZHSzFmbjJZWXhR?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-10-11 房地产救市进入时间换空间阶段：首套房贷贴息与现房销售改革同步推进  虎嗅网",
       "content": "2026-10-11 房地产救市进入时间换空间阶段：首套房贷贴息与现房销售改革同步推进  虎嗅网"
-    },
-    {
-      "group": "property",
-      "title": "政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成",
-      "source": "mrjjxw.com",
-      "date": "2026-10-08",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzajBoQmEyYWZtYmQ5MGxUYkZQZjlTOFNHYTZvSThMM055WHpPLTlxR3BiTDU4UjNkUlNNUHhNclNSZml6WGROcGNlOVdEMlpsU25Ec19mQzBnOXFUdl9TSUpPOHJJdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-08 政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成交面积同比增长33.8%  mrjjxw.com",
-      "content": "2026-10-08 政策“组合拳”集中落地后首个国庆假期：现房销售重构房企打法，重点25城新房日均成交面积同比增长33.8%  mrjjxw.com"
     },
     {
       "group": "property",
