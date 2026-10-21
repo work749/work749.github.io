@@ -1,42 +1,33 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "items": [
     {
       "group": "credit",
-      "title": "潘功胜谈货币政策转型：隔夜回购将成主要政策利率，退出存贷基准利率",
-      "source": "财新",
-      "date": "2026-10-19",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ycXBFRTh0Z3hTZ1FNa1B1MDZXaHl2bS1OTkktNl9ETEFyVEJfOF90X1I2WERTTWpoc1BxNXd5QURCSHREZGtuOE94SUZPRjBJNlhjNXBwbzV1UjJaY0ppSDlR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-19 潘功胜谈货币政策转型：隔夜回购将成主要政策利率，退出存贷基准利率  财新",
-      "content": "2026-10-19 潘功胜谈货币政策转型：隔夜回购将成主要政策利率，退出存贷基准利率  财新"
+      "title": "事关房贷！央行公布最新LPR",
+      "source": "新浪财经",
+      "date": "2026-10-20",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9nODh4UHdPZFY0SjRXWGExS01aWHRqWmNyMlpXeDFDWjREOWd5ZGRUNEYtd0trMW5lZkFxMGFmT3RnaEZtSjRmLUZKNUJRNGZLeHVEcmxrYjd5Q1Y4bXZ1a1Y2WG80MHlKX0xGbU1QbDdBTHgyY0E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-20 事关房贷！央行公布最新LPR  新浪财经",
+      "content": "2026-10-20 事关房贷！央行公布最新LPR  新浪财经"
     },
     {
       "group": "credit",
-      "title": "购房贴息政策落地实探：多地银行执行，部分已审未放贷款也能享受",
-      "source": "21世纪经济报道",
+      "title": "消费贷贴息如何优化？东吴证券芦哲：可给生育养老等加成贴息 - QQ News",
+      "source": "腾讯新闻",
       "date": "2026-10-15",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORzljLTNvUzNmM1pISkl3N09rSGNIWjBiNHdDZm9lSTVNb0xzQTdHeWFjMGRLZ2diQWhLaTEtNFZNczVqX1V3Y1RScXFGU1NzNURIM2FkLWlGSzItczJoTHNZekhCUGg5UGZnRGlzVXFrVUVwVTJKSHpqNFJub25FaVV1c1dqdHY0ZVhpTlp6Yw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-15 购房贴息政策落地实探：多地银行执行，部分已审未放贷款也能享受  21财经",
-      "content": "2026-10-15 购房贴息政策落地实探：多地银行执行，部分已审未放贷款也能享受  21财经"
-    },
-    {
-      "group": "credit",
-      "title": "居民购房贷款贴息政策的四重防线_银行新闻_银行",
-      "source": "证券之星",
-      "date": "2026-10-12",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Ia0N0bndjelY3T2VuR0x5LTZybFV3ZUN2NWFLT1NRbXJWeFdrRDNuWXZaZkswYUNTZjBpY2w0bWF0T2VHQzRrZmxaSzgtMks3LTJ3djBYUTFEdXM2azJrcA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-12 居民购房贷款贴息政策的四重防线_银行新闻_银行  证券之星",
-      "content": "2026-10-12 居民购房贷款贴息政策的四重防线_银行新闻_银行  证券之星"
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE4wYUdCeVpYNHl4M2VFVVJlV1lENFFtdVlrdnljYkZoMVI4bUNHeHMyNnhzT3VzQ1dhWENYaEVLM01TM0VzS3VoT0FtekM0Z0xIS0Z6RmEzenhpbVBVNHRVUldR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-15 消费贷贴息如何优化？东吴证券芦哲：可给生育养老等加成贴息  QQ News",
+      "content": "2026-10-15 消费贷贴息如何优化？东吴证券芦哲：可给生育养老等加成贴息  QQ News"
     },
     {
       "group": "property",
-      "title": "国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达",
-      "source": "东方财富",
-      "date": "2026-10-09",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4xaUZEY2dLUDlqcWcza25aNGJ5Z1dST25lUU9YZGVYWV91eUwzV01wYzBoeUMtLUJFemFqU3pSZ21ydGJrQVJCWTdHRkp1NWZKN3gyOUNYUE44WjN4WWZDeVlUc3JIZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-09 国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达  东方财富",
-      "content": "2026-10-09 国庆二手房成交超预期，贴息政策落地或助力房地产行业止跌回稳丨盘中雷达  东方财富"
+      "title": "徐州新房、上海二手房领涨全国，9月70城房价藏了什么信号？",
+      "source": "同花顺",
+      "date": "2026-10-19",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9sNkpxdVRnaFRpVkE1NEJxM05iUDE2VHpzQ2VMZWZFRUVpTVFEWk9VUUtnb2t2a0ZIZXNYUmFMQ3N2OHB3VWtJdXhEYmxoS2xtaGE2bTdWQXEyX2d2UmVKSnhR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-19 徐州新房、上海二手房领涨全国，9月70城房价藏了什么信号？  同花顺",
+      "content": "2026-10-19 徐州新房、上海二手房领涨全国，9月70城房价藏了什么信号？  同花顺"
     },
     {
       "group": "property",
@@ -64,6 +55,24 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5lZ0YtOGFwSVIzaElEZVBXbEQ1dEVGSmVsRHZSYzBJOFFqd09MQy12VVZqU2E0NVk5WjduRjhqRFlkVkdTYWRnSDh0aVowVGoyVVl0TDRRdkVRcTNkczlpaGp6U3RtQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  https://www.mrjjxw.com/",
       "content": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  https://www.mrjjxw.com/"
+    },
+    {
+      "group": "credit",
+      "title": "居民购房贷款贴息政策的四重防线_银行新闻_银行",
+      "source": "证券之星",
+      "date": "2026-10-12",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Ia0N0bndjelY3T2VuR0x5LTZybFV3ZUN2NWFLT1NRbXJWeFdrRDNuWXZaZkswYUNTZjBpY2w0bWF0T2VHQzRrZmxaSzgtMks3LTJ3djBYUTFEdXM2azJrcA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-12 居民购房贷款贴息政策的四重防线_银行新闻_银行  证券之星",
+      "content": "2026-10-12 居民购房贷款贴息政策的四重防线_银行新闻_银行  证券之星"
+    },
+    {
+      "group": "property",
+      "title": "为什么当前房地产刺激力度超过2015年，房价走势却完全不同？ - QQ News",
+      "source": "腾讯新闻",
+      "date": "2026-10-18",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9pU2FYV2MtU3lmNl9MMGlVYThLUXRvYzFhdEJMbkVkb1ZSYWNWZlZDQXV5U212dmd5RjVqYm1OVU5GdmwxWUV5MEc0ZlhjTVFZZ0tPS05B?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-18 为什么当前房地产刺激力度超过2015年，房价走势却完全不同？  QQ News",
+      "content": "2026-10-18 为什么当前房地产刺激力度超过2015年，房价走势却完全不同？  QQ News"
     }
   ]
 };
