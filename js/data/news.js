@@ -1,7 +1,16 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "items": [
+    {
+      "group": "credit",
+      "title": "【央行酝酿征信数据库管理办法对六种代理征信投诉行为不予受理】在现行《个人信用信息",
+      "source": "手机新浪网",
+      "date": "2026-10-09",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9SMXo2MmpVQTdYMkd1ampwZnlkS2liWEVVT2NUNzQ5WnNQVlRnWTJ6VVZVY3ZMNkppRUdnZ29KaF96bDNVbF9jZkNnWUhNX3RoY1ZTOFlMS21MSExLMkpWRHpRNA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-09 【央行酝酿征信数据库管理办法对六种代理征信投诉行为不予受理】在现行《个人信用信息基础数据库管理暂行办法》的基础上，人民银行拟进一步规范金融信用信息基础数据库业务，监管范围从银行扩展到其他提供信贷业务的机构，同时将企业征",
+      "content": "2026-10-09 【央行酝酿征信数据库管理办法对六种代理征信投诉行为不予受理】在现行《个人信用信息基础数据库管理暂行办法》的基础上，人民银行拟进一步规范金融信用信息基础数据库业务，监管范围从银行扩展到其他提供信贷业务的机构，同时将企业征信纳入数据库。http://t.cn  手机新浪网"
+    },
     {
       "group": "credit",
       "title": "房贷贴息新政落地：对商业银行经营影响几何？",
@@ -23,11 +32,11 @@ window.NEWS_DATA = {
     {
       "group": "credit",
       "title": "多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将",
-      "source": "https://www.mrjjxw.c",
+      "source": "mrjjxw.com",
       "date": "2026-10-16",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5lZ0YtOGFwSVIzaElEZVBXbEQ1dEVGSmVsRHZSYzBJOFFqd09MQy12VVZqU2E0NVk5WjduRjhqRFlkVkdTYWRnSDh0aVowVGoyVVl0TDRRdkVRcTNkczlpaGp6U3RtQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  https://www.mrjjxw.com/",
-      "content": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  https://www.mrjjxw.com/"
+      "summary": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  mrjjxw.com",
+      "content": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  mrjjxw.com"
     },
     {
       "group": "property",
@@ -48,13 +57,13 @@ window.NEWS_DATA = {
       "content": "2026-10-22 房贷贴息新政落地近一个月 深圳二手房成交均价走低  财新"
     },
     {
-      "group": "property",
-      "title": "房地产救市进入时间换空间阶段：首套房贷贴息与现房销售改革同步推进",
-      "source": "虎嗅网",
-      "date": "2026-10-11",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1rUTZWZGM3R1RLYk50R2VaNHF5WlM2Z1JlbS1MeDZUdG5ScGJTZ2drUEJtR3BxemhTNm9UWF9xM1V4N09XU1dERVdHNW51UnZoeXhUWDZHSzFmbjJZWXhR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-11 房地产救市进入时间换空间阶段：首套房贷贴息与现房销售改革同步推进  虎嗅网",
-      "content": "2026-10-11 房地产救市进入时间换空间阶段：首套房贷贴息与现房销售改革同步推进  虎嗅网"
+      "group": "credit",
+      "title": "消费贷贴息如何优化？东吴证券芦哲：可给生育养老等加成贴息 - QQ News",
+      "source": "腾讯新闻",
+      "date": "2026-10-15",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE4wYUdCeVpYNHl4M2VFVVJlV1lENFFtdVlrdnljYkZoMVI4bUNHeHMyNnhzT3VzQ1dhWENYaEVLM01TM0VzS3VoT0FtekM0Z0xIS0Z6RmEzenhpbVBVNHRVUldR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-15 消费贷贴息如何优化？东吴证券芦哲：可给生育养老等加成贴息  QQ News",
+      "content": "2026-10-15 消费贷贴息如何优化？东吴证券芦哲：可给生育养老等加成贴息  QQ News"
     }
   ]
 };
