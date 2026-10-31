@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "items": [
     {
       "group": "credit",
@@ -13,12 +13,12 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "2026年10月LPR维持不变！合肥当前房贷利率",
-      "source": "凤凰网",
-      "date": "2026-10-24",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1zT3YzQnV4SEJ0UjE3SlZxSnZ5Tkl1MWhhdExwOFFZNkhHQWVyYmJSNFJreV9jWkZpcmliWmVTZ2dTMG9tYzdOQ1FEd3c?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-24 2026年10月LPR维持不变！合肥当前房贷利率  凤凰网",
-      "content": "2026-10-24 2026年10月LPR维持不变！合肥当前房贷利率  凤凰网"
+      "title": "2026年10月LPR维持不变！杭州当前房贷利率 - QQ News",
+      "source": "腾讯新闻",
+      "date": "2026-10-26",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5JU3h6MWl1clpWcnQ3UUh6cHpkS1I0LXJ4QUtPejNJajJnNVZGYVJyWXFvM0ZIUEJKZ2thcFdTLTlGMUtTSzR4ak9kMFZVTXhtZ05WcWxR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-26 2026年10月LPR维持不变！杭州当前房贷利率  QQ News",
+      "content": "2026-10-26 2026年10月LPR维持不变！杭州当前房贷利率  QQ News"
     },
     {
       "group": "credit",
@@ -49,12 +49,12 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "10月第4周重庆九龙坡新房价格11111元/平，环比上周下跌0.04%",
-      "source": "房天下",
-      "date": "2026-10-26",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5oS1BiNUIweFBKSTJRWk9SZmVmT1dWMDJOVzloSzVhbVdrT3AzRXJpbHNVM3dIeUxoU2JkRWdacmhacnlkSVlKY0ZjZ0FQZmZOWkNVZUhjMW5vSklwMXVKLQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-26 10月第4周重庆九龙坡新房价格11111元/平，环比上周下跌0.04%  房天下",
-      "content": "2026-10-26 10月第4周重庆九龙坡新房价格11111元/平，环比上周下跌0.04%  房天下"
+      "title": "最新房贷利率公布！1年期和5年期以上LPR 均未调整",
+      "source": "粤港澳都市网",
+      "date": "2026-10-21",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1qR3cxYjlfTFVBRzlmQmQyRU03aERqSTcyZjh5ZFhZaGNsZHBRNnBGcnR4ckNHTzV0SjFmNzFuT3cxbmNRZkJCWGR1VkNPcnVxdjlhaWMzRkhLdUQx?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-21 最新房贷利率公布！1年期和5年期以上LPR 均未调整  粤港澳都市网",
+      "content": "2026-10-21 最新房贷利率公布！1年期和5年期以上LPR 均未调整  粤港澳都市网"
     },
     {
       "group": "credit",
@@ -67,30 +67,30 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
+      "title": "潘功胜谈货币政策转型：隔夜回购将成主要政策利率，退出存贷基准利率",
+      "source": "财新",
+      "date": "2026-10-19",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ycXBFRTh0Z3hTZ1FNa1B1MDZXaHl2bS1OTkktNl9ETEFyVEJfOF90X1I2WERTTWpoc1BxNXd5QURCSHREZGtuOE94SUZPRjBJNlhjNXBwbzV1UjJaY0ppSDlR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-19 潘功胜谈货币政策转型：隔夜回购将成主要政策利率，退出存贷基准利率  财新",
+      "content": "2026-10-19 潘功胜谈货币政策转型：隔夜回购将成主要政策利率，退出存贷基准利率  财新"
+    },
+    {
+      "group": "credit",
       "title": "多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将",
       "source": "新浪财经",
       "date": "2026-10-16",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMHNtX09vcEFGZHJFVzF4UmloLUswWElTZUdOMGRjX0ktLVBIRERlTjk4RzlLTUw3bU5WczM5NGhGdTRHdWtvdXQ5alltMHVVSDA1X29SMXlTVEc0S091ZzRmUnhNQUpNUjJjaEkzV2ZLTWtvM2lPcmNOSTUyYVZ2d1RLRVllS3VqUEp1dzAxS2hDNWxDQUxBN19MU2dKUFd5RlNqdVVpOVhqN3F4M2dOZ2ZDRVhURTVRTUxlX0JmTTlmaEZ1dzFpcTRnYzU1WU0?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNamRjMFpBZzUtUlhaam9aRm1fRHlJSk53TUVibEpNbHpPYmdYSUNNUjlYR0ltd0dDVXpwRnQ5TDNWM2Z3R2E1OHBQZXN5V1hfQk56a3B5alg0SnZJOVNMRkZ5ZEVGODRiLTh5dGI5NmZ4Ynh3eTZlWmNNYzVwMDBxX3lTNnM0RWhfZGZQMGpJRGxjRTVDQV9vNXZDbHNYb2F4SEFsOE5EdTNmaGt0N1lwUWZtb3JMREZtNVlSSXh4dmdYWFlZQXBBNExmeHhudTNZ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  新浪财经",
       "content": "2026-10-16 多家银行严控贷款违规流向：AI大数据辅助下监管力度进一步增强业内：低息套利行为将进一步收敛  新浪财经"
     },
     {
       "group": "property",
-      "title": "最新房贷利率公布！1年期和5年期以上LPR 均未调整",
-      "source": "粤港澳都市网",
-      "date": "2026-10-21",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1qR3cxYjlfTFVBRzlmQmQyRU03aERqSTcyZjh5ZFhZaGNsZHBRNnBGcnR4ckNHTzV0SjFmNzFuT3cxbmNRZkJCWGR1VkNPcnVxdjlhaWMzRkhLdUQx?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-21 最新房贷利率公布！1年期和5年期以上LPR 均未调整  粤港澳都市网",
-      "content": "2026-10-21 最新房贷利率公布！1年期和5年期以上LPR 均未调整  粤港澳都市网"
-    },
-    {
-      "group": "property",
-      "title": "中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大 调整压力仍存 - QQ",
+      "title": "为什么当前房地产刺激力度超过2015年，房价走势却完全不同？ - QQ News",
       "source": "腾讯新闻",
-      "date": "2026-10-15",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9hTndGNVFCZDFfZFQ4bm9SZlhaZlpMdGF5YUFneks4dndqVEtFV2ttLXhSeVR6OS1CVXNSNVJNTVpFNFFWMXkwRmU5ejRJdjJnTEJRaTNR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-10-15 中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大 调整压力仍存  QQ News",
-      "content": "2026-10-15 中指研究院：9月重点城市二手房价格环比跌幅较上月有所扩大 调整压力仍存  QQ News"
+      "date": "2026-10-18",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9pU2FYV2MtU3lmNl9MMGlVYThLUXRvYzFhdEJMbkVkb1ZSYWNWZlZDQXV5U212dmd5RjVqYm1OVU5GdmwxWUV5MEc0ZlhjTVFZZ0tPS05B?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-10-18 为什么当前房地产刺激力度超过2015年，房价走势却完全不同？  QQ News",
+      "content": "2026-10-18 为什么当前房地产刺激力度超过2015年，房价走势却完全不同？  QQ News"
     }
   ]
 };
