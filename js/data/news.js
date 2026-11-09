@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "items": [
     {
       "group": "credit",
@@ -22,12 +22,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "央行利率“换锚”：从7天到隔夜货币政策传导新变化_国内经济",
-      "source": "证券之星",
+      "title": "央行利率“换锚”：从7天到隔夜 货币政策传导新变化",
+      "source": "经济观察报",
       "date": "2026-11-07",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fMHlyYzc1MEE0OGgtZ3BjN2JPTTQxcjFRdUJfcmZtRTVNLV8tbElldC1zWjJBR1ZPaDU4aTFPRzE2OHZhZmxoMFpReUgyUDhSejFwYjk0djIxRlZHXzVkdnFCTTE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-07 央行利率“换锚”：从7天到隔夜货币政策传导新变化_国内经济  证券之星",
-      "content": "2026-11-07 央行利率“换锚”：从7天到隔夜货币政策传导新变化_国内经济  证券之星"
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9QazFkM0ExQlZfUi0zSmw1RjhXUHd4elJ2RFNFb0N1VVNSWUxodVV3QkFrLVE5MlZSaGp0SHNjRGRiNEh4V3VpYjlKYUpxekU5dXhtdkVMaFc?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-07 央行利率“换锚”：从7天到隔夜 货币政策传导新变化  经济观察网",
+      "content": "2026-11-07 央行利率“换锚”：从7天到隔夜 货币政策传导新变化  经济观察网"
+    },
+    {
+      "group": "credit",
+      "title": "贷款贴息政策激活低总价住房市场",
+      "source": "中国经济网",
+      "date": "2026-11-04",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1BWWZRQjhTaE1rd09QaUtlRkxfMTl6ZVF4S3pRT0I4ZEgyVlpjNlZDZ01UNEhLaWgwUVRqem5aSTl1ODFDaWZOVGRTV2YwZkVDU1ZMUUVjcDhabjg5aVBUWDVhM0lVM3NsOThr?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-04 贷款贴息政策激活低总价住房市场  中国经济网",
+      "content": "2026-11-04 贷款贴息政策激活低总价住房市场  中国经济网"
     },
     {
       "group": "property",
@@ -40,12 +49,12 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "贷款贴息政策激活低总价住房市场",
-      "source": "中国经济网",
-      "date": "2026-11-04",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1BWWZRQjhTaE1rd09QaUtlRkxfMTl6ZVF4S3pRT0I4ZEgyVlpjNlZDZ01UNEhLaWgwUVRqem5aSTl1ODFDaWZOVGRTV2YwZkVDU1ZMUUVjcDhabjg5aVBUWDVhM0lVM3NsOThr?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-04 贷款贴息政策激活低总价住房市场  中国经济网",
-      "content": "2026-11-04 贷款贴息政策激活低总价住房市场  中国经济网"
+      "title": "“不能全部切掉，也不能任其泛滥”：消金边界和助贷角色之辩_公司新闻_财经",
+      "source": "证券之星",
+      "date": "2026-11-06",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9vMTNHbmROWG9NdFdpUDZzUm9RZnlvNHNDSkhnYl9OX2VHQ24wb09yVDcwcWVGZGVycHNsYmRHT2FpbU5GTkt3UjlzWlpkLTlpeEVvRkI4QXZDZzZSV2o0RQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-06 “不能全部切掉，也不能任其泛滥”：消金边界和助贷角色之辩_公司新闻_财经  证券之星",
+      "content": "2026-11-06 “不能全部切掉，也不能任其泛滥”：消金边界和助贷角色之辩_公司新闻_财经  证券之星"
     },
     {
       "group": "credit",
