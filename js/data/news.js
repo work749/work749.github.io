@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "items": [
     {
       "group": "credit",
@@ -16,7 +16,7 @@ window.NEWS_DATA = {
       "title": "牛市早报｜央行：推动贷款利率定价基准改革",
       "source": "澎湃新闻",
       "date": "2026-11-12",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhRUxFZEtFeG1DLURCRFhWRzZlb1BFT2FKOENuWE9CT1pqOTRLeVE0RFh6VG9SNW5SQy1QOE1zaVp6LXBPRXBSQ1p1R28ycl9ZVjZtVFk2R016a3hNelB2NA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5VTERsSkJERHNYQ3hIM0VmM1FCRzd5cXk1LVZqbVJUTE9KaEJ4VlFjMzJwRGtWLVJ2b0hjMkFwSUlHYmNuZjJvUWljYUgwc1UxV01uZUhKY1JkazU0Vmc?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-11-12 牛市早报｜央行：推动贷款利率定价基准改革  ThePaper.cn",
       "content": "2026-11-12 牛市早报｜央行：推动贷款利率定价基准改革  ThePaper.cn"
     },
@@ -30,22 +30,13 @@ window.NEWS_DATA = {
       "content": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家"
     },
     {
-      "group": "credit",
-      "title": "2026年10月LPR维持不变！海口最新房贷利率 - QQ News",
-      "source": "腾讯新闻",
-      "date": "2026-11-02",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBfeGVmTEdpNnRFUzdZNElNWVFhWWE2Mk9jWjJqRGhOZmNyeUFnM3JYdUxQYjZKUGtidHFzNE5uNVVvZVhLM21VNEpQdTZOMHhxUENYU2hn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-02 2026年10月LPR维持不变！海口最新房贷利率  QQ News",
-      "content": "2026-11-02 2026年10月LPR维持不变！海口最新房贷利率  QQ News"
-    },
-    {
       "group": "property",
-      "title": "深圳楼市新信号：新房92.1%卖在关外，二手49%成交在福田罗湖南山",
-      "source": "搜狐",
-      "date": "2026-11-09",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRnlMUlNjU3ZsSDdZVnJOdHRNUS1PeE1jMGtJd0tyRC1JeGRxSW5keUlHcGJTWWNVQjByaTFRQnAzVW9GQ0ExNkQyV1hEX1R6d3BCSEpiTFJzUmJ4dy1KVjZKWTZJVHFzV1d3OVVpX1lQYnl6blRqeGFFUzZBVzF4ei1Hc0xuTHhH?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-09 深圳楼市新信号：新房92.1%卖在关外，二手49%成交在福田罗湖南山  搜狐网",
-      "content": "2026-11-09 深圳楼市新信号：新房92.1%卖在关外，二手49%成交在福田罗湖南山  搜狐网"
+      "title": "深圳前10月二手房成交创六年同期新高，新房加速去库存",
+      "source": "21世纪经济报道",
+      "date": "2026-11-11",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMHBVZ1hQOV8zeEh6MjAtSlZNNGFfT2EzRUtjM09aMmJjQVBNNUF4M1FncG40Y1RvXzMxX2FKUEhhUXBINGRsOEg5cU5qcFB4c2JucDQ1RVBVSDdyNXpTNU9zRkNXcldhWUJOVDlLVkZQT3FzeUI1ZnRBSXVlaEZpVzFaNFhHem5jWHBWazh5QQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-11 深圳前10月二手房成交创六年同期新高，新房加速去库存  21财经",
+      "content": "2026-11-11 深圳前10月二手房成交创六年同期新高，新房加速去库存  21财经"
     },
     {
       "group": "property",
@@ -57,22 +48,13 @@ window.NEWS_DATA = {
       "content": "2026-11-03 楼市“银十”收官：重点18城二手住宅成交同比增长17.5%  经济频道"
     },
     {
-      "group": "credit",
-      "title": "央行发布三季度货币政策报告 前三季度GDP同比增长4.6%",
-      "source": "观点网",
+      "group": "property",
+      "title": "【CIFER国际金融双周报】英央行加息、美联储存分歧，利率怎么传到你的贷款",
+      "source": "国际金融与经济研究中心",
       "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrd3VPT2dZbWk5TzYta0xXdXFjcUgzblBDTll2bGUya1YwdW10OXdNaFZyYnl0dFF0aTBwaWJiUTZ6R3o3Ym5sdWpjXy1JSVBIYlpWSzBxSTgtYzlIeFpERHNn?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 央行发布三季度货币政策报告 前三季度GDP同比增长4.6%  观点网",
-      "content": "2026-11-11 央行发布三季度货币政策报告 前三季度GDP同比增长4.6%  观点网"
-    },
-    {
-      "group": "credit",
-      "title": "贷款贴息政策激活低总价住房市场",
-      "source": "中国经济网",
-      "date": "2026-11-04",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1BWWZRQjhTaE1rd09QaUtlRkxfMTl6ZVF4S3pRT0I4ZEgyVlpjNlZDZ01UNEhLaWgwUVRqem5aSTl1ODFDaWZOVGRTV2YwZkVDU1ZMUUVjcDhabjg5aVBUWDVhM0lVM3NsOThr?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-04 贷款贴息政策激活低总价住房市场  中国经济网",
-      "content": "2026-11-04 贷款贴息政策激活低总价住房市场  中国经济网"
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5NaXpmMXBsSXBoUUQxU3BzMmE5aG84WG9FREpLUHlyRFVlNU8zaTA3d2ZqTVplS0tncDJ4LW8wQm51UmpCN3NoNkF3MEk4MjNoeklFeHZPOWoxeWsya25Nd1dqaWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-11 【CIFER国际金融双周报】英央行加息、美联储存分歧，利率怎么传到你的贷款  国际金融与经济研究中心",
+      "content": "2026-11-11 【CIFER国际金融双周报】英央行加息、美联储存分歧，利率怎么传到你的贷款  国际金融与经济研究中心"
     }
   ]
 };
