@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "items": [
     {
       "group": "credit",
@@ -22,21 +22,12 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级",
-      "source": "驱动之家",
-      "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE02b3ZDX0xrZkxmLXlQOUxINzBRcEFCU2NOS3NYdHRHcTR0Sy15SjE2VzhTMmxwUmtRNHpqTDg1aWRiSFhscGhyWDREeGdLNDJSa3pEZEZNUGo?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家",
-      "content": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家"
-    },
-    {
-      "group": "property",
-      "title": "深圳前10月二手房成交创六年同期新高，新房加速去库存",
-      "source": "21世纪经济报道",
-      "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMHBVZ1hQOV8zeEh6MjAtSlZNNGFfT2EzRUtjM09aMmJjQVBNNUF4M1FncG40Y1RvXzMxX2FKUEhhUXBINGRsOEg5cU5qcFB4c2JucDQ1RVBVSDdyNXpTNU9zRkNXcldhWUJOVDlLVkZQT3FzeUI1ZnRBSXVlaEZpVzFaNFhHem5jWHBWazh5QQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 深圳前10月二手房成交创六年同期新高，新房加速去库存  21财经",
-      "content": "2026-11-11 深圳前10月二手房成交创六年同期新高，新房加速去库存  21财经"
+      "title": "央行：加力实施支持资本市场的两项货币政策工具，用好债市非银大额赎回互换便利，维护",
+      "source": "财联社",
+      "date": "2026-11-10",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFA4RmFHSzBPYkprUUh5dlR3VFkwNTFjWkphUkVlUDdtSGJHQXM3WWoxVEdXYmlhZ0pMSW42Q2Q3N0wxZkkzM1E?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-10 央行：加力实施支持资本市场的两项货币政策工具，用好债市非银大额赎回互换便利，维护股票、债券、外汇等金融市场平稳运行  财联社电报",
+      "content": "2026-11-10 央行：加力实施支持资本市场的两项货币政策工具，用好债市非银大额赎回互换便利，维护股票、债券、外汇等金融市场平稳运行  财联社电报"
     },
     {
       "group": "property",
@@ -49,12 +40,39 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "【CIFER国际金融双周报】英央行加息、美联储存分歧，利率怎么传到你的贷款",
-      "source": "国际金融与经济研究中心",
+      "title": "深圳楼市“银十”平稳收官 一二手住宅成交同比保持增长",
+      "source": "21世纪经济报道",
+      "date": "2026-11-02",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPb3BjMVJiend5N25QNV9yUFlKNkFLUXdkN2MzbzBwU3lVa29ZWGVQU1RYcGlZY0I5Uk1XekFjNkZ0c3NfNnE2YlgxeDBIUENCaEJzYy1jckJPdlBxSFBDVk1reVRtVnNLbVZRVjJUWHhNaVdlOHlneXZTc01EZGhLWGhBNUZWcmd0Mnlqd2xOUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-02 深圳楼市“银十”平稳收官 一二手住宅成交同比保持增长  21财经",
+      "content": "2026-11-02 深圳楼市“银十”平稳收官 一二手住宅成交同比保持增长  21财经"
+    },
+    {
+      "group": "property",
+      "title": "11月第2周重庆巴南新房价格8828元/平，环比上周下跌0.44%",
+      "source": "房天下",
+      "date": "2026-11-09",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1qTkFRRXhqUUtzdm83YktpNVhPNFlrOGl2S3M1eHpkbjBJRTN0M0NvYmZSUU4zbi1zQl9zOTBxengzWTNWeDluZlYwNkdRc0ZSeVpmQTZMWUYzVVFKeVJXMQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-09 11月第2周重庆巴南新房价格8828元/平，环比上周下跌0.44%  房天下",
+      "content": "2026-11-09 11月第2周重庆巴南新房价格8828元/平，环比上周下跌0.44%  房天下"
+    },
+    {
+      "group": "credit",
+      "title": "央行发布三季度货币政策报告 前三季度GDP同比增长4.6%",
+      "source": "观点网",
       "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5NaXpmMXBsSXBoUUQxU3BzMmE5aG84WG9FREpLUHlyRFVlNU8zaTA3d2ZqTVplS0tncDJ4LW8wQm51UmpCN3NoNkF3MEk4MjNoeklFeHZPOWoxeWsya25Nd1dqaWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 【CIFER国际金融双周报】英央行加息、美联储存分歧，利率怎么传到你的贷款  国际金融与经济研究中心",
-      "content": "2026-11-11 【CIFER国际金融双周报】英央行加息、美联储存分歧，利率怎么传到你的贷款  国际金融与经济研究中心"
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrd3VPT2dZbWk5TzYta0xXdXFjcUgzblBDTll2bGUya1YwdW10OXdNaFZyYnl0dFF0aTBwaWJiUTZ6R3o3Ym5sdWpjXy1JSVBIYlpWSzBxSTgtYzlIeFpERHNn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-11 央行发布三季度货币政策报告 前三季度GDP同比增长4.6%  观点网",
+      "content": "2026-11-11 央行发布三季度货币政策报告 前三季度GDP同比增长4.6%  观点网"
+    },
+    {
+      "group": "property",
+      "title": "多只QDII限购升级；冯明远调研一博科技 - https://www.mrjjx",
+      "source": "https://www.mrjjxw.c",
+      "date": "2026-11-13",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1EN3RteUJIb0FmbXVlQTRpZ05aTjhHbmliR203dEFfTmdKZW5UYXo4SzVNSkN5QUZ1OEhRMldmWlg4alRiOVJ6MmVFeG12d3I1YmtfbmlQYUxLdzE5UVl0TU9fZU9TZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-13 多只QDII限购升级；冯明远调研一博科技  https://www.mrjjxw.com/",
+      "content": "2026-11-13 多只QDII限购升级；冯明远调研一博科技  https://www.mrjjxw.com/"
     }
   ]
 };
