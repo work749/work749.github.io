@@ -1,16 +1,7 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "items": [
-    {
-      "group": "credit",
-      "title": "央行：从比较单一地参考贷款市场报价利率（LPR）定价向更加多元定价基准转型",
-      "source": "mrjjxw.com",
-      "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4ySU5XWWcwb0d6eE84MnlGYlRDdEhUM3owb3R5c3o0UFE1dlJHOTA1NC1UZ09QM3VlQmlQZE1oaE01Und3N0wycU9kdDROdVBZa0xQamljalVTS2g5bkVxMlFkNnU2UQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 央行：从比较单一地参考贷款市场报价利率（LPR）定价向更加多元定价基准转型  mrjjxw.com",
-      "content": "2026-11-11 央行：从比较单一地参考贷款市场报价利率（LPR）定价向更加多元定价基准转型  mrjjxw.com"
-    },
     {
       "group": "credit",
       "title": "大行市占率达46%！中小银行普惠小微信贷增量何在？",
@@ -49,12 +40,12 @@ window.NEWS_DATA = {
     },
     {
       "group": "property",
-      "title": "11月第2周成都武侯新房价格28680元/平，环比上周持平",
+      "title": "11月第2周重庆大渡口新房价格10200元/平，环比上周上涨0.63%",
       "source": "房天下",
       "date": "2026-11-09",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5CYkhSYlF1VC1PWjZxNGF3V3I3dVUtdFVWdXFkcmdvalMwcnlqeTRwNkY3QzdoaEhOazk1TXFEZ2F3dHRwNzZSNTBEbThBVkpxTFJrMGIwODJQQQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-09 11月第2周成都武侯新房价格28680元/平，环比上周持平  房天下",
-      "content": "2026-11-09 11月第2周成都武侯新房价格28680元/平，环比上周持平  房天下"
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tVm80NVRZMXduUFlkbjc1Z1Jhb2V4ZGtQVm1oUl8yT2hkR2U2SzRqQklxUmtLVW05c05GZ21LTlNMejgtaXdUNkdGTmFIcnI4TC1odnF1Y0Rnc3RfX3l4MA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-09 11月第2周重庆大渡口新房价格10200元/平，环比上周上涨0.63%  房天下",
+      "content": "2026-11-09 11月第2周重庆大渡口新房价格10200元/平，环比上周上涨0.63%  房天下"
     },
     {
       "group": "property",
@@ -64,6 +55,15 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5hS2paMnAzRE8yTmpNR2tOT3J4Mk5COVVTOTZuNGQwUkxpeUVWMzlGbmYwWVh4akpiSV8wSTNCUzNLN1RGZWpBbW90TklNTXlhSEVkZ093cE9fVDNLSjBscg?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-11-01 11月广州黄埔新房价格31553元/平，环比上月上涨0.78%  房天下",
       "content": "2026-11-01 11月广州黄埔新房价格31553元/平，环比上月上涨0.78%  房天下"
+    },
+    {
+      "group": "credit",
+      "title": "央行发布三季度货币政策报告 前三季度GDP同比增长4.6%",
+      "source": "观点网",
+      "date": "2026-11-11",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrd3VPT2dZbWk5TzYta0xXdXFjcUgzblBDTll2bGUya1YwdW10OXdNaFZyYnl0dFF0aTBwaWJiUTZ6R3o3Ym5sdWpjXy1JSVBIYlpWSzBxSTgtYzlIeFpERHNn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-11 央行发布三季度货币政策报告 前三季度GDP同比增长4.6%  观点网",
+      "content": "2026-11-11 央行发布三季度货币政策报告 前三季度GDP同比增长4.6%  观点网"
     }
   ]
 };
