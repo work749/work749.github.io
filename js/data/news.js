@@ -1,7 +1,16 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "items": [
+    {
+      "group": "credit",
+      "title": "中国无抵押消费信贷风险有多大？银行体系能否承受？",
+      "source": "财新",
+      "date": "2026-11-20",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBWTERWVVlTci1iNUhtejNpQjZnNzZWVlJTX2c4NC0tRW4zNG1LaDBabEZNX1NUQWx5b3hQLWkwcldFMWlIcXJSN01XSEZkNnlnMTdoeEJEWWROU3NGc21POWh3?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-20 中国无抵押消费信贷风险有多大？银行体系能否承受？  财新",
+      "content": "2026-11-20 中国无抵押消费信贷风险有多大？银行体系能否承受？  财新"
+    },
     {
       "group": "credit",
       "title": "大行市占率达46%！中小银行普惠小微信贷增量何在？",
@@ -13,30 +22,12 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "2026年11月20日贷款市场报价利率（LPR）",
-      "source": "潮新闻客户端",
-      "date": "2026-11-20",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1xLThBY3hkMWtndVdPZnlfQzFvd2tCeTVKVkJzZ3pwYXBwZ0tLaUI2ajRkOUN3cmhYSHA5aGduR2JhY0tJNDBmWE9JcVFiNFpnTXRMMWxfN2R3OG5oSnUxaE1kcUtCV1JuRG4yQWt6cUlrbFk?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-20 2026年11月20日贷款市场报价利率（LPR）  潮新闻客户端",
-      "content": "2026-11-20 2026年11月20日贷款市场报价利率（LPR）  潮新闻客户端"
-    },
-    {
-      "group": "credit",
       "title": "普惠贷款已达38.5万亿，大行下沉\"抢客\"份额近半，中小银行如何脱困？",
       "source": "财联社",
       "date": "2026-11-19",
       "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5mdkFSRlE1TVJ5ZGp5UDRwR0lhRGRjTUFPT0VDalB1YVpIOFFsdV9Zc1RNS2hvamVzSko1ejNFM0tNQjZiS01iNg?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-11-19 普惠贷款已达38.5万亿，大行下沉\"抢客\"份额近半，中小银行如何脱困？  财联社",
       "content": "2026-11-19 普惠贷款已达38.5万亿，大行下沉\"抢客\"份额近半，中小银行如何脱困？  财联社"
-    },
-    {
-      "group": "credit",
-      "title": "央行最新报告：推动贷款利率定价基准改革",
-      "source": "澎湃新闻",
-      "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB1RjA3NmplNDBtUkNVcjhoOHpVdHI4Q0FtaldQNDBwZnpYXzRSXzRScmJ4UFFlNms1LWdOaUJVRnpvWDV0aGQ3RFQxNjFLTjV5NHlZekE5aXlUWTNqOEltVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn",
-      "content": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn"
     },
     {
       "group": "property",
@@ -51,10 +42,10 @@ window.NEWS_DATA = {
       "group": "property",
       "title": "10月南京新房价格领涨全国 全国70城房价指数：一线城市复苏更明显",
       "source": "紫牛新闻",
-      "date": "2026-11-16",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oLXlCWGJ6WmQwd0Q5WG14MTVsUnAzVnh4ZWpEZ01lcFpCb0U1UnZTbkhCMGVpVnFoQnA2eWRZTmxpZlpIeTFYUDFGT0g5ejN6Tkp1VGdGR294VHQweXRzc1F2ZHE4cEV5?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-16 10月南京新房价格领涨全国 全国70城房价指数：一线城市复苏更明显  紫牛新闻",
-      "content": "2026-11-16 10月南京新房价格领涨全国 全国70城房价指数：一线城市复苏更明显  紫牛新闻"
+      "date": "2026-11-15",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBoVFpkRExsV0NZTzVyZkw0bzJLYkFtaUk5NlpYMGd1LWhJNGFtSTRKQUhJcWdmSVgzcjlMelVKTklhUmQ0azVPV19KN045OEFGSWs1dA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-15 10月南京新房价格领涨全国 全国70城房价指数：一线城市复苏更明显  紫牛新闻",
+      "content": "2026-11-15 10月南京新房价格领涨全国 全国70城房价指数：一线城市复苏更明显  紫牛新闻"
     },
     {
       "group": "property",
@@ -67,21 +58,30 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "消费贷ABS前三季度发行量同比降两成至3119亿元，资产供给收缩或是主因",
-      "source": "财联社",
-      "date": "2026-11-17",
-      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE4ySEtZTS00b3JEdm5PS2tkaDJOTXlYZC1vTHA2a1dMbFppSnoyQWdJZzM0TWQ1UFRWcWJUb25fOVE1dGhxTGc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-17 消费贷ABS前三季度发行量同比降两成至3119亿元，资产供给收缩或是主因  财联社电报",
-      "content": "2026-11-17 消费贷ABS前三季度发行量同比降两成至3119亿元，资产供给收缩或是主因  财联社电报"
+      "title": "央行最新报告：推动贷款利率定价基准改革",
+      "source": "澎湃新闻",
+      "date": "2026-11-11",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB1RjA3NmplNDBtUkNVcjhoOHpVdHI4Q0FtaldQNDBwZnpYXzRSXzRScmJ4UFFlNms1LWdOaUJVRnpvWDV0aGQ3RFQxNjFLTjV5NHlZekE5aXlUWTNqOEltVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn",
+      "content": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn"
+    },
+    {
+      "group": "credit",
+      "title": "央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超",
+      "source": "第一财经",
+      "date": "2026-11-18",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1uNC1sNWtEU0RqVUFURzZzR0d4WS1yMG1xSGkybDRDX0ZTRDRZc3Q1NzVXYUY4Y2Vyb25sd2RpRXBpRXJ5cTU5S3RseE8wU1Q4T1FSdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-18 央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超6000亿  第一财经",
+      "content": "2026-11-18 央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超6000亿  第一财经"
     },
     {
       "group": "property",
-      "title": "一线房价，临近转折点？",
-      "source": "36Kr",
-      "date": "2026-11-15",
-      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0tMWRnbmprZUlHcXRTU05jSnUzUzVPSGNNSGVhNEhYcHFucC01OXRjRi05UlZPcUg4d3AwZHR1Y0tYZTkzSTdrYm5NM3Bidw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-15 一线房价，临近转折点？  36Kr",
-      "content": "2026-11-15 一线房价，临近转折点？  36Kr"
+      "title": "直击业绩会｜贝壳集团管理层：预计今年二手房交易占比持续提升，存量房盘活成新引擎 ",
+      "source": "https://www.mrjjxw.c",
+      "date": "2026-11-17",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBqcEp2X1Rxa3RPMVF1bm1keGo5MC1PeG1XdGVfUkl5dE9TV3pJQXlkUVRmbXc3eHRnRWp0d0NBdG9UaFBQOU1tcnhPc29WQ2ZrTzh4NllzWlduY3RJODNIWTJZTUwyZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-17 直击业绩会｜贝壳集团管理层：预计今年二手房交易占比持续提升，存量房盘活成新引擎  https://www.mrjjxw.com/",
+      "content": "2026-11-17 直击业绩会｜贝壳集团管理层：预计今年二手房交易占比持续提升，存量房盘活成新引擎  https://www.mrjjxw.com/"
     }
   ]
 };
