@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "items": [
     {
       "group": "credit",
@@ -13,30 +13,30 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "大行市占率达46%！中小银行普惠小微信贷增量何在？",
-      "source": "21世纪经济报道",
-      "date": "2026-11-07",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPMWhxSDdPLUR5Q0Z4X0tocWRuc0s0Uy0zcjBXUXZkdlJBVjVZZ2dVSFhMdWtzZ3NyQ2NMeEJpVXlwendDTUFoWGdqdEcxQ0trMFpLNks0ZFJpQndEUVZyNWZ0bS1OY0pFLUlpaExQb1B1ZXN1R09SUG9qRWhMdVFITDNUenB1NVlNak1RWHRPbw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-07 大行市占率达46%！中小银行普惠小微信贷增量何在？  21财经",
-      "content": "2026-11-07 大行市占率达46%！中小银行普惠小微信贷增量何在？  21财经"
-    },
-    {
-      "group": "credit",
-      "title": "普惠贷款已达38.5万亿，大行下沉\"抢客\"份额近半，中小银行如何脱困？",
-      "source": "财联社",
-      "date": "2026-11-19",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5mdkFSRlE1TVJ5ZGp5UDRwR0lhRGRjTUFPT0VDalB1YVpIOFFsdV9Zc1RNS2hvamVzSko1ejNFM0tNQjZiS01iNg?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-19 普惠贷款已达38.5万亿，大行下沉\"抢客\"份额近半，中小银行如何脱困？  财联社",
-      "content": "2026-11-19 普惠贷款已达38.5万亿，大行下沉\"抢客\"份额近半，中小银行如何脱困？  财联社"
-    },
-    {
-      "group": "credit",
       "title": "央行金融科技奖出炉！工行拿下唯一特等奖，8家银行获一等奖",
       "source": "新浪财经",
       "date": "2026-11-12",
       "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQNXdBQ1NGSzNzUmRkM3Y3NmNhZEloVTkzcDZaanNFbXRWM0pVVFk1akJQYlZBV1M4X1I4bEtoZkllRnYxTUFkRkV2SENYdHkxVExvYjJIM2duN2RsY1dVd0VoNHBfNEo2dnRRQ2dncHl0aklucTB3SHNCV1hmdG0tWHRjdlpGSjY2VG5GT2U5R1ZVUUx6TkRscFFSTEgyVFhjaE9uU3ZObUYtdFc3cVAtbU1SY3dpM0MtNXVMbUpPV0tPUXh0MmRFVkxfVzNmdmd2dkptaWctTVpNdzF2RVRkeWZhcHpBM3BWUUtjT21sUk5WV0UzZlRzakZ3ZXRXNllzdU9Fanh0QmlhNDJyeTI4WWNJVVJxU3M?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-11-12 央行金融科技奖出炉！工行拿下唯一特等奖，8家银行获一等奖  新浪财经",
       "content": "2026-11-12 央行金融科技奖出炉！工行拿下唯一特等奖，8家银行获一等奖  新浪财经"
+    },
+    {
+      "group": "credit",
+      "title": "央行最新报告：推动贷款利率定价基准改革",
+      "source": "澎湃新闻",
+      "date": "2026-11-11",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB1RjA3NmplNDBtUkNVcjhoOHpVdHI4Q0FtaldQNDBwZnpYXzRSXzRScmJ4UFFlNms1LWdOaUJVRnpvWDV0aGQ3RFQxNjFLTjV5NHlZekE5aXlUWTNqOEltVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn",
+      "content": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn"
+    },
+    {
+      "group": "credit",
+      "title": "主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%",
+      "source": "新浪新闻_手机新浪网",
+      "date": "2026-11-22",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZDFNQW9wV1FXaG5XRG5RM0VDSXZkVlNKZFJYZEpoR3hYTnJoazN2WF9SQmtfU1RuNmFMZFRyS0lMb2NRUTZWbjRxZDhQRTVjM1Q2WGo2WGtmZWpDUWhtdDE5UENEN2Z3NWRvS0RWLVROWVBselc1c1RLYVphOW5TWGM1Nl9LVVQ2Q1dmdDdjaEJzemtG?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-22 主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%  新浪新闻_手机新浪网",
+      "content": "2026-11-22 主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%  新浪新闻_手机新浪网"
     },
     {
       "group": "property",
@@ -58,30 +58,21 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
-      "title": "央行最新报告：推动贷款利率定价基准改革",
-      "source": "澎湃新闻",
-      "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB1RjA3NmplNDBtUkNVcjhoOHpVdHI4Q0FtaldQNDBwZnpYXzRSXzRScmJ4UFFlNms1LWdOaUJVRnpvWDV0aGQ3RFQxNjFLTjV5NHlZekE5aXlUWTNqOEltVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn",
-      "content": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn"
+      "title": "央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超",
+      "source": "第一财经",
+      "date": "2026-11-18",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1uNC1sNWtEU0RqVUFURzZzR0d4WS1yMG1xSGkybDRDX0ZTRDRZc3Q1NzVXYUY4Y2Vyb25sd2RpRXBpRXJ5cTU5S3RseE8wU1Q4T1FSdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-18 央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超6000亿  第一财经",
+      "content": "2026-11-18 央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超6000亿  第一财经"
     },
     {
-      "group": "credit",
-      "title": "度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级",
-      "source": "驱动之家",
-      "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE02b3ZDX0xrZkxmLXlQOUxINzBRcEFCU2NOS3NYdHRHcTR0Sy15SjE2VzhTMmxwUmtRNHpqTDg1aWRiSFhscGhyWDREeGdLNDJSa3pEZEZNUGo?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家",
-      "content": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家"
-    },
-    {
-      "group": "credit",
-      "title": "新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现",
-      "source": "腾讯新闻",
-      "date": "2026-11-09",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBZaVJtQmlyMlBLd2t3aXRtUUFUb3dKR21IRzYzbjAyMHJrVTZ3eFc1S1NNcDk1LURDWU9mZk9JS0wwRGhZZXJJUC1qLXVqNmNvTVF3Z3dB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-09 新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现  腾讯新闻",
-      "content": "2026-11-09 新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现  腾讯新闻"
+      "group": "property",
+      "title": "贝壳累计拒签逾5000单风险交易 二手房资金监管仍存难点",
+      "source": "财新",
+      "date": "2026-11-19",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9iUk40X0RFdVg5TWh6a0UxNmpnbHY3Q3hudTU5NGhPTEg1X2hUU1ZPb2ZIWEJYaUpvZW9BWGRYX050dUFZOUtsUUNlSEFHb0NEallZOW9IanNDbDBmYWptYW15RzQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-19 贝壳累计拒签逾5000单风险交易 二手房资金监管仍存难点  财新",
+      "content": "2026-11-19 贝壳累计拒签逾5000单风险交易 二手房资金监管仍存难点  财新"
     },
     {
       "group": "property",
