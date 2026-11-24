@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "items": [
     {
       "group": "credit",
@@ -10,6 +10,15 @@ window.NEWS_DATA = {
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5JbHd4NUw0NnpNZFNGbGYxZW9pdmZtNWhTT2pjRWloa1pOMjV3bkRIaVNmQ2hQVVZ5X05CVXBYNWg2bDVZbEVDN3BvZ0xqNVh2N3Y1Nm9Dd2s?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-11-20 信用贷最高1000万！天门金融监管护航促消费- 湖北日报新闻客户端  湖北日报传媒集团",
       "content": "2026-11-20 信用贷最高1000万！天门金融监管护航促消费- 湖北日报新闻客户端  湖北日报传媒集团"
+    },
+    {
+      "group": "credit",
+      "title": "普惠贷款已达38.5万亿，大行下沉“抢客”份额近半，中小银行如何脱困？",
+      "source": "21世纪经济报道",
+      "date": "2026-11-19",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQOGNjQVNtcWNWeTBaNWhEa0d3SWdRX3l1WDZRdjdhdEp5VEUxcURrWnJyNnRUOFE4T25fVm82eGxaTVJZeXJESVVaLXFiOU5WRldSVDlFamdQTmc2a3dSYzV6UmhjM21GekNQRE12dG8teDVsNWczMmI4QTBHU0p4a1ZSNkM5cDFVeWNQc0loOA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-19 普惠贷款已达38.5万亿，大行下沉“抢客”份额近半，中小银行如何脱困？  21财经",
+      "content": "2026-11-19 普惠贷款已达38.5万亿，大行下沉“抢客”份额近半，中小银行如何脱困？  21财经"
     },
     {
       "group": "credit",
@@ -30,15 +39,6 @@ window.NEWS_DATA = {
       "content": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn"
     },
     {
-      "group": "credit",
-      "title": "主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%",
-      "source": "新浪新闻_手机新浪网",
-      "date": "2026-11-22",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZDFNQW9wV1FXaG5XRG5RM0VDSXZkVlNKZFJYZEpoR3hYTnJoazN2WF9SQmtfU1RuNmFMZFRyS0lMb2NRUTZWbjRxZDhQRTVjM1Q2WGo2WGtmZWpDUWhtdDE5UENEN2Z3NWRvS0RWLVROWVBselc1c1RLYVphOW5TWGM1Nl9LVVQ2Q1dmdDdjaEJzemtG?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-22 主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%  新浪新闻_手机新浪网",
-      "content": "2026-11-22 主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%  新浪新闻_手机新浪网"
-    },
-    {
       "group": "property",
       "title": "10月70城二手房价上涨城市降至7个 成交回暖为何难以带动价格企稳？",
       "source": "财新",
@@ -57,31 +57,40 @@ window.NEWS_DATA = {
       "content": "2026-11-16 11月上半月：深圳二手房成交增长15%  21财经"
     },
     {
+      "group": "property",
+      "title": "11月第4周北京门头沟新房价格38565元/平，环比上周持平",
+      "source": "房天下",
+      "date": "2026-11-23",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5EcnpqRnNNeXh2U0NSaXhhVUN6MWhHSmU1ZHB6WVRTN2lZX3hBOVRmV1o3Z2RWRzJxWXM1Y1ZpVmQ2aUhOcmtKNmpPaEZvUFR6RTVRaDFadGg0Zw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-23 11月第4周北京门头沟新房价格38565元/平，环比上周持平  房天下",
+      "content": "2026-11-23 11月第4周北京门头沟新房价格38565元/平，环比上周持平  房天下"
+    },
+    {
       "group": "credit",
-      "title": "央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超",
-      "source": "第一财经",
-      "date": "2026-11-18",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1uNC1sNWtEU0RqVUFURzZzR0d4WS1yMG1xSGkybDRDX0ZTRDRZc3Q1NzVXYUY4Y2Vyb25sd2RpRXBpRXJ5cTU5S3RseE8wU1Q4T1FSdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-18 央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超6000亿  第一财经",
-      "content": "2026-11-18 央行重磅定调：将加力维护金融市场平稳运行；长钱入市加速：社保年金年初净买入A股超6000亿  第一财经"
+      "title": "度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级",
+      "source": "驱动之家",
+      "date": "2026-11-11",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE02b3ZDX0xrZkxmLXlQOUxINzBRcEFCU2NOS3NYdHRHcTR0Sy15SjE2VzhTMmxwUmtRNHpqTDg1aWRiSFhscGhyWDREeGdLNDJSa3pEZEZNUGo?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家",
+      "content": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家"
     },
     {
-      "group": "property",
-      "title": "贝壳累计拒签逾5000单风险交易 二手房资金监管仍存难点",
-      "source": "财新",
-      "date": "2026-11-19",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9iUk40X0RFdVg5TWh6a0UxNmpnbHY3Q3hudTU5NGhPTEg1X2hUU1ZPb2ZIWEJYaUpvZW9BWGRYX050dUFZOUtsUUNlSEFHb0NEallZOW9IanNDbDBmYWptYW15RzQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-19 贝壳累计拒签逾5000单风险交易 二手房资金监管仍存难点  财新",
-      "content": "2026-11-19 贝壳累计拒签逾5000单风险交易 二手房资金监管仍存难点  财新"
+      "group": "credit",
+      "title": "新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现",
+      "source": "腾讯新闻",
+      "date": "2026-11-09",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBZaVJtQmlyMlBLd2t3aXRtUUFUb3dKR21IRzYzbjAyMHJrVTZ3eFc1S1NNcDk1LURDWU9mZk9JS0wwRGhZZXJJUC1qLXVqNmNvTVF3Z3dB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-09 新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现  腾讯新闻",
+      "content": "2026-11-09 新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现  腾讯新闻"
     },
     {
-      "group": "property",
-      "title": "一线房价，临近转折点？",
-      "source": "36Kr",
-      "date": "2026-11-15",
-      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0tMWRnbmprZUlHcXRTU05jSnUzUzVPSGNNSGVhNEhYcHFucC01OXRjRi05UlZPcUg4d3AwZHR1Y0tYZTkzSTdrYm5NM3Bidw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-15 一线房价，临近转折点？  36Kr",
-      "content": "2026-11-15 一线房价，临近转折点？  36Kr"
+      "group": "credit",
+      "title": "事关房贷，央行最新公布",
+      "source": "新浪财经",
+      "date": "2026-11-24",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUlQyWUxwb3NDcTVJcGlod2k5SkdYVGZpcXMtajRhbkNEcHh6R0VoMGN5MFdaN21CbXNPMGJjUUtBUGRjMFVZa2pld21zQ3U2d0VtQkF2OTJ1aUhKMDFrM0RCbmd0ckc4UkR3Z1N3TGV2LVNKOTREQUxlRi1hSkxuUGdB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-24 事关房贷，央行最新公布  手机新浪网",
+      "content": "2026-11-24 事关房贷，央行最新公布  手机新浪网"
     }
   ]
 };
