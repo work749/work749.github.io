@@ -1,6 +1,6 @@
 /* 每日要闻数据，由 tools/fetch_news.py 自动生成（多源真实搜索 + 大模型整理）。 */
 window.NEWS_DATA = {
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "items": [
     {
       "group": "credit",
@@ -22,12 +22,39 @@ window.NEWS_DATA = {
     },
     {
       "group": "credit",
+      "title": "双十一的金融暗线：从“发券”到“贴息”，银行与基金各自算了一笔新账",
+      "source": "搜狐",
+      "date": "2026-11-13",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBxRGpXY1FKTlhxdzZnTEJxZFprYlhBbzRwaHM5ejQ3d3VmeE4xb042N1NraWFha0NnTm16RGdCekpwdG0wVlJkWVVtVDhWM2dMNmNn?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-13 双十一的金融暗线：从“发券”到“贴息”，银行与基金各自算了一笔新账  Sohu",
+      "content": "2026-11-13 双十一的金融暗线：从“发券”到“贴息”，银行与基金各自算了一笔新账  Sohu"
+    },
+    {
+      "group": "credit",
       "title": "央行金融科技奖出炉！工行拿下唯一特等奖，8家银行获一等奖",
       "source": "新浪财经",
       "date": "2026-11-12",
       "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQNXdBQ1NGSzNzUmRkM3Y3NmNhZEloVTkzcDZaanNFbXRWM0pVVFk1akJQYlZBV1M4X1I4bEtoZkllRnYxTUFkRkV2SENYdHkxVExvYjJIM2duN2RsY1dVd0VoNHBfNEo2dnRRQ2dncHl0aklucTB3SHNCV1hmdG0tWHRjdlpGSjY2VG5GT2U5R1ZVUUx6TkRscFFSTEgyVFhjaE9uU3ZObUYtdFc3cVAtbU1SY3dpM0MtNXVMbUpPV0tPUXh0MmRFVkxfVzNmdmd2dkptaWctTVpNdzF2RVRkeWZhcHpBM3BWUUtjT21sUk5WV0UzZlRzakZ3ZXRXNllzdU9Fanh0QmlhNDJyeTI4WWNJVVJxU3M?oc=5&hl=en-US&gl=US&ceid=US:en",
       "summary": "2026-11-12 央行金融科技奖出炉！工行拿下唯一特等奖，8家银行获一等奖  新浪财经",
       "content": "2026-11-12 央行金融科技奖出炉！工行拿下唯一特等奖，8家银行获一等奖  新浪财经"
+    },
+    {
+      "group": "property",
+      "title": "中美楼市大洗牌，老房贷成新枷锁，普通人该咋选 - QQ News",
+      "source": "腾讯新闻",
+      "date": "2026-11-23",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB5cU1pOGxOeXBad2JfQUxuZXB4LVoybG9DMXM2V1RNYi1GUTNxeGRMS0U4Y0NfWGJLdGZWZE1BWE83OGEzbjB1aVNSRXdyVVNxVVNMUUpB?oc=5",
+      "summary": "2026-11-23 中美楼市大洗牌，老房贷成新枷锁，普通人该咋选  QQ News",
+      "content": "2026-11-23 中美楼市大洗牌，老房贷成新枷锁，普通人该咋选  QQ News"
+    },
+    {
+      "group": "property",
+      "title": "2026年10月十大城市二手房房价地图",
+      "source": "腾讯新闻",
+      "date": "2026-11-17",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBQY1ZyZmsxSEZhTUJzZ21teTRHdGExWGV1Y0FGRmNEUi1aMExwTC1UOXlrTVpMMnFGa1A2WkpqektFQjFVQXdYQkszTVVKZ2Z4dlJrMU9n?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-17 2026年10月十大城市二手房房价地图  腾讯新闻",
+      "content": "2026-11-17 2026年10月十大城市二手房房价地图  腾讯新闻"
     },
     {
       "group": "credit",
@@ -39,58 +66,22 @@ window.NEWS_DATA = {
       "content": "2026-11-11 央行最新报告：推动贷款利率定价基准改革  ThePaper.cn"
     },
     {
-      "group": "property",
-      "title": "10月70城二手房价上涨城市降至7个 成交回暖为何难以带动价格企稳？",
-      "source": "财新",
-      "date": "2026-11-16",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuXzEwZUpjbFkwYnU2Qk1aZ3dhR2J5NHBhRGctaXQ2VFRsdFA2QndxWC13dVhiV3ZTWEJGeGh0QWRNSFIyYjFKNlpXUDlvRzBSaTlTRmpOWHBWOTRUMDZHNXNVUWtSRkU?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-16 10月70城二手房价上涨城市降至7个 成交回暖为何难以带动价格企稳？  财新",
-      "content": "2026-11-16 10月70城二手房价上涨城市降至7个 成交回暖为何难以带动价格企稳？  财新"
+      "group": "credit",
+      "title": "主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%",
+      "source": "新浪新闻_手机新浪网",
+      "date": "2026-11-22",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNN2lSeEdOY3YyLWJkZDJ6Tk1NUmFjcFFBMU5kYmVpSE9CeWlHZHRlZTlWYkQyalJzaDNBMFl6YmptUFNCbVBpVGR1NWtGaGV2M3JBWmR0WGZxa19IVzhvYVUtQlJ0UkM2YTcyOGROc3JwUmlhdjdrX2d2Wk9vZXNIOEo2dFNoemIyQ1k2aWJxa3JIaVRkenZJZWFCNTRqZlZpQVU3WHAwVDdvQVRiMVJfTDNkNm10UmVJblpXTUJkaGJNWU1hNE55M3J0N2Q1Zw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-22 主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%  新浪新闻_手机新浪网",
+      "content": "2026-11-22 主要政策利率换锚后首期LPR出炉 1年期3.0%，5年期以上3.5%  新浪新闻_手机新浪网"
     },
     {
       "group": "property",
-      "title": "11月上半月：深圳二手房成交增长15%",
-      "source": "21世纪经济报道",
-      "date": "2026-11-16",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR081M2g4TzlYZURUM3BpUmtVSXJFRDRLMkRNbzVaSDFLQ2ZSekNGeWlQY24zMUFaSXJxNUdobEEzNU83VTE0cHFsZl84ZmNYQ001X2hkakRCYmxIX1RMUktNLVNJYl85VkM1MHB2TXVFZk1BaDNyczA2dlNLNXREbEVHd3V0ZXRoTnk3RWJoWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-16 11月上半月：深圳二手房成交增长15%  21财经",
-      "content": "2026-11-16 11月上半月：深圳二手房成交增长15%  21财经"
-    },
-    {
-      "group": "property",
-      "title": "11月第4周北京门头沟新房价格38565元/平，环比上周持平",
+      "title": "11月第4周桂林临桂区新房价格5150元/平，环比上周持平",
       "source": "房天下",
-      "date": "2026-11-23",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5EcnpqRnNNeXh2U0NSaXhhVUN6MWhHSmU1ZHB6WVRTN2lZX3hBOVRmV1o3Z2RWRzJxWXM1Y1ZpVmQ2aUhOcmtKNmpPaEZvUFR6RTVRaDFadGg0Zw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-23 11月第4周北京门头沟新房价格38565元/平，环比上周持平  房天下",
-      "content": "2026-11-23 11月第4周北京门头沟新房价格38565元/平，环比上周持平  房天下"
-    },
-    {
-      "group": "credit",
-      "title": "度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级",
-      "source": "驱动之家",
-      "date": "2026-11-11",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE02b3ZDX0xrZkxmLXlQOUxINzBRcEFCU2NOS3NYdHRHcTR0Sy15SjE2VzhTMmxwUmtRNHpqTDg1aWRiSFhscGhyWDREeGdLNDJSa3pEZEZNUGo?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家",
-      "content": "2026-11-11 度小满、蚂蚁、腾讯、京东、抖音集体参与！互联网助贷监管再升级  驱动之家"
-    },
-    {
-      "group": "credit",
-      "title": "新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现",
-      "source": "腾讯新闻",
-      "date": "2026-11-09",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBZaVJtQmlyMlBLd2t3aXRtUUFUb3dKR21IRzYzbjAyMHJrVTZ3eFc1S1NNcDk1LURDWU9mZk9JS0wwRGhZZXJJUC1qLXVqNmNvTVF3Z3dB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-09 新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现  腾讯新闻",
-      "content": "2026-11-09 新加坡星展银行时隔16年换帅！中国业务净利大增186%，个人消费贷布局浮现  腾讯新闻"
-    },
-    {
-      "group": "credit",
-      "title": "事关房贷，央行最新公布",
-      "source": "新浪财经",
       "date": "2026-11-24",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUlQyWUxwb3NDcTVJcGlod2k5SkdYVGZpcXMtajRhbkNEcHh6R0VoMGN5MFdaN21CbXNPMGJjUUtBUGRjMFVZa2pld21zQ3U2d0VtQkF2OTJ1aUhKMDFrM0RCbmd0ckc4UkR3Z1N3TGV2LVNKOTREQUxlRi1hSkxuUGdB?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "summary": "2026-11-24 事关房贷，央行最新公布  手机新浪网",
-      "content": "2026-11-24 事关房贷，央行最新公布  手机新浪网"
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE56RGRGQlRYcWlGWTFVazZTSlQtSElNazh5Ykk3b0hkemQ4YWFCWGRKVmNFY3RpYmRQRGUyRk1XcjZac1VSd2pzTExEMXBGbkJ3ZGJTQzFmRUxpSF85SjdR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "summary": "2026-11-24 11月第4周桂林临桂区新房价格5150元/平，环比上周持平  房天下",
+      "content": "2026-11-24 11月第4周桂林临桂区新房价格5150元/平，环比上周持平  房天下"
     }
   ]
 };
